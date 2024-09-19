@@ -1,5 +1,7 @@
 # Bryan Friedman Website
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7cf6e075-812a-4689-a6ce-66bf9a03352f/deploy-status)](https://app.netlify.com/sites/bryanfriedman/deploys)
+
 ## A Brief History
 
 Having built and customized quite a few websites using [WordPress](https://wordpress.org) over the years, my self-hosted personal website/blog was naturally powered by WordPress for a long time as well. However, I became aware of [Jamstack](https://jamstack.org) in a previous job and was intrigued by it. Later in my career, I led a team where we built a [Hugo](https://gohugo.io) site and hosted it on [Netlify](https://www.netlify.com). I _really_ liked the whole experience and became curious about other [Static Site Generators](https://jamstack.org/generators/). After experimenting with a few [React](https://react.dev)-based ones, I stumbled on [Eleventy](https://www.11ty.dev) and I liked the balance it struck between the JavaScript ecosystem and the experience I had with Hugo. So I thought the best way to learn was to rebuild my site using Eleventy, so here we are.
