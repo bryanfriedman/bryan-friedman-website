@@ -1,0 +1,25 @@
+
+{% macro postslist(list, showContent, reverse) %}
+
+{% if (reverse) %}
+{% set list = list | reverse %}
+{% endif %}
+
+{% for post in list %}
+		<div class="post-preview">
+			<article class="mb-4">
+				<a href="{{ post.url }}">
+					<h1 class="post-title">{% if post.data.title %}{{ post.data.title }}{% else %}{{ post.data.url }}{% endif %}</h1>
+					<span class="post-subtitle">{{ post.data.description }}</span>
+				</a>
+				{% import "postmeta.njk" as postmeta %}
+				{{ postmeta.postmeta(post) }}
+				{% if (showContent) %}
+					{{ post.content | safe }}
+				{% endif %}
+			</article>
+		</div>
+    <hr class="my-4" />
+{% endfor %}
+
+{% endmacro %}

@@ -1,0 +1,16 @@
+---
+permalink: /topics/
+layout: home.njk
+eleventyNavigation:
+  key: Topics
+  order: 2
+---
+
+<h1>Topics</h1>
+
+<ul>
+{% for topic in collections.posts | getAllTopics | filterTopicList %}
+	{% set topicUrl %}/topics/{{ topic | slugify }}/{% endset %}
+	<li><a href="{{ topicUrl }}" class="post-topic">{{ topic }}</a></li>
+{% endfor %}
+</ul>

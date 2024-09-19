@@ -1,0 +1,20 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: topic
+  filter:
+    - all
+  addAllPagesToCollections: true
+layout: home.njk
+eleventyComputed:
+  title: "Topic: {{ topic }}"
+description: ""
+permalink: /topics/{{ topic | slugify }}/
+---
+
+
+{% import "postslist.njk" as postslist %}
+{{ postslist.postslist(collections[ topic ], true, true) }}
+
+<div class="mt-5 mb-5 text-center"><a class="btn btn-primary text-uppercase" href="/topics">All Topics</a></div>

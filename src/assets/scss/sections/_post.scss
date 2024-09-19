@@ -1,0 +1,89 @@
+// 
+// Posts
+// 
+
+.section-heading {
+    margin-top: 2.75rem;
+}
+
+.caption {
+    font-size: $font-size-sm;
+    font-style: italic;
+    display: block;
+    margin: 0;
+    padding: 0.625rem;
+    text-align: center;
+}
+
+.alignright {
+    float: right;
+    margin: 1em 0 1em 1em !important;
+}
+
+.alignleft {
+    float: left;
+    margin: 1em 1em 1em 0 !important;
+}
+
+.alignriht-top {
+    float: left;
+    margin: 0 0 1em 1em !important;
+}
+
+.alignleft-top {
+    float: left;
+    margin: 0 1em 1em 0 !important;
+}
+
+// Styling for post previews on the blog homepage
+
+.post-preview {
+
+    p {
+        >img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    >a {
+        color: $gray-900;
+
+        &:focus,
+        &:hover {
+            text-decoration: none;
+            color: $primary;
+        }
+
+        >.post-title {
+            margin-top: 1.875rem;
+            margin-bottom: 0.625rem;
+        }
+
+        >.post-subtitle {
+            font-family: $headings-font-family;
+            font-size: 1.6rem;
+            font-weight: 300;
+            margin-bottom: 0.625rem;
+            display: block;
+        }
+    }
+
+    .post-meta {
+        font-family: $headings-font-family;
+        font-size: 1.25rem;
+        font-style: italic;
+        margin-top: 0;
+        color: $gray-600;
+
+        >a {
+            text-decoration: none;
+        }
+    }
+}
+
+.video-container, .twitter-tweet {
+    margin-bottom: 2rem !important;
+}

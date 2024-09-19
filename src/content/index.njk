@@ -1,0 +1,26 @@
+---
+pagination:
+  data: collections.posts
+  size: 5
+  alias: posts
+  reverse: true
+layout: home.njk
+headerImage: "header.jpg"
+eleventyNavigation:
+  key: Home
+  order: 1
+permalink: "/{% if pagination.pageNumber > 0 %}blog/{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
+---
+
+{% import "postslist.njk" as postslist %}
+{{ postslist.postslist(posts, true, false) }}
+{%- if pagination.href.previous %}<div class="mt-5 mb-5 float-start"><a class="btn btn-primary text-uppercase" href="{{ pagination.href.previous }}">← Older Posts</a></div>{% endif %}
+{%- if pagination.href.next %}<div class="mt-5 mb-5 float-end"><a class="btn btn-primary text-uppercase" href="{{ pagination.href.next }}">Newer Posts →</a></div>{% endif %}
+
+{# Lists all collection items
+<ul>
+	{%- for entry in collections.all %}
+	<li><a href="{{ entry.url }}"><code>{{ entry.url }}</code></a></li>
+	{%- endfor %}
+</ul>
+#}

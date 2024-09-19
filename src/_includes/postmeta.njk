@@ -1,0 +1,10 @@
+{% macro postmeta(post) %}
+
+<span class="post-meta">Posted {% if post.data.author %} by {{ post.data.author }}{% endif %} on <time datetime="{{ post.data.date | htmlDateString }}">{{ post.data.date | readableDate("LLLL d, yyyy") }}</time></span>
+{%- for topic in post.data.tags | filterTopicList %}
+    {%- if loop.first %}<span class="post-meta"> in {% endif %}
+    {%- set topicUrl %}/topics/{{ topic | slugify }}/{% endset %}
+    <a href="{{ topicUrl }}">{{ topic }}</a>{%- if not loop.last %}, {% else %}</span>{% endif %}
+{%- endfor %}
+
+{% endmacro %}
