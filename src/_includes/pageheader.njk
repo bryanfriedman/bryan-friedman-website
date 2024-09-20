@@ -1,6 +1,5 @@
    {% if not headerImage %} {% set headerImage = "header.jpg" %} {% elseif (headerImage == "none") %} {% set headerImage = "" %} {% endif %}
-   <!-- Should never have to fallback on black background since it's being set here but just in case... -->
-    <header class="masthead" style="{{ ["background-image: url('/img/", headerImage, "')"] | join if headerImage else "background-color: #6c757d" }}">
+    <header class="masthead" style="{{ ["background-image: url('/img/", headerImage, "')"] | join }}">
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
