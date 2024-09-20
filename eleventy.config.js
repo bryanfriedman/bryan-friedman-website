@@ -4,6 +4,9 @@ const production = require("./src/_data/production.js");
 
 module.exports = function(eleventyConfig) {
 
+	// Copy root directory assets
+	eleventyConfig.addPassthroughCopy({"src/assets/root": "/"});
+
 	// Copy img assets
 	eleventyConfig.addPassthroughCopy({"src/assets/img": "/img"});
 
