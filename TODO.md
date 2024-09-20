@@ -29,14 +29,7 @@ This is just a list to keep track of random thoughts or ideas that might be fun 
 - [ ] Integrate live Twitter(X) or Threads feed?
 - [ ] Add a sidebar with recent posts or list of topics?
 - [ ] Add `id` tags for headers using `markdown-it-anchor`?
-- [ ] Add favicon
+- [X] Add favicon
 - [ ] Submit sitemap for SEO?
-
-
-TODO Migration:
-
-- Fix up README and TODO.md and give credit to open source references
-
-- Add to GitHub and wire up to Netlify...
 
 
