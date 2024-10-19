@@ -6,6 +6,9 @@ module.exports = function(eleventyConfig) {
 
 	// Copy root directory assets
 	eleventyConfig.addPassthroughCopy({"src/assets/root": "/"});
+	
+	// Copy admin for Decap CMS
+	eleventyConfig.addPassthroughCopy({"src/assets/admin": "/admin"});
 
 	// Copy img assets
 	eleventyConfig.addPassthroughCopy({"src/assets/img": "/img"});
