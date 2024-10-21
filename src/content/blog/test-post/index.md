@@ -9,4 +9,4 @@ tags:
 
 Test Post
 
-![](/img/uploads/oldheader-seattle.jpg)
+![](/img/uploads/img_0604165631-1.jpg)
