@@ -20,4 +20,3 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Topics", name: "tags", widget: "list" }
       - { label: "Body", name: "body", widget: "markdown" }
-    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
