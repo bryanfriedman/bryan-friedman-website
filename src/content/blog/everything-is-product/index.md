@@ -7,8 +7,6 @@ tags:
   - "Career"
 ---
 
-# Everything is Product
-
 I can’t believe it’s been more than ten years since [I first became a product manager](https://www.bryanfriedman.com/blog/being-a-product-manager/). Since then, I’ve been on a “[hybrid career](https://www.bryanfriedman.com/blog/a-hybrid-career/)” journey, and have worked in a lot of different related areas over the past several years including product marketing, competitive intelligence, developer relations, customer education, and technical content development, all while playing both individual contributor and leadership roles.
 
 For me, though, it’s been sort of a “once a product manager, always a product manager” situation through all of it. Actually, I have brought the things I learned from product management into just about everything I’ve done, even outside of my career. Thinking about things from a user perspective, creating a closed feedback loop, working iteratively, failing fast, and staying agile (and sometimes *Agile*), are all strategies that can be applied successfully in quite a few different areas. Why is that?
