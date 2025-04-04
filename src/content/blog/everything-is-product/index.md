@@ -53,7 +53,7 @@ With this feedback comes (hopefully) a closed loop of iteration and improvement.
 
 ## Conclusion
 
-Truthfully, I’m kind of annoyed that I even felt I had to write this. This concept of everything being a product has become so apparent to me, so blatantly obvious, that I found myself in disbelief the last time was last told that it wasn’t the case in a particular situation. Watching a once great and valuable product that was loved by customers be gutted and replaced by cumbersome templated muck was painful. But it did help clarify what kinds of leaders and companies I’d be happy working for. 
+Truthfully, I’m kind of annoyed that I even felt I had to write this. This concept of everything being a product has become so apparent to me, so blatantly obvious, that I found myself in disbelief the last time was told that it wasn’t the case in a particular situation. Watching a once great and valuable product that was loved by customers be gutted and replaced by cumbersome templated muck was painful. But it did help clarify what kinds of leaders and companies I’d be happy working for. 
 
 I want an environment where leadership embraces the "Everything is Product" philosophy. That way the business can unlock hidden potential, improve user satisfaction across the board, and create a culture of continuous improvement.
 
