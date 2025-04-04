@@ -1,3 +1,12 @@
+---
+title: "Everything is Product"
+date: "2025-04-04"
+tags: 
+  - "Product Management"
+  - "Agile"
+  - "Career"
+---
+
 # Everything is Product
 
 I can’t believe it’s been more than ten years since [I first became a product manager](https://www.bryanfriedman.com/blog/being-a-product-manager/). Since then, I’ve been on a “[hybrid career](https://www.bryanfriedman.com/blog/a-hybrid-career/)” journey, and have worked in a lot of different related areas over the past several years including product marketing, competitive intelligence, developer relations, customer education, and technical content development, all while playing both individual contributor and leadership roles.
