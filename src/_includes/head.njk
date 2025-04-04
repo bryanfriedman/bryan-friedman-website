@@ -1,8 +1,14 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<meta name="description" content="{{ metadata.description }}">
-<meta name="author" content="">  <meta name="author" content="{{ metadata.author }}">
+<meta name="description" content="{{ description or metadata.description }}">
+<meta name="author" content="{{ metadata.author.name }}">
 <meta name="generator" content="{{ eleventy.generator }}">
+
+<meta property="og:url" content="{{ page.url | htmlBaseUrl(metadata.url) }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ title or metadata.title }}">
+<meta property="og:description" content="{{ description or metadata.description }}">
+<!--<meta property="og:image" content="">-->
 
 <link rel="icon" type="image/png" sizes="96x96" href="{{ '/img/favicon.png' | url }}">
 <link rel="icon" type="image/png" sizes="32x32" href="{{ '/img/favicon-32x32.png' | url }}">
