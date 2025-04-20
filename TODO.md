@@ -8,6 +8,10 @@ This is just a list to keep track of random thoughts or ideas that might be fun 
 - [ ] Is `mdAttr` plugin not running on some rebuilds?
 
 ## Possible Enhancements / Open Questions
+- [ ] Alphabetize Topic list?
+- [ ] Dynamically find port to open instead of hardcoding 8080?
+- [ ] Add some space between posts?
+- [ ] Better syntax highlighting styles?
 - [ ] Add lazy loading to images?
 - [ ] Additional styles (blockquote, etc.)
 - [ ] Fork my own copy of https://github.com/maxboeck/eleventy-plugin-page-assets to make it more sustainable?
