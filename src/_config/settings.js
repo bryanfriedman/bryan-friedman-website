@@ -1,5 +1,5 @@
-module.exports = (function () {
-    settings = 
+export default (function() {
+    const settings = 
     {
         markdownTemplateEngine: "njk",
         dir: {

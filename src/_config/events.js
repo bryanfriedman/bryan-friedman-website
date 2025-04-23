@@ -1,13 +1,13 @@
-const production = require("../_data/production.js");
-const clean = require("rimraf");
-const open = require('open');
+import production from "../_data/production.js";
+import { rimraf } from "rimraf";
+import open from 'open';
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
 
 	// Clean output folders
 	eleventyConfig.on("eleventy.before", async ({ dir }) => {
-		clean.sync(dir.output+"/*");
-		if (production) clean.sync('public');
+		rimraf.sync(dir.output+"/*");
+		if (production) rimraf.sync('public');
 	});
 
 	// Open browser window after dev build (but not on subsequent watch changes)

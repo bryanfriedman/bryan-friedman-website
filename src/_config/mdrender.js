@@ -1,6 +1,6 @@
-const mdAttr = require("markdown-it-attrs");
+import mdAttr from "markdown-it-attrs";
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
     eleventyConfig.amendLibrary('md', (markdown) => {
         // Add 'section-heading' class to h2 tags
         markdown.renderer.rules.heading_open = function (tokens, idx, options, env, self) {

@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 
 function getYoutubeId(url) {
     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
@@ -6,7 +6,7 @@ function getYoutubeId(url) {
     return (match && match[2].length === 11) ? match[2] : null;
 }
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
 
     eleventyConfig.addShortcode('youtube', function(url) {
 		const iframeMarkup = 
