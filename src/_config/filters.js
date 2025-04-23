@@ -27,6 +27,7 @@ export default function(eleventyConfig) {
 			(item.data.tags || []).forEach(topic => topicSet.add(topic));
 		}
 		return Array.from(topicSet).sort();
+		return Array.from(topicSet).sort();
 	});
 
 	// Filter out 'posts' tag from the topics list
