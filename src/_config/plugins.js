@@ -1,12 +1,12 @@
 // 11ty plugins
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginBundle = require("@11ty/eleventy-plugin-bundle");
-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
-const pageAssetsPlugin = require('eleventy-plugin-page-assets');
+import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
+import pluginRss from "@11ty/eleventy-plugin-rss";
+import pluginBundle from "@11ty/eleventy-plugin-bundle";
+import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
+import pageAssetsPlugin from 'eleventy-plugin-page-assets';
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginBundle);

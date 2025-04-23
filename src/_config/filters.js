@@ -1,6 +1,6 @@
-const { DateTime } = require("luxon");
+import { DateTime } from "luxon";
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
     
 	// Filters for displaying dates 
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
@@ -24,7 +24,7 @@ module.exports = function(eleventyConfig) {
 		for(let item of collection) {
 			(item.data.tags || []).forEach(topic => topicSet.add(topic));
 		}
-		return Array.from(topicSet);
+		return Array.from(topicSet).sort();
 	});
 
 	// Filter out 'posts' tag from the topics list

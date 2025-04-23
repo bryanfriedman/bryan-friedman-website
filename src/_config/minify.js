@@ -1,7 +1,7 @@
-const jsUglify = require("uglify-js");
-const htmlmin = require('html-minifier-terser');
+import jsUglify from "uglify-js";
+import htmlmin from 'html-minifier-terser';
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
     eleventyConfig.addTemplateFormats("js");
 	eleventyConfig.addExtension("js", {
 		outputFileExtension: "js",
