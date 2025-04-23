@@ -21,11 +21,11 @@ export default function(eleventyConfig) {
   // See for more info (and why we are pointing to fork instead of outdated npm package):
   //    https://github.com/victornpb/eleventy-plugin-page-assets/issues/3
   //    https://github.com/maxboeck/eleventy-plugin-page-assets
-  //eleventyConfig.addPlugin(pageAssetsPlugin, {
-  //    mode: "directory",
-  //    postsMatching: "**/*.md",
-  //    recursive: true,
-  //    silent: true
-  //});
+  /*eleventyConfig.addPlugin(pageAssetsPlugin, {
+      mode: "directory",
+      postsMatching: "**\/*.md",
+      recursive: true,
+      silent: true
+  });*/
 
 }
