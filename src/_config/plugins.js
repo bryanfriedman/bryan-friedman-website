@@ -6,6 +6,7 @@ import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import eleventyCopyDataCascade from "@bryanfriedman/eleventy-plugin-html-relative-datacascade";
 //import pageAssetsPlugin from 'eleventy-plugin-page-assets';
+//import pageAssetsPlugin from 'eleventy-plugin-page-assets';
 
 export default function(eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
@@ -21,11 +22,11 @@ export default function(eleventyConfig) {
   // See for more info (and why we are pointing to fork instead of outdated npm package):
   //    https://github.com/victornpb/eleventy-plugin-page-assets/issues/3
   //    https://github.com/maxboeck/eleventy-plugin-page-assets
-  /*eleventyConfig.addPlugin(pageAssetsPlugin, {
-      mode: "directory",
-      postsMatching: "**\/*.md",
-      recursive: true,
-      silent: true
-  });*/
+  //eleventyConfig.addPlugin(pageAssetsPlugin, {
+  //    mode: "directory",
+  //    postsMatching: "**/*.md",
+  //    recursive: true,
+  //    silent: true
+  //});
 
 }
