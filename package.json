@@ -11,12 +11,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf dist && rm -rf public",
     "dev": "open=true npx @11ty/eleventy --serve",
-    "build": "npx @11ty/eleventy && cp -r ./dist/ ./public"
+    "build": "npm run clean && npx @11ty/eleventy && cp -r ./dist/ ./public"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "cssnano": "^7.0.6",
-    "eleventy-plugin-page-assets": "github:maxboeck/eleventy-plugin-page-assets",
     "eleventy-plugin-purgecss": "^0.5.0",
     "html-minifier-terser": "^7.2.0",
     "luxon": "^3.3.0",
