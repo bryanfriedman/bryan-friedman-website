@@ -5,7 +5,6 @@ import pluginBundle from "@11ty/eleventy-plugin-bundle";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 //import pageAssetsPlugin from 'eleventy-plugin-page-assets';
-//import pageAssetsPlugin from 'eleventy-plugin-page-assets';
 
 export default function(eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
