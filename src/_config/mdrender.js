@@ -14,7 +14,6 @@ export default function(eleventyConfig) {
         // Allow for specifying attributes in markdown (i.e. {.alignright})
         markdown.use(mdAttr);
 
-
         // Add anchors to headers
         markdown.use(mdAnchor);
 
