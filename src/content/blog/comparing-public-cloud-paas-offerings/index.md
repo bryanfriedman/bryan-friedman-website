@@ -7,7 +7,7 @@ tags:
 
 For custom-built applications, using a Platform-as-a-Service (PaaS) solution is an excellent option. With a PaaS, developers simply focus on writing code and pushing an app. It removes the complexity of having to build and maintain any underlying infrastructure.
 
-In this post, I'm going to try out some of the major PaaS offerings and compare and contrast the experiences. There are two different approaches[1](#footnotes) to PaaS adoption:
+In this post, I'm going to try out some of the major PaaS offerings and compare and contrast the experiences. There are two different approaches<sup>[1](#footnotes)</sup> to PaaS adoption:
 
 - **Use a PaaS offered by a public cloud provider.** All the big cloud players have a host of services covering the entire software stack. This includes PaaS, and customers may choose to host applications there.
 - **Use a third-party PaaS on top of an IaaS provider.** The alternative is to use a PaaS that can run on many infrastructure providers. The most notable option here is the Cloud Foundry platform.
@@ -66,7 +66,7 @@ After applying the environment properties, EB restarts the app for us. So once i
 
 ### Azure App Service
 
-You may be asking, "why on earth would you deploy a Java application to a Windows server anyway?" Fair question. Microsoft has actually done well at embracing Linux recently. At the end of last year, they announced [Azure App Service on Linux](https://channel9.msdn.com/Events/Connect/2016/199), and it went [GA just this month](https://azure.microsoft.com/en-us/blog/general-availability-of-app-service-on-linux-and-web-app-for-containers/). Unfortunately, it doesn't support Java at this time (only PHP, Ruby, Node.js, and .NET Core). While it's great news for some apps, it didn't help me here, so Windows it is.[2](#footnotes)
+You may be asking, "why on earth would you deploy a Java application to a Windows server anyway?" Fair question. Microsoft has actually done well at embracing Linux recently. At the end of last year, they announced [Azure App Service on Linux](https://channel9.msdn.com/Events/Connect/2016/199), and it went [GA just this month](https://azure.microsoft.com/en-us/blog/general-availability-of-app-service-on-linux-and-web-app-for-containers/). Unfortunately, it doesn't support Java at this time (only PHP, Ruby, Node.js, and .NET Core). While it's great news for some apps, it didn't help me here, so Windows it is.<sup>[2](#footnotes)</sup>
 
 First, we create the web app. No code needed at this point. Once up and running, the app will be available at http://<APP-NAME>.azurewebsites.net/.
 
@@ -78,7 +78,7 @@ Once it's done creating, we click the newly-created web app in the _App Services
 
 ![](images/azure3.png)
 
-Now we're ready to upload the code. There are a few different ways to do it using the _Deployment Options_ menu. Azure App Services offers integrations with developer IDEs and source code management tools. I just want to upload my _jar_ file[3](#footnotes). The _web deploy_ option that [integrates with IDEs](https://docs.microsoft.com/en-us/java/azure/eclipse/azure-toolkit-for-eclipse-installation) does have a CLI (_msdeploy.exe_) but it's Windows only. No Mac support. So the best option for me in this case is to use FTP. It wouldn't generally be my first choice, but at least it's scriptable. (It also supports FTPS).
+Now we're ready to upload the code. There are a few different ways to do it using the _Deployment Options_ menu. Azure App Services offers integrations with developer IDEs and source code management tools. I just want to upload my _jar_ file<sup>[3](#footnotes)</sup>. The _web deploy_ option that [integrates with IDEs](https://docs.microsoft.com/en-us/java/azure/eclipse/azure-toolkit-for-eclipse-installation) does have a CLI (_msdeploy.exe_) but it's Windows only. No Mac support. So the best option for me in this case is to use FTP. It wouldn't generally be my first choice, but at least it's scriptable. (It also supports FTPS).
 
 To make this work, we have to set up FTP credentials in the _Deployment Credentials_ section.
 
