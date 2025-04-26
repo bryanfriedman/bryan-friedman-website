@@ -13,6 +13,8 @@
     "build": "npx @11ty/eleventy && cp -r ./dist/ ./public"
   },
   "devDependencies": {
+    "@netlify/plugin-a11y": "^1.0.0-beta.1",
+    "@netlify/plugin-lighthouse": "^6.0.1",
     "autoprefixer": "^10.4.20",
     "cssnano": "^7.0.6",
     "eleventy-plugin-page-assets": "github:maxboeck/eleventy-plugin-page-assets",
@@ -21,6 +23,7 @@
     "luxon": "^3.3.0",
     "markdown-it": "^14.1.0",
     "markdown-it-attrs": "^4.2.0",
+    "netlify-plugin-checklinks": "^4.1.1",
     "node-fetch": "^2.7.0",
     "nunjucks": "^3.2.3",
     "open": "8.4.2",
