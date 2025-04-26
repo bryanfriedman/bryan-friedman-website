@@ -14,3 +14,18 @@
 
   # Default build command.
   command = "npm run build"
+
+[[plugins]]
+  package = "netlify-plugin-checklinks"
+
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+  [plugins.inputs.audits]
+    # optional, deploy the lighthouse report to a path under your site
+    output_path = "reports/lighthouse.html"
+
+[[plugins]]
+  package = "@netlify/plugin-a11y"
+  [plugins.inputs]
+    # Do not fail the build if a11y issues are found
+    failWithIssues = false
