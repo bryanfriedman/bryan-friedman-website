@@ -29,18 +29,23 @@
 <link rel="preload" as="image" href="{{ '/img/header.jpg' | url }}">
 <link rel="preload" as="image" href="{{ '/img/about.jpg' | url }}">
 
+{% set global = this.ctx %} 
+{% set global.minify = "" %}
+{% set global.titlePrefix = "" %}
 {% if production %}
-<title>{{ title or metadata.title }}</title>
-<link href="{{ '/css/styles.min.css' | url }}" rel="stylesheet" type="text/css">
+{% set global.minify = ".min" %}
 {% else %}
-<title>DEV - {{ title or metadata.title }}</title>
-<link href="{{ '/css/styles.css' | url }}" rel="stylesheet" type="text/css">
+{% set global.titlePrefix = "DEV - " %}
 {% endif %}
 
-<!-- PrismJS stylesheet for syntax highlighting -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-base16-ateliersulphurpool.light.min.css" rel="stylesheet" />
-<!-- Font Awesome icons (free version)-->
-<script src="https://use.fontawesome.com/releases/v6.6.0/js/all.js" crossorigin="anonymous"></script>
+<title>{{ global.titlePrefix }}{{ title or metadata.title }}</title>
+
+<link href="{{ (['/css/prism-base16-ateliersulphurpool.light', global.minify, '.css'] | join) | url }}" rel="stylesheet" type="text/css"> <!-- PrismJS stylesheet for syntax highlighting -->
+<script defer src="{{ (['/js/fontawesome', global.minify, '.js'] | join) | url }}" crossorigin="anonymous"></script>
+<script defer src="{{ (['/js/brands', global.minify, '.js'] | join) | url }}" crossorigin="anonymous"></script>
+<script defer src="{{ (['/js/solid', global.minify, '.js'] | join) | url }}" crossorigin="anonymous"></script>
+<link href="{{ (['/css/styles', global.minify, '.css'] | join)' | url }}" rel="stylesheet" type="text/css">
+
 <!-- Google fonts-->
 <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
