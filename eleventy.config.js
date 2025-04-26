@@ -11,13 +11,10 @@ import filters from './src/_config/filters.js';
 import plugins from './src/_config/plugins.js';
 
 export default function(eleventyConfig) {
-<<<<<<< HEAD
 
 	eleventyConfig.addPassthroughCopy("src/content/**/*.jpg", {
 		mode: "html-relative"
 	});
-=======
->>>>>>> 39c5dc3 (Upgrade to v3upgrade)
 
 	// Copy root directory assets
 	eleventyConfig.addPassthroughCopy({"src/assets/root": "/"});
