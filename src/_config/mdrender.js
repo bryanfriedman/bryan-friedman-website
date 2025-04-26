@@ -1,4 +1,5 @@
 import mdAttr from "markdown-it-attrs";
+import mdAnchor from "markdown-it-anchor";
 
 export default function(eleventyConfig) {
     eleventyConfig.amendLibrary('md', (markdown) => {
@@ -12,6 +13,9 @@ export default function(eleventyConfig) {
 
         // Allow for specifying attributes in markdown (i.e. {.alignright})
         markdown.use(mdAttr);
+
+        // Add anchors to headers
+        markdown.use(mdAnchor);
 
         // Make relative image references work on all pages
         markdown.renderer.rules.image = function (tokens, idx, options, env, self) {
