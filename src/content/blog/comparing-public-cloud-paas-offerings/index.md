@@ -12,7 +12,7 @@ In this post, I'm going to try out some of the major PaaS offerings and compare 
 - **Use a PaaS offered by a public cloud provider.** All the big cloud players have a host of services covering the entire software stack. This includes PaaS, and customers may choose to host applications there.
 - **Use a third-party PaaS on top of an IaaS provider.** The alternative is to use a PaaS that can run on many infrastructure providers. The most notable option here is the Cloud Foundry platform.
 
-I'll assess three public cloud provider offerings ([AWS Elastic Beanstalk](#aws), [Microsoft Azure App Service](#azure), and [Google App Engine](#google)), and one third-party option ([Pivotal Cloud Foundry](#pivotal)).
+I'll assess three public cloud provider offerings ([AWS Elastic Beanstalk](#aws-elastic-beanstalk), [Microsoft Azure App Service](#azure-app-service), and [Google App Engine](#google-app-engine)), and one third-party option ([Pivotal Cloud Foundry](#pivotal-cloud-foundry)).
 
 _FULL DISCLOSURE: I work for Pivotal. I've also worked in the IaaS product space for 3 years. I have more than 10 years of experience working in enterprise IT. I'd like to believe I can remain pragmatic and present a fair view of related technologies._
 
