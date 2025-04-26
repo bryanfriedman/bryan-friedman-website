@@ -23,7 +23,7 @@ In her post "[Monitoring and Observability](https://medium.com/@copyconstruct/mo
 
 For each PaaS, I'll review some of the features offered that relate to any of these areas.
 
-_Note:_ The public clouds do tend to have a standalone service that covers lots of these features. Amazon has CloudWatch, Azure has Azure Monitor, and Google has Stackdriver. I'll try not to stray too far from the PaaS itself, and won't go into a ton of detail on these offerings. I'll just highlight where it's relevant and integrates with the PaaS product.[1](#footnotes)
+_Note:_ The public clouds do tend to have a standalone service that covers lots of these features. Amazon has CloudWatch, Azure has Azure Monitor, and Google has Stackdriver. I'll try not to stray too far from the PaaS itself, and won't go into a ton of detail on these offerings. I'll just highlight where it's relevant and integrates with the PaaS product.<sup>[1](#footnotes)</sup>
 
 ### Spring Boot Actuator
 
@@ -87,11 +87,11 @@ By default, visualizations appear for key metrics like requests, response time, 
 
 ![](images/azure2-2.png)
 
-From here you can set alerts as well.[2](#footnotes) The "+ Add metric alert_"_ button will let you create an alert on various metrics like CPU time or response codes. It also supports alerts for events like successful stop or failed start. There doesn't seem to be a way to configure a health check endpoint though.
+From here you can set alerts as well.<sup>[2](#footnotes)</sup> The "+ Add metric alert_"_ button will let you create an alert on various metrics like CPU time or response codes. It also supports alerts for events like successful stop or failed start. There doesn't seem to be a way to configure a health check endpoint though.
 
 ![](images/azure2-3-495x1024.png)
 
-The Azure Monitor interface also provides access to Application Insights and Log Analytics. Application Insights is Azure's APM tool. (I'm not going to go into detail on APM in this post.[1](#footnotes)) Log Analytics supports capturing various details like infrastructure logs and Windows metrics. Unfortunately, it doesn't appear to support capturing application logs. (I did find [this blog post on how to programatically push application logs to Log Analytics](https://blog.adamfurmanek.pl/2017/06/10/capturing-azure-webapp-application-log-in-azure-log-analytics/) but I didn't try it.)
+The Azure Monitor interface also provides access to Application Insights and Log Analytics. Application Insights is Azure's APM tool. (I'm not going to go into detail on APM in this post.<sup>[1](#footnotes)</sup>) Log Analytics supports capturing various details like infrastructure logs and Windows metrics. Unfortunately, it doesn't appear to support capturing application logs. (I did find [this blog post on how to programatically push application logs to Log Analytics](https://blog.adamfurmanek.pl/2017/06/10/capturing-azure-webapp-application-log-in-azure-log-analytics/) but I didn't try it.)
 
 So Azure Monitor isn't super helpful for App Service users after all. We're back to the App Service blade menu to view application logs. You must first turn them on in the "Diagnostics Logs" section, and then you can view them in the "Log stream." You can also choose to store them in Azure storage.
 
@@ -103,7 +103,7 @@ While I didn't get into the CLI much, there are options there as well. Tail and 
 
 ### Google App Engine
 
-Most of Google's Day 2 operational functions are part of GCP's Stackdriver product. With Stackdriver, you can set up Alerting and Uptime Checks and view dashboards. (It also supports Debugging and Tracing if you've enabled your project for them.[1](#footnotes)) From within the native GAE interface, we do have access to a few things. We have a basic dashboard for viewing certain metrics over time. We can also view streaming logs for each instance or version running. This links to the Stackdriver Logging area where we can stream and search through logs.
+Most of Google's Day 2 operational functions are part of GCP's Stackdriver product. With Stackdriver, you can set up Alerting and Uptime Checks and view dashboards. (It also supports Debugging and Tracing if you've enabled your project for them.<sup>[1](#footnotes)</sup>) From within the native GAE interface, we do have access to a few things. We have a basic dashboard for viewing certain metrics over time. We can also view streaming logs for each instance or version running. This links to the Stackdriver Logging area where we can stream and search through logs.
 
 ![](images/google2-1-1024x205.png) ![](images/google2-2-1024x471.png)
 
@@ -257,7 +257,7 @@ Like all the platforms, PCF does self-healing and handles crashed instances grac
 
 For patching, I'm interested in how each platform handles software updates. In particular, I want to explore how they manage zero downtime deployments. Typically this gets handled by either rolling updates or blue-green deployments. The main difference between these two options is the number of environments.
 
-With a rolling deployment, there is only one environment. Updates are first deployed to a subset of instances in that environment. After successful completion, deployment moves on to the next subset. In the blue-green scenario there are two complete environments. Only one gets updated at a time, and once confirmed working, traffic is directed to the new version.[3](#footnotes)
+With a rolling deployment, there is only one environment. Updates are first deployed to a subset of instances in that environment. After successful completion, deployment moves on to the next subset. In the blue-green scenario there are two complete environments. Only one gets updated at a time, and once confirmed working, traffic is directed to the new version.<sup>[3](#footnotes)</sup>
 
 ### AWS Elastic Beanstalk
 
