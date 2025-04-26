@@ -20,7 +20,7 @@ module.exports = function(eleventyConfig) {
 	if (!production) {
 		eleventyConfig.addPassthroughCopy({"src/assets/scripts": "/js"});
 	} else { 
-		// If not production, minify js and html
+		// If production, minify js and html
 		eleventyConfig.addPlugin(require('./src/_config/minify.js'));
 	}
 	
