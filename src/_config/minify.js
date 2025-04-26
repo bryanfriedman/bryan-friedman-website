@@ -15,7 +15,7 @@ export default function(eleventyConfig) {
 		},
 		compile: async function (inputContent, inputPath) { 
 			// Only include files in /js directory
-			if (!inputPath.includes("/js/")) return; 
+			if (!inputPath.includes("/scripts/")) return; 
 			return async (data) => {
 				return jsUglify.minify(inputContent).code;
 			};

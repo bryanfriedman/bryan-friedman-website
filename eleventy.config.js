@@ -21,9 +21,12 @@ export default function(eleventyConfig) {
 	// Copy img assets
 	eleventyConfig.addPassthroughCopy({"src/assets/img": "/img"});
 
+	eleventyConfig.addPassthroughCopy({"src/assets/css": "/css"});
+
 	// Copy js assets
+	eleventyConfig.addPassthroughCopy({"src/assets/js": "/js"});
 	if (!production) {
-		eleventyConfig.addPassthroughCopy({"src/assets/js": "/js"});
+		eleventyConfig.addPassthroughCopy({"src/assets/scripts": "/js"});
 	} else { 
 		// If not production, minify js and html
 		eleventyConfig.addPlugin(minify);
