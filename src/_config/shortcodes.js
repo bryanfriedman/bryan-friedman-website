@@ -11,7 +11,7 @@ export default function(eleventyConfig) {
     eleventyConfig.addShortcode('youtube', function(url) {
 		const iframeMarkup = 
             '<div class="video-container">'
-			+ '<iframe width="750" height="422" src="//www.youtube.com/embed/' 
+			+ '<iframe width="750" height="422" data-src="//www.youtube.com/embed/' 
 			+ getYoutubeId(url) 
 			+ '" frameborder="0" allowfullscreen></iframe>'
             + '</div>';
@@ -21,7 +21,7 @@ export default function(eleventyConfig) {
 
     eleventyConfig.addShortcode('tweet', async function(url) {
         try {
-            var { html } = await fetch("https://publish.twitter.com/oembed?align=center&url=" + url).then(res => res.json());
+            var { html } = await fetch("https://publish.twitter.com/oembed?align=center&omit_script=true&url=" + url).then(res => res.json());
             return html;
         }
         catch (err) {
