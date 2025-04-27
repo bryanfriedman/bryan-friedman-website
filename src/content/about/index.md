@@ -2,7 +2,7 @@
 title: "About"
 date: "2014-05-18"
 layout: "page.njk"
-headerImage: "about.jpg"
+headerImage: "about.webp"
 eleventyNavigation:
   key: About
   order: 3
