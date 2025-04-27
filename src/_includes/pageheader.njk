@@ -1,4 +1,4 @@
-   {% if not headerImage %} {% set headerImage = "header.jpg" %} {% elseif (headerImage == "none") %} {% set headerImage = "" %} {% endif %}
+   {% if not headerImage %} {% set headerImage = "header.webp" %} {% elseif (headerImage == "none") %} {% set headerImage = "" %} {% endif %}
     <header class="masthead" style="{{ ["background-image: url('/img/", headerImage, "')"] | join }}">
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
