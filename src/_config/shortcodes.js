@@ -11,11 +11,15 @@ export default function(eleventyConfig) {
     eleventyConfig.addShortcode('youtube', function(url) {
 		const iframeMarkup = 
             '<div class="video-container">'
-			+ '<iframe width="750" height="422" data-src="//www.youtube.com/embed/' 
+			//+ '<iframe width="750" height="422" data-src="//www.youtube.com/embed/' 
+            + '<lite-youtube videoid="'
 			+ getYoutubeId(url) 
-			+ '" frameborder="0" allowfullscreen></iframe>'
+            + '" playlabel="Play: Crayon Physics Deluxe - Trailer HD" style="background-image: url(\'https://i.ytimg.com/vi_webp/'+getYoutubeId(url)+'/maxresdefault.webp\');"></lite-youtube>'
+			//+ '" frameborder="0" allowfullscreen></iframe>'
             + '</div>';
 	
+
+
 		return iframeMarkup;
 	});
 
