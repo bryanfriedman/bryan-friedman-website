@@ -1,4 +1,8 @@
 const fetch = require("node-fetch");
+const axios = require('axios');
+const dotenv = require('dotenv').config();
+
+const apiUrl = 'https://www.googleapis.com/youtube/v3';
 
 function getYoutubeId(url) {
     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
@@ -6,21 +10,32 @@ function getYoutubeId(url) {
     return (match && match[2].length === 11) ? match[2] : null;
 }
 
+async function getYoutubeTitle(videoId, apiKey) {
+  try {
+    var reqUrl = apiUrl + '/videos?part=snippet&id=' + videoId + '&key=' + process.env.YOUTUBE_APIKEY;
+    const response = await axios.get(reqUrl);
+    return response.data.items[0].snippet.title;
+  } catch (error) {
+    console.error("Error getting YouTube title: " + error);
+    return "";
+  }
+}
+
 module.exports = function(eleventyConfig) {
 
-    eleventyConfig.addShortcode('youtube', function(url) {
-		const iframeMarkup = 
+    eleventyConfig.addShortcode('youtube', async function(url) {
+        var id = getYoutubeId(url);
+        let title = await getYoutubeTitle(id);
+		const html = 
             '<div class="video-container">'
 			//+ '<iframe width="750" height="422" data-src="//www.youtube.com/embed/' 
-            + '<lite-youtube videoid="'
-			+ getYoutubeId(url) 
-            + '" playlabel="Play: Crayon Physics Deluxe - Trailer HD" style="background-image: url(\'https://i.ytimg.com/vi_webp/'+getYoutubeId(url)+'/maxresdefault.webp\');"></lite-youtube>'
+            + '<lite-youtube videoid="'+id
+            + '" title="'+title
+            + '""></lite-youtube>'
 			//+ '" frameborder="0" allowfullscreen></iframe>'
             + '</div>';
-	
 
-
-		return iframeMarkup;
+		return html;
 	});
 
     eleventyConfig.addShortcode('tweet', async function(url) {
