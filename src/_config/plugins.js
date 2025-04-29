@@ -18,7 +18,10 @@ module.exports = function(eleventyConfig) {
     preAttributes: { tabindex: 0 }
   });
         
-  eleventyConfig.addPlugin(embedTwitter, { cacheText: true });
+  eleventyConfig.addPlugin(embedTwitter, { 
+    cacheText: true,
+    align: "center"
+  });
   eleventyConfig.addPlugin(embedYouTube, {
     lite: true,
 	  titleOptions: { download: true }

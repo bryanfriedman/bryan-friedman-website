@@ -40,7 +40,6 @@
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "bootstrap": "^5.3.3",
-    "dotenv": "^16.5.0",
     "eleventy-plugin-embed-twitter": "^1.4.2",
     "eleventy-plugin-youtube-embed": "^1.13.0"
   }
