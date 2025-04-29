@@ -20,7 +20,7 @@ So that was that. Now my daughter was better able to manage her bouts of perfect
 
 Then it came up _again._ Except this time, it wasn't the eight year-old. It was Twitter. And it actually came up a lot. My Twitter feed is primarily filled with cloud computing and tech pundits and professionals (with a smattering of comedians and baseball reporters just to confuse and entertain). So I was surprised to see an elementary school education concept come up with some regularity from this crowd.
 
-{% tweet "https://twitter.com/caitie/status/1225815427797774337?s=20" %}
+https://twitter.com/caitie/status/1225815427797774337?s=20
 
 I'm sure you're way ahead of me here. My brick brain had taken this long to realize that this wasn't just for kids. In fact, maybe there was something to the fact that my _own_ kid had been struggling with perfectionism. Have they found that strand in the human genome yet?
 

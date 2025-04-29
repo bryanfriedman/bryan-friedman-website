@@ -18,7 +18,7 @@ We’ve heard the virtues of [continuous integration](https://springoneplatform.
 
 Pivotal announced that it “has a team working on contributing Cloud Foundry support to open source Spinnaker.” Spinnaker already supported AWS, Azure, GCP, Google App Engine, Kubernetes, and other platforms. Now, Pivotal is ensuring that Cloud Foundry is a first-class citizen of Spinnaker. Jon Schneider covered this on the main stage and in detail in a [breakout session](https://springoneplatform.io/2018/sessions/spinnaker-and-the-distributed-monorepo).
 
-{% youtube "https://www.youtube.com/watch?v=xcD4mWo_YHE" %}
+https://www.youtube.com/watch?v=xcD4mWo_YHE
 
 #### Why Is It Cool?
 
@@ -42,7 +42,7 @@ CredHub is the credential manager that’s baked in to Cloud Foundry. In his thr
 
 In his example, a webhook object in Kubernetes injects CredHub into pods on the cluster. Then application code in the pods may access secrets from the credential store. It was a slick demo and an incredible way to show off CredHub’s simplicity and strong capabilities. Peter’s [CredHub with Kubernetes code is on GitHub](https://github.com/Oskoss/kubernetes-credhub)!
 
-{% tweet "https://twitter.com/r_arni/status/1045076680925204481" %}
+https://twitter.com/r_arni/status/1045076680925204481
 
 #### Why Is It Cool?
 
@@ -67,7 +67,7 @@ What’s a tech conference today without the mention of serverless? SpringOne de
 
 [Mark Fisher did a live demo of riff](https://www.youtube.com/watch?v=_OiGt4QwdlM&list=PLAdzTan_eSPQsR_aqYBQxpYTEQZnjhTN6&index=8) on the main stage. There were also some very informative and demystifying sessions on Knative and riff. They ranged from [YAML-heavy](https://springoneplatform.io/2018/sessions/introducing-knative) to [YAML-free](https://springoneplatform.io/2018/sessions/riffing-on-knative) with one especially [for Spring developers](https://springoneplatform.io/2018/sessions/knative-and-riff-for-spring-developers).
 
-{% youtube "https://www.youtube.com/watch?v=_OiGt4QwdlM" %}
+https://www.youtube.com/watch?v=_OiGt4QwdlM
 
 #### Why Is It Cool?
 
@@ -85,9 +85,9 @@ Containers and Kubernetes are hot topics at conferences. What's even hotter? Tak
 
 Day 1 main stage had a surprise ending from Stephen Levine from Pivotal and Terence Lee from Heroku. They introduced an effort to bring buildpacks to the broader cloud-native community. It's called Cloud Native Buildpacks, and it joins the CNCF as a sandbox project [_today_](https://www.cncf.io/blog/2018/10/03/cncf-to-host-cloud-native-buildpacks-in-the-sandbox).
 
-{% youtube "https://www.youtube.com/watch?v=wU5n7Sv8JL8" %}
+https://www.youtube.com/watch?v=wU5n7Sv8JL8
 
-{% tweet "https://twitter.com/rseroter/status/1044606332622557184" %}
+https://twitter.com/rseroter/status/1044606332622557184
 
 #### Why Is It Cool?
 
@@ -105,9 +105,9 @@ Reactive programming is not a new concept for SpringOne Platform attendees. I vi
 
 There were two impressive keynotes relevant in the Reactive programming space. First, there was the introduction of the non-blocking relational database connectivity driver, R2DBC. We also learned about RSocket, a new message-based application network protocol.
 
-{% youtube "https://www.youtube.com/watch?v=E3s5f-JF8z4" %}
+https://www.youtube.com/watch?v=E3s5f-JF8z4
 
-{% youtube "https://www.youtube.com/watch?v=D2Z5d9dEBxQ" %}
+https://www.youtube.com/watch?v=D2Z5d9dEBxQ
 
 #### Why Is It Cool?
 

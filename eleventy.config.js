@@ -29,9 +29,6 @@ module.exports = function(eleventyConfig) {
 
 	// Run pre- and post-build events for dev workflow
 	eleventyConfig.addPlugin(require('./src/_config/events.js'));
-	
-	// Add shortcodes
-	eleventyConfig.addPlugin(require('./src/_config/shortcodes.js'));
 
     // Add Markdown render rules to add custom class for h2
 	eleventyConfig.addPlugin(require('./src/_config/mdrender.js'));
