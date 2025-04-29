@@ -20,7 +20,8 @@ module.exports = function(eleventyConfig) {
         
   eleventyConfig.addPlugin(embedTwitter, { 
     cacheText: true,
-    align: "center"
+    align: "center",
+    twitterScript: { defer: true }
   });
   eleventyConfig.addPlugin(embedYouTube, {
     lite: true,
