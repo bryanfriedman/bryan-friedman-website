@@ -23,6 +23,6 @@ No matter what kind of organization you're in, building software is a difficult 
 
 That's what makes Pivotal's mission so incredibly intriguing. Companies (perhaps the biggest ones especially) need to rethink and revisit how they design, develop, and deploy software. In today's arena, that often means they need to be more cloud-native. But it's bigger than one technology or a single tool - it's truly about transformation. That's why I really love how Pivotal tackles it not just with a strong portfolio of products (from the flagship [Pivotal Cloud Foundry](https://pivotal.io/platform), to the open source [Spring](https://spring.io/) framework, to the more widely known [Pivotal Tracker](https://www.pivotaltracker.com/), and even a [Big Data Suite](http://pivotal.io/big-data/pivotal-big-data-suite)), but also through [Pivotal Labs](https://pivotal.io/labs), where they partner directly with customers and guide them through the change.
 
-{% youtube "https://www.youtube.com/watch?v=7APZD0me1nU" %}
+https://www.youtube.com/watch?v=7APZD0me1nU
 
 As for me, I'm particularly fired up about that one word in my new title that I haven't _fully_ experienced in my career yet - **marketing.** I'm thrilled to be able to work with a truly incredible group of professionals as I discover how to sprinkle that bit of _marketing_ in along with my passion for the technology and my enthusiasm for communicating about it. I'm eager to get started. Let's do this!

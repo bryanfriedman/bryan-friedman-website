@@ -8,7 +8,7 @@ tags:
 
 Richard Watson from Gartner [led a customer panel](https://www.youtube.com/watch?v=joJN_oTtHG4) in the final round of keynotes at SpringOne. In it, he asked the company leaders what blew their minds during the conference. Of course, it got me thinking about what blew _my_ mind at SpringOne Platform this year. Here's what I came up with, in no particular order.
 
-{% tweet "https://twitter.com/bryanfriedman/status/938826352773406720" %}
+https://twitter.com/bryanfriedman/status/938826352773406720
 
 ![](images/jackie-chan-mind-blown.jpg)
 
@@ -21,9 +21,9 @@ I've been to a fair amount of conferences in my career, and this one was truly t
 - The breakout sessions were right-sized, on point, and on schedule. And they were well attended! During sessions, the hallways were empty, with only a few stragglers at some booths or on laptops.
 - It had a fun vibe! Lots of discussion and socializing. Plenty of power strips everywhere. Coffee, drinks and food available at regular intervals. There were even old school arcade games!
 
-{% tweet "https://twitter.com/bryanfriedman/status/938445879949672448" %}
+https://twitter.com/bryanfriedman/status/938445879949672448
 
-{% tweet "https://twitter.com/laurenvolpi/status/938871933843619841" %}
+https://twitter.com/laurenvolpi/status/938871933843619841
 
 ### 2\. Open Source is Thriving in the Enterprise!
 
@@ -31,7 +31,7 @@ When I saw links to GitHub repos in the Comcast and Intuit sessions, it was anot
 
 Comcast [has a lot of stuff out there](https://github.com/Comcast), including a [BOSH release for telegraf](https://github.com/Comcast/telegraf-boshrelease). Intuit showed off a [validator](https://github.com/intuit/intuit-spring-cloud-config-validator) and [inspector](https://github.com/intuit/intuit-spring-cloud-config-inspector) for Spring Cloud Config. Other companies using PCF like [Home Depot](https://homedepot.github.io/opensource/) and [Mastercard](https://github.com/Mastercard) seem to have thriving public GitHub repos as well. What a time to be alive.
 
-{% tweet "https://twitter.com/bryanfriedman/status/938862565945307136" %}
+https://twitter.com/bryanfriedman/status/938862565945307136
 
 ### 3\. Windows and .NET at a Spring Conference!?
 
@@ -39,9 +39,9 @@ The [announcement of PCF 2.0](https://content.pivotal.io/announcements/pivotal-u
 
 Speaking of feeling weird, how about displaying hardware at a software conference? That's right, PCF 2.0 will have beta support for Azure Stack. The Microsoft booth had a working Dell EMC server cabinet to showcase it. Mind blown.
 
-{% tweet "https://twitter.com/rseroter/status/938183593515298816" %}
+https://twitter.com/rseroter/status/938183593515298816
 
-{% tweet "https://twitter.com/_CloudNinja/status/938589906208677889" %}
+https://twitter.com/_CloudNinja/status/938589906208677889
 
 ### 4\. A Who's Who of Cloud Native Celebrities
 
@@ -51,11 +51,11 @@ People like [James Watters](https://twitter.com/wattersjames), [Andrew Clay Scha
 
 I know that's a lot of name dropping. But it really was an incredible showing of very smart and talented professionals. The best part about all of this is how lucky I feel to be able to call so many of these people colleagues now. _That_ realization is what blew my mind the most.
 
-{% tweet "https://twitter.com/bryanfriedman/status/938128886151426049" %}
+https://twitter.com/bryanfriedman/status/938128886151426049
 
-{% tweet "https://twitter.com/_CloudNinja/status/938493320401002496" %}
+https://twitter.com/_CloudNinja/status/938493320401002496
 
-{% tweet "https://twitter.com/bryanfriedman/status/938468880892116992" %}
+https://twitter.com/bryanfriedman/status/938468880892116992
 
 ###  5. Thoughtful Analyst Community
 
@@ -63,6 +63,6 @@ Finally, I have to drop a few more names so I can share the amazing interactions
 
 But it was the personal interactions I had with these analysts this week that had the most impact for me. It's one of the great privileges I have in my role at Pivotal now. I get to have insightful, relevant conversations with these folks. Doing it in person is always an even more superior experience. The questions they had about platforms and the product landscape alone blew my mind. I appreciated their thoughts and observations this week. I look forward to more mind-blowing 😲 action [next year in Washington, D.C.](https://springoneplatform.io/)
 
-{% tweet "https://twitter.com/DBurrow11/status/938818227496402944" %}
+https://twitter.com/DBurrow11/status/938818227496402944
 
-{% tweet "https://twitter.com/bryanfriedman/status/938223873845207040" %}
+https://twitter.com/bryanfriedman/status/938223873845207040

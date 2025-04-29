@@ -19,7 +19,7 @@ To be sure, Cloud Foundry tech has always championed interoperability. It's mult
 
 There was the [introduction of Alibaba Cloud as a BOSH CPI](https://www.cloudfoundry.org/blog/cloud-foundry-now-available-asias-leading-cloud-provider-alibaba-cloud/). Some awesome advances in .NET support appeared (plus a [whole conference track](https://cfna18.sched.com/overview/type/Cloud+Native+.NET) to go along with it). Kubernetes was also mentioned quite a bit as the [Cloud Foundry Container Runtime](https://www.cloudfoundry.org/container-runtime/) continues to take hold.
 
-{% tweet "https://twitter.com/ronak/status/986719499981291521" %}
+https://twitter.com/ronak/status/986719499981291521
 
 Indeed, it's nice to see this interoperability movement flourish. Still, I couldn't help but think of how it relates to another critical part of Cloud Foundry's success.
 
@@ -53,7 +53,7 @@ In the business and IT world, however, it seems like curation is often avoided. 
 
 At CF Summit, I attended many talks about Kubernetes and its role within the Cloud Foundry ecosystem. As [Onsi Fakhouri spoke about at SpringOne Platform](https://www.youtube.com/watch?v=_uB5bBsMZIk) late last year, it's an and conversation, not or. It's not about Kubernetes vs. Cloud Foundry, but rather how can they interoperate? Or, more specifically (and more opinionated), how should they interoperate?
 
-{% tweet "https://twitter.com/cloudfoundry/status/986960472380530688" %}
+https://twitter.com/cloudfoundry/status/986960472380530688
 
 This was a popular topic at CF Summit this year. Right now, Cloud Foundry has a few ways it interoperates with Kubernetes. Most prominently it's a separate container runtime (as opposed to the application runtime). Some things fit better on the container runtime (like stateful workloads, ISV container images). Some are made for the application runtime (12-factor apps, microservices, etc.). The opinion right now is that it all depends on the use case.
 
