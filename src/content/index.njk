@@ -14,8 +14,8 @@ permalink: "/{% if pagination.pageNumber > 0 %}blog/{{ pagination.pageNumber + 1
 
 {% import "postslist.njk" as postslist %}
 {{ postslist.postslist(posts, true, false) }}
-{%- if pagination.href.previous %}<div class="mt-5 mb-5 float-start"><a class="btn btn-primary text-uppercase" href="{{ pagination.href.previous }}">← Older Posts</a></div>{% endif %}
-{%- if pagination.href.next %}<div class="mt-5 mb-5 float-end"><a class="btn btn-primary text-uppercase" href="{{ pagination.href.next }}">Newer Posts →</a></div>{% endif %}
+{%- if pagination.href.previous %}<div class="mt-5 mb-5 float-end"><a class="btn btn-primary text-uppercase" href="{{ pagination.href.previous }}">Newer Posts →</a></div>{% endif %}
+{%- if pagination.href.next %}<div class="mt-5 mb-5 float-start"><a class="btn btn-primary text-uppercase" href="{{ pagination.href.next }}">← Older Posts</a></div>{% endif %}
 
 {# Lists all collection items
 <ul>
