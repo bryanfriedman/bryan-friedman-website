@@ -5,7 +5,7 @@ tags:
   - "Cloud"
 ---
 
-In [my last post, I explored what it's like to deploy a Spring Boot app to four different public PaaS products](http://www.bryanfriedman.com/2017/09/20/comparing-public-cloud-paas-offerings/). Now that the app is live, we have to manage it. As promised, for this post, I'll build on the experience by going beyond the Day 1 deployment. I'll try out some of the features of each platform associated with Day 2 operations.
+In [my last post, I explored what it's like to deploy a Spring Boot app to four different public PaaS products](/blog/comparing-public-cloud-paas-offerings/). Now that the app is live, we have to manage it. As promised, for this post, I'll build on the experience by going beyond the Day 1 deployment. I'll try out some of the features of each platform associated with Day 2 operations.
 
 Once again I'll look at three major public cloud players (AWS Elastic Beanstalk, Microsoft Azure App Service, and Google App Engine), as well as a third-party option that can run on a public or private cloud (Pivotal Cloud Foundry).
 
