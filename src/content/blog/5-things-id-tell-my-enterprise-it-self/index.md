@@ -8,7 +8,7 @@ tags:
   - "DevOps"
 ---
 
-It was exactly one year ago today that I became a [Product Owner](http://www.bryanfriedman.com/2014/06/09/being-a-product-manager/ "Being a Product Manager") (née Manager) at CenturyLink Cloud, and as a colleague of mine likes to point out, that's a really long time in "cloud years." As I reflect back on the experience I've had so far, it feels good to know that the me of today knows a whole lot more than the me of one year ago. Just as a college student wishes he could go back in time and educate his high school self, I now find myself thinking about the helpful things I could share with my [enterprise IT self](http://www.bryanfriedman.com/2014/05/16/11-years-later-2/ "11 Years Later") and all my former colleagues. So with that BuzzFeed-esque premise, here are some things I'd let the trapped-in-IT-purgatory version of myself know about how life _could_ be.
+It was exactly one year ago today that I became a [Product Owner](/blog/being-a-product-manager/ "Being a Product Manager") (née Manager) at CenturyLink Cloud, and as a colleague of mine likes to point out, that's a really long time in "cloud years." As I reflect back on the experience I've had so far, it feels good to know that the me of today knows a whole lot more than the me of one year ago. Just as a college student wishes he could go back in time and educate his high school self, I now find myself thinking about the helpful things I could share with my [enterprise IT self](/blog/11-years-later/ "11 Years Later") and all my former colleagues. So with that BuzzFeed-esque premise, here are some things I'd let the trapped-in-IT-purgatory version of myself know about how life _could_ be.
 
 #### You Don't Know The Cloud
 
