@@ -41,7 +41,11 @@ Now, at last, I am building myself back up. I’m thrilled to say, I’m headin
 
 **Broad Skill Application.** I’ve always gravitated toward roles that blend technical expertise and depth with strength in soft skills like communication, collaboration, storytelling, and problem-solving. Moderne’s small and nimble team gives me the chance to wear multiple hats and contribute wherever I’m needed most.
 
+<<<<<<< HEAD
 **People I Respect.** I’m lucky to be joining a team full of [folks I’ve admired for a while](/blog/springone-platform-2018-lets-get-technical/). It’s energizing to be surrounded by smart, driven people. Plus, there’s a strong Java foundation here that keeps me connected to  [my friends in the](https://www.vmware.com/docs/advocates) [Spring community](https://spring.io/authors).
+=======
+**People I Respect.** I’m lucky to be joining a team full of [folks I’ve admired for a while](https://www.bryanfriedman.com/blog/springone-platform-2018-lets-get-technical/). It’s energizing to be surrounded by smart, driven people. Plus, there’s a strong Java foundation here that keeps me connected to [my friends in the](https://www.vmware.com/docs/advocates) [Spring community](https://spring.io/authors).
+>>>>>>> 968c49c (Minor updates)
 
 **Remote First.** The Moderne team is globally distributed, and I’ve been working remotely since before it was cool. While I certainly appreciate in-person meet-ups on occasion, async communication suits me just fine. I've been able to build trust through consistent delivery rather than relying on physical presence, and with today’s collaboration tools, it’s easy for remote teams to stay connected and effective.
 
