@@ -5,7 +5,7 @@ tags:
   "Career"
 ---
 
-It was 11 years ago (to the day, if you can believe that) that I started a new job after leaving my first job out of college. (Fun fact: that was also an 11 year run.) Since then, I’ve been [charting my career journey](https://www.bryanfriedman.com/blog/11-years-later/) in this space. It sure has been [quite a ride](https://www.bryanfriedman.com/blog/a-hybrid-career/), filled with [diverse roles](https://www.bryanfriedman.com/blog/being-a-product-manager/), inspiring leaders, and [wildly different company cultures](https://www.bryanfriedman.com/blog/5-things-id-tell-my-enterprise-it-self/).
+It was 11 years ago (to the day, if you can believe that) that I started a new job after leaving my first job out of college. (Fun fact: that was also an 11 year run.) Since then, I’ve been [charting my career journey](/blog/11-years-later/) in this space. It sure has been [quite a ride](/a-hybrid-career/), filled with [diverse roles](/blog/being-a-product-manager/), inspiring leaders, and [wildly different company cultures](/blog/5-things-id-tell-my-enterprise-it-self/).
 
 Most of my time has been spent inside large enterprise companies with tens of thousands of employees. In my most recent roles, I’ve even been focused on selling software and application platforms _to_ enterprise customers, giving me a unique view from both sides of the table.
 
@@ -41,7 +41,7 @@ Now, at last, I am building myself back up. I’m thrilled to say, I’m headin
 
 **Broad Skill Application.** I’ve always gravitated toward roles that blend technical expertise and depth with strength in soft skills like communication, collaboration, storytelling, and problem-solving. Moderne’s small and nimble team gives me the chance to wear multiple hats and contribute wherever I’m needed most.
 
-**People I Respect.** I’m lucky to be joining a team full of [folks I’ve admired for a while](https://www.bryanfriedman.com/blog/springone-platform-2018-lets-get-technical/). It’s energizing to be surrounded by smart, driven people. Plus, there’s a strong Java foundation here that keeps me connected to [my friends in the](https://www.vmware.com/docs/advocates) [Spring community](https://spring.io/authors).
+**People I Respect.** I’m lucky to be joining a team full of [folks I’ve admired for a while](/blog/springone-platform-2018-lets-get-technical/). It’s energizing to be surrounded by smart, driven people. Plus, there’s a strong Java foundation here that keeps me connected to [my friends in the](https://www.vmware.com/docs/advocates) [Spring community](https://spring.io/authors).
 
 **Remote First.** The Moderne team is globally distributed, and I’ve been working remotely since before it was cool. While I certainly appreciate in-person meet-ups on occasion, async communication suits me just fine. I've been able to build trust through consistent delivery rather than relying on physical presence, and with today’s collaboration tools, it’s easy for remote teams to stay connected and effective.
 
