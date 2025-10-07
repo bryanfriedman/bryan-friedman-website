@@ -42,11 +42,11 @@ Rather than give up, I went hunting for a compatible solution and I stumbled upo
 
 Using OpenRewrite [dependency recipes](https://docs.openrewrite.org/recipes/java/dependencies), I [swapped out the old framework for the new libraries](https://github.com/bryanfriedman/help-desk-scheduler/blob/main/recipes/src/main/resources/META-INF/rewrite/handle-dependencies.yml). That meant replacing the old Servlet API with the new ones, retiring the old `com.sun.mail` packages in favor of new ones from Eclipse, and replacing the local Struts JAR with all new references to the Struts1 Reloaded libraries.
 
-Still had a bunch of build errors, but far fewer. Getting closer. 
+Still got a bunch of build errors, but far fewer. Getting closer. 
 
 ## A Little Genetic Engineering
 
-The errors were mostly from type and method name changes from moving to Struts 1.5. Thankfully, those trusty old OpenRewrite standards  [`ChangeType`](https://docs.openrewrite.org/recipes/java/changetype) and [`ChangeMethodName`](https://docs.openrewrite.org/recipes/java/changemethodname) came to the rescue for that. `Action perform()` is now `Action execute()`? No problem. Oh, `ActionError` is gone in favor of `ActionMessage`? Easy. But `ActionMessages empty()` needs to be `ActionMessages isEmpty()`? Done. Thanks OpenRewrite!
+The errors were mostly type and method name changes from moving to Struts 1.5. Thankfully, those trusty old OpenRewrite standards  [`ChangeType`](https://docs.openrewrite.org/recipes/java/changetype) and [`ChangeMethodName`](https://docs.openrewrite.org/recipes/java/changemethodname) came to the rescue for that. `Action perform()` is now `Action execute()`? No problem. Oh, `ActionError` is gone in favor of `ActionMessage`? Easy. But `ActionMessages empty()` needs to be `ActionMessages isEmpty()`? Done. Thanks OpenRewrite!
 
 ```
 type: specs.openrewrite.org/v1beta/recipe
