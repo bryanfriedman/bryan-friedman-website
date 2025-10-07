@@ -28,13 +28,13 @@ Everyone at SpringOne Platform seems pretty pumped about the announcements. But 
 
 During Wednesday morning's keynote, I felt a little like a kid eating ice cream for the first time. It was riveting watching [Kim Bannerman and Meaghan Kjelland do a PKS demo](https://www.youtube.com/watch?v=yuEFJePhrLQ) and seeing Mark Fisher show off [riff](https://github.com/projectriff/riff). There is such an exciting future for PCF and I'm stoked I get to go along for the ride.
 
-{% tweet "https://twitter.com/bryanfriedman/status/938096655647117312" %}
+https://twitter.com/bryanfriedman/status/938096655647117312
 
-{% tweet "https://twitter.com/pivotal/status/938121807567126528" %}
+https://twitter.com/pivotal/status/938121807567126528
 
-{% tweet "https://twitter.com/thenewstack/status/938091182181310464" %}
+https://twitter.com/thenewstack/status/938091182181310464
 
-{% tweet "https://twitter.com/TechCrunch/status/938090882703732737" %}
+https://twitter.com/TechCrunch/status/938090882703732737
 
 ### Did Somebody Say "Digital Transformation"?
 
@@ -48,20 +48,20 @@ I listened to industry giants from many sectors — telco, banking, insurance, 
 
 Of course, these companies' journeys aren't over. Far from it. They know that. They all said it. But they know the path now. They have the confidence they need to move forward. Or at least to move. Pivotal showed them the way and continues to partner with them on their journey. Like Onsi said, it's all about learning.
 
-{% tweet "https://twitter.com/bryanfriedman/status/938109140093755392" %}
+https://twitter.com/bryanfriedman/status/938109140093755392
 
-{% tweet "https://twitter.com/bryanfriedman/status/938120992311844864" %}
+https://twitter.com/bryanfriedman/status/938120992311844864
 
-{% tweet "https://twitter.com/bryanfriedman/status/938140926391627776" %}
+https://twitter.com/bryanfriedman/status/938140926391627776
 
-{% tweet "https://twitter.com/bryanfriedman/status/938173890810994688" %}
+https://twitter.com/bryanfriedman/status/938173890810994688
 
-{% tweet "https://twitter.com/DormainDrewitz/status/938206422935814149" %}
+https://twitter.com/DormainDrewitz/status/938206422935814149
 
-{% tweet "https://twitter.com/bryanfriedman/status/938458709306392576" %}
+https://twitter.com/bryanfriedman/status/938458709306392576
 
-{% tweet "https://twitter.com/bryanfriedman/status/938465824792178688" %}
+https://twitter.com/bryanfriedman/status/938465824792178688
 
-{% tweet "https://twitter.com/bryanfriedman/status/938495243413995520" %}
+https://twitter.com/bryanfriedman/status/938495243413995520
 
-{% tweet "https://twitter.com/bryanfriedman/status/938577510446415873" %}
+https://twitter.com/bryanfriedman/status/938577510446415873
