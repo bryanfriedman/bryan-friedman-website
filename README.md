@@ -48,11 +48,11 @@ I really liked the idea of a clean and more readable `eleventy.config.js` file a
 
 ### `_data`
 
-This is the global data file directory as normal in Eleventy, which houses some metadata and a helper function for outputing the current year in the footer. Oone additional note  is that I followed the advice on [this post](https://www.roboleary.net/webdev/2024/01/24/eleventy-production-flag.html) to create a global data flag for when the build is for Production to determine when to minify code, among other things.
+This is the global data file directory as normal in Eleventy, which houses some metadata and a helper function for outputing the current year in the footer. One additional note is that I followed the advice on [this post](https://www.roboleary.net/webdev/2024/01/24/eleventy-production-flag.html) to create a global data flag for when the build is for Production to determine when to minify code, among other things.
 
 ### `assets`
 
-All the folders within here are copied to the root of of the output folder, shedding the `assets` folder, which is only used to help separate from other content and files under the input directory. This includes the `img` folder, which gets copied via passthrough for images that aren't already stored in the same folder as the content (see below), the `js` folder which is copied via passthrough for local development but gets run through minification first for production, and finally, the `scss` folder containing the Sass style templates that get compiled into CSS and copied to the `css` folder. 
+All the folders within here are copied to the root of the output folder, shedding the `assets` folder, which is only used to help separate from other content and files under the input directory. This includes the `img` folder, which gets copied via passthrough for images that aren't already stored in the same folder as the content (see below), the `js` folder which is copied via passthrough for local development but gets run through minification first for production, and finally, the `scss` folder containing the Sass style templates that get compiled into CSS and copied to the `css` folder. 
 
 ### `content`
 
