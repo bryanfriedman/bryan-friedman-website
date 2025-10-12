@@ -1,3 +1,4 @@
+import production from "../_data/production.js";
 import { DateTime } from "luxon";
 import production from './src/_data/production.js';
 
