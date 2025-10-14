@@ -12,6 +12,10 @@ import plugins from './src/_config/plugins.js';
 
 export default function(eleventyConfig) {
 
+	eleventyConfig.addPassthroughCopy("src/content/**/*.jpg", {
+		mode: "html-relative"
+	});
+
 	// Copy root directory assets
 	eleventyConfig.addPassthroughCopy({"src/assets/root": "/"});
 	
@@ -50,8 +54,12 @@ export default function(eleventyConfig) {
 	// Add 11ty plugins
 	eleventyConfig.addPlugin(plugins);
 
+
+	
 	// Add watch targets here
-	eleventyConfig.addWatchTarget("src/_config/purgecss.js");
+	//eleventyConfig.addWatchTarget("src/_config/purgecss.js");
+
+
 
 	// Exclude draft files
 	//if (production) {
