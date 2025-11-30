@@ -26,8 +26,8 @@
     # optional, deploy the lighthouse report to a path under your site
     output_path = "reports/lighthouse.html"
 
-[[plugins]]
-  package = "@netlify/plugin-a11y"
-  [plugins.inputs]
-    # Do not fail the build if a11y issues are found
-    failWithIssues = false
+#[[plugins]]
+#  package = "@netlify/plugin-a11y"
+#  [plugins.inputs]
+#    # Do not fail the build if a11y issues are found
+#    failWithIssues = false
