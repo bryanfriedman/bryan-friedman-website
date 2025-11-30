@@ -47,7 +47,7 @@ There are probably several different views on what technical marketing is and ho
 
 ### What Technical Marketers Need to Know
 
-Unsurprisingly the three key knowledge areas are pretty much the [same as I listed for PMs](/blog/being-a-product-manager#what-a-product-manager-knows). 
+Unsurprisingly the three key knowledge areas are pretty much the [same as I listed for PMs](/blog/being-a-product-manager/#what-a-product-manager-knows). 
 
 To do this job well, we have to know the **product** as more than just a list of features. We learn it by using it. We dig under the hood to understand how things work, explore the user workflows, and every now and then work through a rough spot to figure out what’s really going on.
 
