@@ -25,6 +25,13 @@ p {
     }
 }
 
+ul {
+
+    a {
+        text-decoration: underline;
+    }
+}
+
 blockquote {
     font-style: italic;
     color: $gray-600;
