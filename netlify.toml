@@ -19,7 +19,7 @@
   package = "netlify-plugin-checklinks"
   [plugins.inputs]
   # Ignore the external Google URLs that are timing out in CI
-  ignoreUrls = [
+  skipPatterns = [
     "https://www.googletagmanager.com/*",
     "https://fonts.googleapis.com/*",
     "https://fonts.gstatic.com/*"
