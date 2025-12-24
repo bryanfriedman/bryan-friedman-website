@@ -6,7 +6,6 @@ import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import eleventyCopyDataCascade from "@bryanfriedman/eleventy-plugin-html-relative-datacascade";
 //import pageAssetsPlugin from 'eleventy-plugin-page-assets';
-//import pageAssetsPlugin from 'eleventy-plugin-page-assets';
 
 export default function(eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
