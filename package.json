@@ -14,6 +14,7 @@
     "build": "npm run clean && npx @11ty/eleventy && cp -r ./dist/ ./public"
   },
   "devDependencies": {
+    "@bryanfriedman/eleventy-plugin-html-relative-datacascade": "0.1.5",
     "@netlify/plugin-a11y": "^1.0.0-beta.1",
     "@netlify/plugin-lighthouse": "^6.0.3",
     "autoprefixer": "^10.4.21",

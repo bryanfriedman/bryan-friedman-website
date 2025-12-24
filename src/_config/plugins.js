@@ -4,6 +4,7 @@ import pluginRss from "@11ty/eleventy-plugin-rss";
 import pluginBundle from "@11ty/eleventy-plugin-bundle";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
+import eleventyCopyDataCascade from "@bryanfriedman/eleventy-plugin-html-relative-datacascade";
 //import pageAssetsPlugin from 'eleventy-plugin-page-assets';
 
 export default function(eleventyConfig) {
@@ -11,6 +12,7 @@ export default function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginBundle);
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+  eleventyConfig.addPlugin(eleventyCopyDataCascade);
   eleventyConfig.addPlugin(pluginSyntaxHighlight, {
     preAttributes: { tabindex: 0 }
   });
