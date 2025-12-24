@@ -54,12 +54,8 @@ export default function(eleventyConfig) {
 	// Add 11ty plugins
 	eleventyConfig.addPlugin(plugins);
 
-
-	
 	// Add watch targets here
 	//eleventyConfig.addWatchTarget("src/_config/purgecss.js");
-
-
 
 	// Exclude draft files
 	//if (production) {
