@@ -1,7 +1,7 @@
-const production = require("../_data/production.js");
-const { DateTime } = require("luxon");
+import production from "../_data/production.js";
+import { DateTime } from "luxon";
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
     
 	// Filters for displaying dates 
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
@@ -25,6 +25,7 @@ module.exports = function(eleventyConfig) {
 		for(let item of collection) {
 			(item.data.tags || []).forEach(topic => topicSet.add(topic));
 		}
+		return Array.from(topicSet).sort();
 		return Array.from(topicSet).sort();
 	});
 

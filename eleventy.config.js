@@ -1,8 +1,20 @@
 // External configuration files
-const settings = require("./src/_config/settings.js");
-const production = require("./src/_data/production.js");
+import settings from './src/_config/settings.js';
+import production from './src/_data/production.js';
 
-module.exports = function(eleventyConfig) {
+import minify from './src/_config/minify.js';
+import sass from './src/_config/sass.js';
+import events from './src/_config/events.js';
+import shortcodes from './src/_config/shortcodes.js';
+import mdrender from './src/_config/mdrender.js';
+import filters from './src/_config/filters.js';
+import plugins from './src/_config/plugins.js';
+
+export default function(eleventyConfig) {
+
+	eleventyConfig.addPassthroughCopy("src/content/**/*.jpg", {
+		mode: "html-relative"
+	});
 
 	// Copy root directory assets
 	eleventyConfig.addPassthroughCopy({"src/assets/root": "/"});
@@ -21,29 +33,29 @@ module.exports = function(eleventyConfig) {
 		eleventyConfig.addPassthroughCopy({"src/assets/scripts": "/js"});
 	} else { 
 		// If production, minify js and html
-		eleventyConfig.addPlugin(require('./src/_config/minify.js'));
+		eleventyConfig.addPlugin(minify);
 	}
 	
     // Add compiler for scss into css
-	eleventyConfig.addPlugin(require('./src/_config/sass.js'));
+	eleventyConfig.addPlugin(sass);
 
 	// Run pre- and post-build events for dev workflow
-	eleventyConfig.addPlugin(require('./src/_config/events.js'));
+	eleventyConfig.addPlugin(events);
 	
 	// Add shortcodes
-	eleventyConfig.addPlugin(require('./src/_config/shortcodes.js'));
+	eleventyConfig.addPlugin(shortcodes);
 
     // Add Markdown render rules to add custom class for h2
-	eleventyConfig.addPlugin(require('./src/_config/mdrender.js'));
+	eleventyConfig.addPlugin(mdrender);
 	
     // Add filters for dates, post count, min, etc.
-	eleventyConfig.addPlugin(require('./src/_config/filters.js'));
+	eleventyConfig.addPlugin(filters);
 	
 	// Add 11ty plugins
-	eleventyConfig.addPlugin(require('./src/_config/plugins.js'));
+	eleventyConfig.addPlugin(plugins);
 
 	// Add watch targets here
-	eleventyConfig.addWatchTarget("src/_config/purgecss.js");
+	//eleventyConfig.addWatchTarget("src/_config/purgecss.js");
 
 	// Exclude draft files
 	//if (production) {

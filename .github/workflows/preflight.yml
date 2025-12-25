@@ -1,0 +1,73 @@
+name: Preflight (Check Links + Lighthouse Reports)
+
+on:
+  pull_request:
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+          cache: false
+
+      - name: Install Muffet
+        run: go install github.com/raviqqe/muffet/v2@v2.10.0
+
+      - name: Serve built site
+        run: |
+          python3 -m http.server 8080 --directory public >/tmp/http.log 2>&1 &
+          echo $! > /tmp/http.pid
+
+      - name: Wait for server
+        run: npx -y wait-on http://127.0.0.1:8080/
+
+      - name: Check internal links with Muffet
+        run: |
+          muffet \
+            --ignore-fragments \
+            --timeout 20 \
+            --max-connections 128 \
+            --exclude '^https?://' \
+            --exclude '^mailto:' \
+            --exclude '^tel:' \
+            http://127.0.0.1:8080
+
+      - name: Generate Lighthouse HTML reports
+        if: always()
+        run: |
+          OUTDIR="${GITHUB_WORKSPACE}/.lighthouseci"
+          mkdir -p "$OUTDIR"
+
+          npx -y lighthouse http://127.0.0.1:8080/ \
+            --output=html \
+            --output-path="$OUTDIR/index.html" \
+            --chrome-flags="--headless --no-sandbox"
+
+      - name: Upload Lighthouse reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-reports
+          path: ${{ github.workspace }}/.lighthouseci/index.html
+          if-no-files-found: error
+
+      - name: Stop server
+        if: always()
+        run: |
+          kill "$(cat /tmp/http.pid)" || true

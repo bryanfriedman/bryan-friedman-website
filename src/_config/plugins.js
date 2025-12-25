@@ -1,16 +1,18 @@
 // 11ty plugins
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginBundle = require("@11ty/eleventy-plugin-bundle");
-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
-const pageAssetsPlugin = require('eleventy-plugin-page-assets');
+import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
+import pluginRss from "@11ty/eleventy-plugin-rss";
+import pluginBundle from "@11ty/eleventy-plugin-bundle";
+import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
+import eleventyCopyDataCascade from "@bryanfriedman/eleventy-plugin-html-relative-datacascade";
+//import pageAssetsPlugin from 'eleventy-plugin-page-assets';
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginBundle);
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+  eleventyConfig.addPlugin(eleventyCopyDataCascade);
   eleventyConfig.addPlugin(pluginSyntaxHighlight, {
     preAttributes: { tabindex: 0 }
   });
@@ -19,11 +21,11 @@ module.exports = function(eleventyConfig) {
   // See for more info (and why we are pointing to fork instead of outdated npm package):
   //    https://github.com/victornpb/eleventy-plugin-page-assets/issues/3
   //    https://github.com/maxboeck/eleventy-plugin-page-assets
-  eleventyConfig.addPlugin(pageAssetsPlugin, {
-      mode: "directory",
-      postsMatching: "**/*.md",
-      recursive: true,
-      silent: true
-  });
+  //eleventyConfig.addPlugin(pageAssetsPlugin, {
+  //    mode: "directory",
+  //    postsMatching: "**/*.md",
+  //    recursive: true,
+  //    silent: true
+  //});
 
 }
