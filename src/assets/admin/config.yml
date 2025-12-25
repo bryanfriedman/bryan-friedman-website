@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: bryanfriedman/bryan-friedman-website
   branch: main
 media_folder: "src/assets/img/uploads"
 public_folder: "/img/uploads"
