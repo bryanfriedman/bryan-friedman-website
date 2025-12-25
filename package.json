@@ -11,10 +11,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf dist && rm -rf public",
     "dev": "open=true npx @11ty/eleventy --serve",
-    "build": "npm run clean && npx @11ty/eleventy && cp -r ./dist/ ./public"
+    "build": "npm run clean && npx @11ty/eleventy && cp -r ./dist/ ./public && npm run build:preview-css",
+    "build:preview-css": "postcss public/css/styles.min.css -o public/admin/preview.css --config postcss.preview.js"
   },
   "devDependencies": {
     "@bryanfriedman/eleventy-plugin-html-relative-datacascade": "0.1.5",
+    "@fullhuman/postcss-purgecss": "^7.0.2",
     "autoprefixer": "^10.4.21",
     "cssnano": "^7.1.1",
     "eleventy-plugin-purgecss": "^0.5.0",
@@ -27,6 +29,7 @@
     "nunjucks": "^3.2.4",
     "open": "10.2.0",
     "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
     "rimraf": "^6.0.1",
     "sass": "1.60.0",
     "uglify-js": "^3.19.3"
