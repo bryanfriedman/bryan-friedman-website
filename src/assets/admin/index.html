@@ -10,10 +10,23 @@
     <!-- Include the script that builds the page and powers Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
+      // Fonts (must be registered before CSS that uses them)
+      CMS.registerPreviewStyle(
+        "https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&display=swap"
+      );
+      CMS.registerPreviewStyle(
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&display=swap"
+      );
+
+      // Main site CSS
       CMS.registerPreviewStyle("/css/styles.min.css");
-      CMS.registerPreviewStyle("https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&display=swap");
-      CMS.registerPreviewStyle("https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&display=swap");
-      
+
+      // Preview-only layout helpers
+      CMS.registerPreviewStyle(`
+        .decap-preview-wrap { padding: 2rem 1rem; }
+        .decap-preview-inner { max-width: 42rem; margin: 0 auto; }
+      `, { raw: true });
+
       const slugify = (s) =>
         String(s || "")
           .trim()
@@ -29,8 +42,7 @@
 
         const tags = Array.isArray(tagsRaw)
           ? tagsRaw
-          : (tagsRaw && typeof tagsRaw.toJS === "function" ? tagsRaw.toJS() : [])
-        ;
+          : (tagsRaw && typeof tagsRaw.toJS === "function" ? tagsRaw.toJS() : []);
 
         const dateStr = dateRaw
           ? new Date(dateRaw).toLocaleDateString("en-US", {
@@ -40,27 +52,29 @@
             })
           : "";
 
-        return h("article", {},
-          h("h1", {}, title),
+        return h("div", { className: "decap-preview-wrap" },
+          h("div", { className: "decap-preview-inner" },
+            h("article", {},
+              h("h1", {}, title),
 
-          // EXACT markup like your site:
-          dateStr
-            ? h("span", { className: "post-meta" },
-                "Posted on ",
-                h("time", { dateTime: dateRaw }, dateStr)
-              )
-            : null,
+              dateStr
+                ? h("span", { className: "post-meta" },
+                    "Posted on ",
+                    h("time", { dateTime: dateRaw }, dateStr)
+                  )
+                : null,
 
-          // One "in <a ...>" span per tag, like your output
-          ...(tags || []).map((t) => {
-            const slug = slugify(t);
-            return h("span", { className: "post-meta" },
-              " in ",
-              h("a", { href: `/topics/${slug}/` }, t)
-            );
-          }),
+              ...(tags || []).map((t) => {
+                const slug = slugify(t);
+                return h("span", { className: "post-meta" },
+                  " in ",
+                  h("a", { href: `/topics/${slug}/` }, t)
+                );
+              }),
 
-          widgetFor("body")
+              widgetFor("body")
+            )
+          )
         );
       };
 
