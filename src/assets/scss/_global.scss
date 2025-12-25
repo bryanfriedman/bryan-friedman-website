@@ -48,3 +48,30 @@ h2 {
 h3 {
     font-size: 1.6rem;
 }
+
+/* Header anchor link styling */
+.header-anchor {
+  position: absolute;
+  left: -1em;
+  opacity: 0;
+  text-decoration: none;
+  color: var(--muted-text, #999);
+  transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  position: relative;
+}
+
+h1:hover .header-anchor,
+h2:hover .header-anchor,
+h3:hover .header-anchor,
+h4:hover .header-anchor,
+h5:hover .header-anchor,
+h6:hover .header-anchor {
+  opacity: 1;
+}
+
+.header-anchor:hover {
+  color: var(--link-color, #007acc);
+}

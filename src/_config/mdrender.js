@@ -46,7 +46,14 @@ export default function(eleventyConfig) {
         };
 
         // Add anchors to headers
-        markdown.use(mdAnchor);
+        markdown.use(mdAnchor, {
+            permalink: mdAnchor.permalink.linkInsideHeader({
+                symbol: "#",
+                placement: "before",
+                class: "header-anchor",
+                ariaHidden: true
+            })
+        });
 
         // Open external links in new tab/window
         markdown.renderer.rules.link_open = function (tokens, idx, options, env, self) {
