@@ -24,14 +24,7 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: "1.22"
-
-      - name: Cache Go (muffet)
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/go/pkg/mod
-            ~/.cache/go-build
-          key: go-${{ runner.os }}-muffet-v2.10.0
+          cache: false
 
       - name: Install Muffet
         run: go install github.com/raviqqe/muffet/v2@v2.10.0
