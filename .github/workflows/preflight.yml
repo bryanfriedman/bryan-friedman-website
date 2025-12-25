@@ -24,7 +24,17 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: "1.22"
-          cache: true
+
+      - name: Cache Go (muffet)
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/go/pkg/mod
+            ~/.cache/go-build
+          key: go-${{ runner.os }}-muffet-v2.10.0
+
+      - name: Install Muffet
+        run: go install github.com/raviqqe/muffet/v2@v2.10.0
 
       - name: Install Muffet
         run: go install github.com/raviqqe/muffet/v2@v2.10.0
@@ -51,15 +61,13 @@ jobs:
       - name: Generate Lighthouse HTML reports
         if: always()
         run: |
-          mkdir -p .lighthouseci
-          npx -y lighthouse \
-            http://127.0.0.1:8080/ \
-            --output=html \
-            --output-path=.lighthouseci/index.html \
-            --chrome-flags="--headless --no-sandbox"
+          OUTDIR="${GITHUB_WORKSPACE}/.lighthouseci"
+          mkdir -p "$OUTDIR"
 
-          echo "Lighthouse output:"
-          find .lighthouseci -maxdepth 2 -type f -print || true
+          npx -y lighthouse http://127.0.0.1:8080/ \
+            --output=html \
+            --output-path="$OUTDIR/index.html" \
+            --chrome-flags="--headless --no-sandbox"
 
       - name: Upload Lighthouse reports
         if: always()
