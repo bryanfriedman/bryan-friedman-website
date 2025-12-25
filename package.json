@@ -11,7 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf dist && rm -rf public",
     "dev": "open=true npx @11ty/eleventy --serve",
-    "build": "npm run clean && npx @11ty/eleventy && cp -r ./dist/ ./public && npm run build:preview-css"
+    "build": "npm run clean && npx @11ty/eleventy && cp -r ./dist/ ./public"
   },
   "devDependencies": {
     "@bryanfriedman/eleventy-plugin-html-relative-datacascade": "0.1.5",
