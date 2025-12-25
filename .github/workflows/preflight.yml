@@ -55,7 +55,7 @@ jobs:
           npx -y lighthouse \
             http://127.0.0.1:8080/ \
             --output=html \
-            --output-path=.lighthouseci \
+            --output-path=.lighthouseci/index.html \
             --chrome-flags="--headless --no-sandbox"
 
           echo "Lighthouse output:"
