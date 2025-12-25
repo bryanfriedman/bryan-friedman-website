@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build site (must produce ./public)
+      - name: Build site
         run: npm run build
 
       - uses: actions/setup-go@v5
@@ -32,9 +32,6 @@ jobs:
             ~/go/pkg/mod
             ~/.cache/go-build
           key: go-${{ runner.os }}-muffet-v2.10.0
-
-      - name: Install Muffet
-        run: go install github.com/raviqqe/muffet/v2@v2.10.0
 
       - name: Install Muffet
         run: go install github.com/raviqqe/muffet/v2@v2.10.0
@@ -74,7 +71,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: lighthouse-reports
-          path: ${{ github.workspace }}/.lighthouseci
+          path: ${{ github.workspace }}/.lighthouseci/index.html
+          if-no-files-found: error
 
       - name: Stop server
         if: always()
