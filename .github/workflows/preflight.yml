@@ -1,4 +1,5 @@
 name: Preflight (Check Links + Lighthouse Audit)
+
 on:
   pull_request:
 
@@ -33,9 +34,11 @@ jobs:
           python3 -m http.server 8080 --directory public >/tmp/http.log 2>&1 &
           echo $! > /tmp/http.pid
 
+      - name: Wait for server
+        run: npx -y wait-on http://127.0.0.1:8080/
+
       - name: Check internal links with Muffet
         run: |
-          sleep 2
           muffet \
             --ignore-fragments \
             --timeout 20 \
@@ -44,11 +47,6 @@ jobs:
             --exclude '^mailto:' \
             --exclude '^tel:' \
             http://127.0.0.1:8080
-
-      - name: Stop server
-        if: always()
-        run: |
-          kill "$(cat /tmp/http.pid)" || true
 
       # --- Lighthouse CI (artifact output) ---
       - name: Run Lighthouse CI
@@ -85,3 +83,8 @@ jobs:
         with:
           name: lighthouse-reports
           path: .lighthouseci
+
+      - name: Stop server
+        if: always()
+        run: |
+          kill "$(cat /tmp/http.pid)" || true
