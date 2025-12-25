@@ -15,8 +15,6 @@
   },
   "devDependencies": {
     "@bryanfriedman/eleventy-plugin-html-relative-datacascade": "0.1.5",
-    "@netlify/plugin-a11y": "^1.0.0-beta.1",
-    "@netlify/plugin-lighthouse": "^6.0.3",
     "autoprefixer": "^10.4.21",
     "cssnano": "^7.1.1",
     "eleventy-plugin-purgecss": "^0.5.0",
@@ -25,7 +23,6 @@
     "markdown-it": "^14.1.0",
     "markdown-it-anchor": "^9.2.0",
     "markdown-it-attrs": "^4.3.1",
-    "netlify-plugin-checklinks": "^4.1.1",
     "node-fetch": "^3.3.2",
     "nunjucks": "^3.2.4",
     "open": "10.2.0",

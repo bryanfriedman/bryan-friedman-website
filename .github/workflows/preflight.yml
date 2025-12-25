@@ -1,0 +1,91 @@
+name: Preflight (Muffet + Lighthouse)
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # --- Node + npm cache ---
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm  # caches ~/.npm based on package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site (must produce ./public)
+        run: npm run build
+
+      # --- Go + module cache ---
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+          cache: true  # caches ~/go/pkg/mod and build cache automatically
+
+      - name: Install Muffet
+        run: go install github.com/raviqqe/muffet/v2@latest
+
+      # Serve public/ (no deps)
+      - name: Serve public/
+        run: |
+          python3 -m http.server 8080 --directory public >/tmp/http.log 2>&1 &
+          echo $! > /tmp/http.pid
+
+      - name: Check internal links with Muffet
+        run: |
+          sleep 2
+          muffet \
+            --ignore-fragments \
+            --timeout 20 \
+            --max-connections 128 \
+            --exclude '^https?://' \
+            --exclude '^mailto:' \
+            --exclude '^tel:' \
+            http://127.0.0.1:8080
+
+      - name: Stop server
+        if: always()
+        run: |
+          kill "$(cat /tmp/http.pid)" || true
+
+      # --- Optional: cache LHCI artifacts (small win) ---
+      - name: Cache Lighthouse CI
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/lighthouse
+            ~/.config/configstore
+          key: lhci-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            lhci-${{ runner.os }}-
+
+      - name: Run Lighthouse CI (staticDistDir=public)
+        run: |
+          cat > lighthouserc.json <<'JSON'
+          {
+            "ci": {
+              "collect": {
+                "staticDistDir": "./public",
+                "numberOfRuns": 1
+              },
+              "assert": {
+                "assertions": {
+                  "categories:performance": ["warn", { "minScore": 0.75 }],
+                  "categories:accessibility": ["warn", { "minScore": 0.90 }],
+                  "categories:seo": ["warn", { "minScore": 0.90 }]
+                }
+              },
+              "upload": { "target": "temporary-public-storage" }
+            }
+          }
+          JSON
+
+          npx -y @lhci/cli autorun --config=./lighthouserc.json
