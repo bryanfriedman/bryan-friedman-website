@@ -1,9 +1,6 @@
-name: Preflight (Muffet + Lighthouse)
-
+name: Preflight (Check Links + Lighthouse Audit)
 on:
   pull_request:
-  push:
-    branches: [main]
 
 jobs:
   preflight:
@@ -12,29 +9,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # --- Node + npm cache ---
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm  # caches ~/.npm based on package-lock.json
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Build site (must produce ./public)
+      - name: Build site
         run: npm run build
 
-      # --- Go + module cache ---
       - uses: actions/setup-go@v5
         with:
           go-version: "1.22"
-          cache: true  # caches ~/go/pkg/mod and build cache automatically
+          cache: true
 
       - name: Install Muffet
-        run: go install github.com/raviqqe/muffet/v2@latest
+        run: go install github.com/raviqqe/muffet/v2@v2.10.0
 
-      # Serve public/ (no deps)
-      - name: Serve public/
+      - name: Serve built site
         run: |
           python3 -m http.server 8080 --directory public >/tmp/http.log 2>&1 &
           echo $! > /tmp/http.pid
@@ -56,24 +50,17 @@ jobs:
         run: |
           kill "$(cat /tmp/http.pid)" || true
 
-      # --- Optional: cache LHCI artifacts (small win) ---
-      - name: Cache Lighthouse CI
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.cache/lighthouse
-            ~/.config/configstore
-          key: lhci-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            lhci-${{ runner.os }}-
-
-      - name: Run Lighthouse CI (staticDistDir=public)
+      # --- Lighthouse CI (artifact output) ---
+      - name: Run Lighthouse CI
         run: |
           cat > lighthouserc.json <<'JSON'
           {
             "ci": {
               "collect": {
-                "staticDistDir": "./public",
+                "url": [
+                  "http://127.0.0.1:8080/",
+                  "http://127.0.0.1:8080/about/"
+                ],
                 "numberOfRuns": 1
               },
               "assert": {
@@ -83,9 +70,18 @@ jobs:
                   "categories:seo": ["warn", { "minScore": 0.90 }]
                 }
               },
-              "upload": { "target": "temporary-public-storage" }
+              "upload": {
+                "target": "filesystem",
+                "outputDir": ".lighthouseci"
+              }
             }
           }
           JSON
 
           npx -y @lhci/cli autorun --config=./lighthouserc.json
+
+      - name: Upload Lighthouse reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-reports
+          path: .lighthouseci
