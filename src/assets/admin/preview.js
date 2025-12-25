@@ -11,11 +11,13 @@ function slugify(s) {
 function getBlogFolder(entry) {
   const p = entry.get("path") || entry.get("slug") || "";
   const normalized = String(p).replace(/\\/g, "/");
-  // match ".../<folder>/index"
-  const m = normalized.match(/\/([^/]+)\/index$/);
-  if (m) return m[1];
-  const parts = normalized.split("/").filter(Boolean);
-  return parts[parts.length - 1] || "";
+  const withoutIndex = normalized
+    .replace(/\/index(\.[a-z0-9]+)?$/i, "") // strips /index, /index.md, /index.njk, etc.
+    .replace(/\/$/, "");
+  const parts = withoutIndex.split("/").filter(Boolean);
+  const last = parts[parts.length - 1] || "";
+
+  return last.replace(/\.[a-z0-9]+$/i, "");
 }
 
 function rewritePreviewImgSrc(src, blogFolder) {
