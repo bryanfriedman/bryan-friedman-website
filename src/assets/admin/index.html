@@ -10,27 +10,21 @@
     <!-- Include the script that builds the page and powers Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
-      // Fonts (must be registered before CSS that uses them)
-      CMS.registerPreviewStyle(
-        "https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&display=swap"
-      );
-      CMS.registerPreviewStyle(
-        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&display=swap"
-      );
+      // Fonts
+      CMS.registerPreviewStyle("https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&display=swap");
+      CMS.registerPreviewStyle("https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&display=swap");
 
-      // Main site CSS
+      // CSS
       CMS.registerPreviewStyle("/css/styles.min.css");
 
-      // Preview-only layout helpers
+      // Preview-only padding
       CMS.registerPreviewStyle(`
         .decap-preview-wrap { padding: 2rem 1rem; }
         .decap-preview-inner { max-width: 42rem; margin: 0 auto; }
       `, { raw: true });
 
       const slugify = (s) =>
-        String(s || "")
-          .trim()
-          .toLowerCase()
+        String(s || "").trim().toLowerCase()
           .replace(/['"]/g, "")
           .replace(/[^a-z0-9]+/g, "-")
           .replace(/^-+|-+$/g, "");
@@ -45,16 +39,13 @@
           : (tagsRaw && typeof tagsRaw.toJS === "function" ? tagsRaw.toJS() : []);
 
         const dateStr = dateRaw
-          ? new Date(dateRaw).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })
+          ? new Date(dateRaw).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })
           : "";
 
         return h("div", { className: "decap-preview-wrap" },
           h("div", { className: "decap-preview-inner" },
-            h("article", {},
+            // IMPORTANT: use the same wrapper classes your theme expects
+            h("article", { className: "post-preview" },  // <-- this is the likely missing piece
               h("h1", {}, title),
 
               dateStr
@@ -64,13 +55,15 @@
                   )
                 : null,
 
-              ...(tags || []).map((t) => {
-                const slug = slugify(t);
-                return h("span", { className: "post-meta" },
-                  " in ",
-                  h("a", { href: `/topics/${slug}/` }, t)
-                );
-              }),
+              (tags && tags.length)
+                ? h("span", { className: "post-meta" },
+                    " in ",
+                    ...tags.flatMap((t, i) => {
+                      const link = h("a", { href: `/topics/${slugify(t)}/` }, t);
+                      return i === 0 ? [link] : [", ", link];
+                    })
+                  )
+                : null,
 
               widgetFor("body")
             )
