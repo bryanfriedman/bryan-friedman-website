@@ -11,15 +11,60 @@
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
       CMS.registerPreviewStyle("/css/styles.min.css");
-      const PostPreview = ({ entry, widgetFor }) => {
-        return h("div", { className: "post-content" }, [
-          h("h1", {}, entry.getIn(["data", "title"])),
-          widgetFor("body"),
-        ]);
-      };
       CMS.registerPreviewStyle("https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&display=swap");
       CMS.registerPreviewStyle("https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&display=swap");
-      CMS.registerPreviewTemplate("blog", PostPreview);
+      
+      const slugify = (s) =>
+        String(s || "")
+          .trim()
+          .toLowerCase()
+          .replace(/['"]/g, "")
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-+|-+$/g, "");
+
+      const BlogPreview = ({ entry, widgetFor }) => {
+        const title = entry.getIn(["data", "title"]) || "";
+        const dateRaw = entry.getIn(["data", "date"]) || "";
+        const tagsRaw = entry.getIn(["data", "tags"]);
+
+        const tags = Array.isArray(tagsRaw)
+          ? tagsRaw
+          : (tagsRaw && typeof tagsRaw.toJS === "function" ? tagsRaw.toJS() : [])
+        ;
+
+        const dateStr = dateRaw
+          ? new Date(dateRaw).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })
+          : "";
+
+        return h("article", {},
+          h("h1", {}, title),
+
+          // EXACT markup like your site:
+          dateStr
+            ? h("span", { className: "post-meta" },
+                "Posted on ",
+                h("time", { dateTime: dateRaw }, dateStr)
+              )
+            : null,
+
+          // One "in <a ...>" span per tag, like your output
+          ...(tags || []).map((t) => {
+            const slug = slugify(t);
+            return h("span", { className: "post-meta" },
+              " in ",
+              h("a", { href: `/topics/${slug}/` }, t)
+            );
+          }),
+
+          widgetFor("body")
+        );
+      };
+
+      CMS.registerPreviewTemplate("blog", BlogPreview);
     </script>
   </body>
 </html>
