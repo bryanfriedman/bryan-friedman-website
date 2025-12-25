@@ -1,7 +1,7 @@
-const mdAttr = require("markdown-it-attrs");
-const mdAnchor = require("markdown-it-anchor");
+import mdAttr from "markdown-it-attrs";
+import mdAnchor from "markdown-it-anchor";
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
     eleventyConfig.amendLibrary('md', (markdown) => {
         // Add 'section-heading' class to h2 tags
         markdown.renderer.rules.heading_open = function (tokens, idx, options, env, self) {
@@ -13,6 +13,37 @@ module.exports = function(eleventyConfig) {
 
         // Allow for specifying attributes in markdown (i.e. {.alignright})
         markdown.use(mdAttr);
+
+
+        // Add anchors to headers
+        markdown.use(mdAnchor);
+
+        // Open external links in new tab/window
+        markdown.renderer.rules.link_open = function (tokens, idx, options, env, self) {
+            if (/a/.test(tokens[idx].tag)) {
+                var href = tokens[idx].attrGet('href');
+                if (!href.includes('bryanfriedman.com') && !href.startsWith('/') && !href.startsWith('#')) {
+                    tokens[idx].attrPush([ 'target', '_blank' ]);
+                    tokens[idx].attrPush([ 'rel', 'noopener noreferrer' ]);
+                }
+            }
+            return self.renderToken(tokens, idx, options);
+        };
+
+        // Add anchors to headers
+        markdown.use(mdAnchor);
+
+        // Open external links in new tab/window
+        markdown.renderer.rules.link_open = function (tokens, idx, options, env, self) {
+            if (/a/.test(tokens[idx].tag)) {
+                var href = tokens[idx].attrGet('href');
+                if (!href.includes('bryanfriedman.com') && !href.startsWith('/') && !href.startsWith('#')) {
+                    tokens[idx].attrPush([ 'target', '_blank' ]);
+                    tokens[idx].attrPush([ 'rel', 'noopener noreferrer' ]);
+                }
+            }
+            return self.renderToken(tokens, idx, options);
+        };
 
         // Add anchors to headers
         markdown.use(mdAnchor);

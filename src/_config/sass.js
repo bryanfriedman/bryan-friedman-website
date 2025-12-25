@@ -1,11 +1,11 @@
-const production = require("../_data/production");
-const path = require("node:path");
-const sass = require("sass");
-const postcss = require('postcss');
-const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
+import production from "../_data/production.js";
+import path from "node:path";
+import sass from "sass";
+import postcss from 'postcss';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
 	eleventyConfig.addTemplateFormats("scss");
 	eleventyConfig.addExtension("scss", {
 		outputFileExtension: "css",
