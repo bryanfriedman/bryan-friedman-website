@@ -28,8 +28,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="{{ '/img/apple-touch-icon.png' | url }}">
 <link rel="manifest" href="{{ '/site.webmanifest' | url }}">
 
-<link rel="preload" as="image" href="{{ '/img/header.webp' | url }}">
-<link rel="preload" as="image" href="{{ '/img/about.webp' | url }}">
+<link rel="preload" fetchpriority="high" as="image" href="{{ '/img/header.webp' | url }}">
+<link rel="preload" fetchpriority="high" as="image" href="{{ '/img/about.webp' | url }}">
 
 <title>{{ (title or metadata.title) | addDevPrefix }}</title>
 

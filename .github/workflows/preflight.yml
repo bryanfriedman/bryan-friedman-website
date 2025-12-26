@@ -59,7 +59,7 @@ jobs:
 
           npx -y lighthouse http://127.0.0.1:8080/ \
             --output=html \
-            --output-path="$OUTDIR/index.html" \
+            --output-path="$OUTDIR/lighthouse.html" \
             --chrome-flags="--headless --no-sandbox"
 
       - name: Upload Lighthouse reports
@@ -67,7 +67,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: lighthouse-reports
-          path: ${{ github.workspace }}/.lighthouseci/index.html
+          path: ${{ github.workspace }}/.lighthouseci/lighthouse.html
           if-no-files-found: error
 
       - name: Stop server
