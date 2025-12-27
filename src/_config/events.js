@@ -2,12 +2,15 @@ import production from "../_data/production.js";
 import { rimraf } from "rimraf";
 import open from 'open';
 
+import { buildTweetAssets } from "./tweet.js";
+
 export default function(eleventyConfig) {
 
 	// Clean output folders
 	eleventyConfig.on("eleventy.before", async ({ dir }) => {
 		rimraf.sync(dir.output+"/*");
 		if (production) rimraf.sync('public');
+		await buildTweetAssets(dir.output)
 	});
 
 	// Open browser window after dev build (but not on subsequent watch changes)

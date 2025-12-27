@@ -1,0 +1,63 @@
+/* ---- react-tweet isolation layer ---- */
+.tweet-shell,
+.tweet-shell * {
+  box-sizing: border-box;
+}
+
+.tweet-shell__placeholder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  background: #fafafa;
+}
+
+.tweet-shell__label {
+  margin: 0;
+  color: rgba(0,0,0,0.55);
+  font-size: 0.95rem;
+}
+
+/* Fix giant SVG icons caused by global svg rules */
+.tweet-shell svg {
+  width: 1.25em;
+  height: 1.25em;
+  max-width: none;
+  max-height: none;
+}
+
+/* Buttons inside tweets */
+.tweet-shell button {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+}
+
+/* Links inside tweets */
+.tweet-shell a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.tweet-shell a:hover {
+  text-decoration: underline;
+}
+
+/* Prevent global img rules from breaking media */
+.tweet-shell img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Reset list styles if your site nukes them */
+.tweet-shell ul,
+.tweet-shell ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
