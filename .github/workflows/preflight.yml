@@ -1,4 +1,4 @@
-name: Preflight (Check Links + Lighthouse Reports)
+name: Preflight (Check Links)
 
 on:
   pull_request:
@@ -50,25 +50,6 @@ jobs:
             --exclude '^mailto:' \
             --exclude '^tel:' \
             http://127.0.0.1:8080
-
-      - name: Generate Lighthouse HTML reports
-        if: always()
-        run: |
-          OUTDIR="${GITHUB_WORKSPACE}/.lighthouseci"
-          mkdir -p "$OUTDIR"
-
-          npx -y lighthouse http://127.0.0.1:8080/ \
-            --output=html \
-            --output-path="$OUTDIR/lighthouse.html" \
-            --chrome-flags="--headless --no-sandbox"
-
-      - name: Upload Lighthouse reports
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: lighthouse-reports
-          path: ${{ github.workspace }}/.lighthouseci/lighthouse.html
-          if-no-files-found: error
 
       - name: Stop server
         if: always()
