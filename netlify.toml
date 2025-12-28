@@ -14,3 +14,26 @@
 
   # Default build command.
   command = "npm run build"
+
+## Caching
+# Long cache for static assets (fingerprinted or versioned output)
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    cache-control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    cache-control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    cache-control = "public, max-age=31536000, immutable"
+
+# No-cache for HTML
+[[headers]]
+  for = "/*"
+  [headers.values]
+    cache-control = "public, max-age=0, must-revalidate"

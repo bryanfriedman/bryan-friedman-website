@@ -1,13 +1,25 @@
 
-<!-- Google tag (gtag.js) -->
 {% if production %}
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZP3XBLDZL"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-8ZP3XBLDZL');
+  // Defer analytics to keep main thread clear
+  (function(w,d,id){
+    if (w.doNotTrack === "1") return;
+    var load = function() {
+      var s = d.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+      s.async = true;
+      d.head.appendChild(s);
+      w.dataLayer = w.dataLayer || [];
+      function gtag(){ w.dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', id, { anonymize_ip: true });
+    };
+    if ('requestIdleCallback' in w) {
+      requestIdleCallback(load, { timeout: 2000 });
+    } else {
+      w.addEventListener('load', load, { once: true });
+    }
+  })(window, document, 'G-8ZP3XBLDZL');
 </script>
 {% endif %}
 
@@ -33,9 +45,20 @@
 
 <title>{{ (title or metadata.title) | addDevPrefix }}</title>
 
-<link href="{{ '/css/prism-base16-ateliersulphurpool.light.css' | minifyPath | url }}" rel="stylesheet" type="text/css" /> <!-- PrismJS stylesheet for syntax highlighting -->
-<link href="{{ '/css/styles.css' | minifyPath | url }}" rel="stylesheet" type="text/css" />
-<link href="{{ '/css/lite-yt-embed.css' | minifyPath | url }}" rel="stylesheet" type="text/css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Main styles (non-blocking load with fallback) -->
+<link rel="preload" href="{{ '/css/styles.css' | minifyPath | url }}" as="style" onload="this.rel='stylesheet'">
+<noscript><link href="{{ '/css/styles.css' | minifyPath | url }}" rel="stylesheet"></noscript>
+
+<!-- Prism stylesheet (only needed when code blocks are present) -->
+<link rel="preload" href="{{ '/css/prism-base16-ateliersulphurpool.light.css' | minifyPath | url }}" as="style" onload="this.rel='stylesheet'">
+<noscript><link href="{{ '/css/prism-base16-ateliersulphurpool.light.css' | minifyPath | url }}" rel="stylesheet"></noscript>
+
+<!-- Lite YouTube embed styles -->
+<link rel="preload" href="{{ '/css/lite-yt-embed.css' | minifyPath | url }}" as="style" onload="this.rel='stylesheet'">
+<noscript><link href="{{ '/css/lite-yt-embed.css' | minifyPath | url }}" rel="stylesheet"></noscript>
 
 <!-- Google fonts-->
 <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&display=swap" rel="stylesheet" type="text/css" />
