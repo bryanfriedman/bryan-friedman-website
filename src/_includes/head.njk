@@ -48,17 +48,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- Main styles (non-blocking load with fallback) -->
-<link rel="preload" href="{{ '/css/styles.css' | minifyPath | url }}" as="style" onload="this.rel='stylesheet'">
-<noscript><link href="{{ '/css/styles.css' | minifyPath | url }}" rel="stylesheet"></noscript>
-
-<!-- Prism stylesheet (only needed when code blocks are present) -->
-<link rel="preload" href="{{ '/css/prism-base16-ateliersulphurpool.light.css' | minifyPath | url }}" as="style" onload="this.rel='stylesheet'">
-<noscript><link href="{{ '/css/prism-base16-ateliersulphurpool.light.css' | minifyPath | url }}" rel="stylesheet"></noscript>
-
-<!-- Lite YouTube embed styles -->
-<link rel="preload" href="{{ '/css/lite-yt-embed.css' | minifyPath | url }}" as="style" onload="this.rel='stylesheet'">
-<noscript><link href="{{ '/css/lite-yt-embed.css' | minifyPath | url }}" rel="stylesheet"></noscript>
+<link href="{{ '/css/styles.css' | minifyPath | url }}" rel="stylesheet" type="text/css" />
+<link href="{{ '/css/prism-base16-ateliersulphurpool.light.css' | minifyPath | url }}" rel="stylesheet" type="text/css" /> <!-- PrismJS stylesheet for syntax highlighting -->
+<link href="{{ '/css/lite-yt-embed.css' | minifyPath | url }}" rel="stylesheet" type="text/css" />
 
 <!-- Google fonts-->
 <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&display=swap" rel="stylesheet" type="text/css" />

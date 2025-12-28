@@ -75,3 +75,13 @@ h6:hover .header-anchor {
 .header-anchor:hover {
   color: var(--link-color, #007acc);
 }
+
+/* Blog content image sizing */
+.post-preview img,
+.post-preview figure img,
+article img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+}
