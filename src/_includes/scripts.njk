@@ -1,9 +1,3 @@
-{% if production %}
-<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<script defer src="/js/scripts.min.js"></script>
-{% else %}
-<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.js"></script>
-<script defer src="/js/scripts.js"></script>
-{% endif %}
+<script defer src="{{ '/js/scripts.js' | minifyPath | url }}"></script>
 <script defer src="{{ '/js/lite-yt-embed.js' | minifyPath | url }}"></script>
 <script defer src="/js/tweet-loader.js"></script>

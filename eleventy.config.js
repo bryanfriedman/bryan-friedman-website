@@ -37,7 +37,7 @@ export default function(eleventyConfig) {
     // Add compiler for scss into css
 	eleventyConfig.addPlugin(sass);
 
-	// Run pre- and post-build events for dev workflow
+    // Run pre- and post-build events for dev workflow
 	eleventyConfig.addPlugin(events);
 	
 	// Add shortcodes

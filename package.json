@@ -10,7 +10,7 @@
     "kill": "kill $(ps -ef | grep '[n]pm exec @11ty/eleventy --serve' | awk '{print $2}')",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "npx rimraf dist public",
-    "dev": "open=true npx @11ty/eleventy --serve",
+    "dev": "npm run clean && open=true npx @11ty/eleventy --serve",
     "build": "npm run clean && npx @11ty/eleventy && cp -r ./dist/ ./public"
   },
   "devDependencies": {

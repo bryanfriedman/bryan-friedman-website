@@ -2,6 +2,16 @@ window.addEventListener('DOMContentLoaded', () => {
     let scrollPos = 0;
     const mainNav = document.getElementById('mainNav');
     const headerHeight = mainNav.clientHeight;
+    const navToggler = document.querySelector('.navbar-toggler');
+    const navTarget = document.querySelector(navToggler?.getAttribute('data-bs-target') || '#navbarResponsive');
+
+    if (navToggler && navTarget) {
+        navToggler.addEventListener('click', () => {
+            const isOpen = navTarget.classList.toggle('show');
+            navToggler.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+    }
+
     window.addEventListener('scroll', function() {
         const currentTop = document.body.getBoundingClientRect().top * -1;
         if ( currentTop < scrollPos) {

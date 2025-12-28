@@ -7,6 +7,8 @@ import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import eleventyCopyDataCascade from "@bryanfriedman/eleventy-plugin-html-relative-datacascade";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import path from "path";
+import pluginPurgeCSS from "eleventy-plugin-purgecss";
+import production from "../_data/production.js";
 //import pageAssetsPlugin from 'eleventy-plugin-page-assets';
 
 export default function(eleventyConfig) {
@@ -18,6 +20,7 @@ export default function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginSyntaxHighlight, {
     preAttributes: { tabindex: 0 }
   });
+
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["webp", "jpeg"],
     widths: [480, 720, 960, 1200, "auto"],
@@ -37,6 +40,42 @@ export default function(eleventyConfig) {
       sizes: "(min-width: 900px) 820px, 100vw",
     },
   });
+  
+  // Purge unused CSS in production builds
+  if (production) {
+    const purgeSafelist = [
+      /^navbar/,
+      /^nav-/,
+      /^collapse/,
+      /^show$/,
+      /^container/,
+      /^row$/,
+      /^col/,
+      /^px-/,
+      /^py-/,
+      /^mx-/,
+      /^my-/,
+      /^ms-/,
+      /^me-/,
+      /^d-/,
+      /^text-/,
+      /^align-/,
+      /^justify-/,
+      /^list-/,
+      /^btn/,
+      /^icon/,
+      /^tweet/,
+      /^react-tweet/,
+      /^lite/
+    ];
+    eleventyConfig.addPlugin(pluginPurgeCSS, {
+      outputDir: "dist",
+      content: ["dist/**/*.html"],
+      css: ["dist/css/styles.css", "dist/css/styles.min.css"],
+      safelist: purgeSafelist,
+      quiet: true,
+    });
+  }
   
   // This is so image files along side md files inside of folders will be copied over correctly without the /content directory
   // See for more info (and why we are pointing to fork instead of outdated npm package):
