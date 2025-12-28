@@ -41,38 +41,10 @@ export default function(eleventyConfig) {
     },
   });
   
-  // Purge unused CSS in production builds
+  // Purge unused CSS in production builds (config in purgecss.config.js)
   if (production) {
-    const purgeSafelist = [
-      /^navbar/,
-      /^nav-/,
-      /^collapse/,
-      /^show$/,
-      /^container/,
-      /^row$/,
-      /^col/,
-      /^px-/,
-      /^py-/,
-      /^mx-/,
-      /^my-/,
-      /^ms-/,
-      /^me-/,
-      /^d-/,
-      /^text-/,
-      /^align-/,
-      /^justify-/,
-      /^list-/,
-      /^btn/,
-      /^icon/,
-      /^tweet/,
-      /^react-tweet/,
-      /^lite/
-    ];
     eleventyConfig.addPlugin(pluginPurgeCSS, {
-      outputDir: "dist",
-      content: ["dist/**/*.html"],
-      css: ["dist/css/styles.css", "dist/css/styles.min.css"],
-      safelist: purgeSafelist,
+      configFile: "purgecss.config.js",
       quiet: true,
     });
   }
