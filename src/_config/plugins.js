@@ -5,6 +5,8 @@ import pluginBundle from "@11ty/eleventy-plugin-bundle";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import eleventyCopyDataCascade from "@bryanfriedman/eleventy-plugin-html-relative-datacascade";
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import path from "path";
 //import pageAssetsPlugin from 'eleventy-plugin-page-assets';
 
 export default function(eleventyConfig) {
@@ -15,6 +17,25 @@ export default function(eleventyConfig) {
   eleventyConfig.addPlugin(eleventyCopyDataCascade);
   eleventyConfig.addPlugin(pluginSyntaxHighlight, {
     preAttributes: { tabindex: 0 }
+  });
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    formats: ["webp", "jpeg"],
+    widths: [480, 720, 960, 1200, "auto"],
+    resolvePath: (filepath) => {
+      if (filepath.startsWith("/")) {
+        const withoutLeading = filepath.replace(/^\/+/, "");
+        return path.join("src", "content", withoutLeading);
+      }
+      return filepath;
+    },
+    htmlOptions: {
+      sizes: "(min-width: 900px) 820px, 100vw",
+    },
+    defaultAttributes: {
+      loading: "lazy",
+      decoding: "async",
+      sizes: "(min-width: 900px) 820px, 100vw",
+    },
   });
   
   // This is so image files along side md files inside of folders will be copied over correctly without the /content directory

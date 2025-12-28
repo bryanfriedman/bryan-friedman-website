@@ -67,15 +67,17 @@ export default function(eleventyConfig) {
             return self.renderToken(tokens, idx, options);
         };
 
-        // Make relative image references work on all pages
+        // Keep image src absolute to the page stem for consistent resolution
         markdown.renderer.rules.image = function (tokens, idx, options, env, self) {
             if (/img/.test(tokens[idx].tag)) {
                 var src = tokens[idx].attrGet('src');
-                if (!(src.startsWith("http"))) {
-                    tokens[idx].attrSet('src', env.page.url+src);
+                if (src && !src.startsWith("http") && env.page && env.page.filePathStem) {
+                    const base = env.page.filePathStem.replace(/\/index$/, "");
+                    tokens[idx].attrSet('src', `${base}/${src}`);
                 }
             }
             return self.renderToken(tokens, idx, options);
-        }; 
+        };
+
     });
 }
