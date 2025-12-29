@@ -92,14 +92,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link rel="preload" as="style" href="{{ '/css/styles.css' | minifyPath | url }}">
-<link rel="preload" as="style" href="{{ '/css/prism-base16-ateliersulphurpool.light.css' | minifyPath | url }}">
-<link rel="preload" as="style" href="{{ '/css/lite-yt-embed.css' | minifyPath | url }}">
+<link rel="preload" as="style" href="{{ '/css/styles.css' | minifyPath | url }}">
 
-<link href="{{ '/css/styles.css' | minifyPath | url }}" rel="stylesheet" type="text/css" media="print" onload="this.media='all'">
-<link href="{{ '/css/prism-base16-ateliersulphurpool.light.css' | minifyPath | url }}" rel="stylesheet" type="text/css" media="print" onload="this.media='all'"> <!-- PrismJS stylesheet for syntax highlighting -->
-<link href="{{ '/css/lite-yt-embed.css' | minifyPath | url }}" rel="stylesheet" type="text/css" media="print" onload="this.media='all'">
+{# Main stylesheet loads normally to avoid FOUC #}
+<link href="{{ '/css/styles.css' | minifyPath | url }}" rel="stylesheet" type="text/css">
+{# Noscript fallbacks for feature styles (code/video) #}
 <noscript>
-  <link href="{{ '/css/styles.css' | minifyPath | url }}" rel="stylesheet" type="text/css">
   <link href="{{ '/css/prism-base16-ateliersulphurpool.light.css' | minifyPath | url }}" rel="stylesheet" type="text/css">
   <link href="{{ '/css/lite-yt-embed.css' | minifyPath | url }}" rel="stylesheet" type="text/css">
 </noscript>

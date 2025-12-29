@@ -1,3 +1,9 @@
+<script>
+  window.assetPaths = {
+    prismCss: "{{ '/css/prism-base16-ateliersulphurpool.light.css' | minifyPath | url }}",
+    liteCss: "{{ '/css/lite-yt-embed.css' | minifyPath | url }}",
+    liteJs: "{{ '/js/lite-yt-embed.js' | minifyPath | url }}"
+  };
+</script>
 <script defer src="{{ '/js/scripts.js' | minifyPath | url }}"></script>
-<script defer src="{{ '/js/lite-yt-embed.js' | minifyPath | url }}"></script>
 <script defer src="/js/tweet-loader.js"></script>

@@ -1,5 +1,12 @@
    {% if not headerImage %} {% set headerImage = "header.webp" %} {% elseif (headerImage == "none") %} {% set headerImage = "" %} {% endif %}
-    <header class="masthead" style="{{ ["background-image: url('/img/", headerImage, "')"] | join }}">
+   {% set headerLow = headerImage %}
+   {% set headerHigh = headerImage %}
+   {% if headerImage and headerImage.endsWith(".webp") %}
+     {% set headerHigh = headerImage | replace(".webp", "-hires.webp") %}
+   {% elseif headerImage and headerImage.endsWith(".jpg") %}
+     {% set headerHigh = headerImage | replace(".jpg", "-hires.jpg") %}
+   {% endif %}
+    <header class="masthead" {% if headerImage %}style="{{ ["background-image: url('/img/", headerLow, "')"] | join }}" data-bg-low="/img/{{ headerLow }}" data-bg-high="/img/{{ headerHigh }}"{% endif %}>
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
