@@ -55,7 +55,7 @@ h3 {
   left: -1em;
   opacity: 0;
   text-decoration: none;
-  color: var(--muted-text, #999);
+  color: var(--muted-text, #666);
   transition: opacity 0.15s ease, color 0.15s ease;
 }
 
@@ -83,5 +83,16 @@ article img {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 1.5rem auto;
+  margin: 0;
+}
+
+/* Prevent code blocks from causing horizontal scroll */
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+pre code {
+  white-space: pre-wrap;
+  word-break: break-word;
 }

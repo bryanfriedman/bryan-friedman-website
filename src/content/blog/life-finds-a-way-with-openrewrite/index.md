@@ -43,7 +43,7 @@ Here’s what it took to get it running in 2025:
 
 After a weekend of tinkering and a few "I can't believe this is working" moments, I had the app running again in my browser, in all of its ugly, table-based, CSS-less glory.
 
-**You can check out the repo [here](https://github.com/bryanfriedman/help-desk-scheduler).**
+**[Check out the Help Desk Scheduler GitHub repository](https://github.com/bryanfriedman/help-desk-scheduler).**
 
 ![HDS Accounts Screen](images/hds-accounts-screen.png)
 
