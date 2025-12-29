@@ -1,0 +1,103 @@
+/* Inline SVG icon helpers */
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #212529;
+  color: #fff;
+}
+
+.icon-circle--lg {
+  width: 52px;
+  height: 52px;
+}
+
+.icon-plain {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: inherit;
+}
+
+.icon-plain svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.icon-circle svg {
+  width: 52%;
+  height: 52%;
+  fill: currentColor;
+}
+
+/* Icon variants */
+.icon-square svg .bg { fill: #212529; }
+.icon-square svg .fg { fill: #fff; }
+.icon-circle.icon-square svg .bg { fill: #fff; }
+.icon-circle.icon-square svg .fg { fill: #212529; }
+.icon-github svg .bg { fill: #212529; }
+.icon-github svg .fg { fill: #fff; }
+
+#mainNav .icon-plain { color: inherit; }
+
+/* Navbar social icons inherit nav state */
+#mainNav .nav-icon-link {
+  color: inherit;
+}
+
+@include media-breakpoint-up(lg) {
+  #mainNav {
+    color: $white;
+  }
+
+  #mainNav.is-fixed {
+    color: $body-color;
+  }
+}
+
+#mainNav .nav-icon {
+  display: inline-flex;
+  width: 22px;
+  height: 22px;
+}
+#mainNav .nav-icon-link:hover,
+#mainNav .nav-icon-link:focus {
+  color: lighten($primary, 10%);
+}
+
+#mainNav .nav-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.nav-social .nav-link {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.nav-social .nav-item + .nav-item {
+  margin-left: 0.9rem;
+}
+
+.footer-social .list-inline-item {
+  margin-left: 0.65rem;
+  margin-right: 0.65rem;
+}
+.footer-social a:hover .icon-circle,
+.footer-social a:focus .icon-circle {
+  background-color: lighten($primary, 5%);
+  color: #fff;
+}

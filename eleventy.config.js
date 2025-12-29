@@ -29,17 +29,15 @@ export default function(eleventyConfig) {
 
 	// Copy js assets
 	eleventyConfig.addPassthroughCopy({"src/assets/js": "/js"});
-	if (!production) {
-		eleventyConfig.addPassthroughCopy({"src/assets/scripts": "/js"});
-	} else { 
+	if (production) { 
 		// If production, minify js and html
 		eleventyConfig.addPlugin(minify);
 	}
-	
+
     // Add compiler for scss into css
 	eleventyConfig.addPlugin(sass);
 
-	// Run pre- and post-build events for dev workflow
+    // Run pre- and post-build events for dev workflow
 	eleventyConfig.addPlugin(events);
 	
 	// Add shortcodes

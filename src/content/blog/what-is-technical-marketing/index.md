@@ -15,7 +15,7 @@ Despite being an important function, particularly for developer-facing products,
 
 So how is technical marketing different? 
 
-![](images/marketing-comic.jpg)
+![](images/marketing-comic.webp)
 
 ## How Technical Marketing Fits In
 
@@ -27,7 +27,7 @@ I guess that might sort of sound like marketing more generally. Traditional mark
 
 It's sort of analogous to the sales associate and sales engineer. When a salesperson pitches something in a room full of executives, talking about what it does might be enough. But invite some architects or developers into the room, and you better have a sales engineer there to field the tougher technical questions and show them how it works.
 
-![](images/marketing-lasers.jpg)
+![](images/marketing-lasers.webp)
 
 ## What About Developer Relations?
 
@@ -39,7 +39,7 @@ Truthfully, all of these areas — PM, DevRel, and Tech Marketing — sit along 
 
 It's why I love these types of roles so much. They let me bring all sides of myself to work: the analytical and the imaginative, the engineer and the storyteller, the tech enthusiast and the theatre kid. It’s where my left brain and right brain finally get equal billing.
 
-![](images/content-marketing.png)
+![](images/content-marketing.webp)
 
 ## So...What Do You Do?
 
