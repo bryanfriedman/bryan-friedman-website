@@ -4,7 +4,10 @@
   // Defer analytics to keep main thread clear
   (function(w,d,id){
     if (w.doNotTrack === "1") return;
+    var loaded = false;
     var load = function() {
+      if (loaded) return;
+      loaded = true;
       var s = d.createElement('script');
       s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
       s.async = true;
@@ -19,6 +22,7 @@
     } else {
       w.addEventListener('load', load, { once: true });
     }
+    ["keydown","pointerdown","scroll"].forEach(evt => w.addEventListener(evt, load, { once: true, passive: true }));
   })(window, document, 'G-8ZP3XBLDZL');
 </script>
 {% endif %}
@@ -91,7 +95,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="preload" as="style" href="{{ '/css/styles.css' | minifyPath | url }}">
 <link rel="preload" as="style" href="{{ '/css/styles.css' | minifyPath | url }}">
 
 {# Main stylesheet loads normally to avoid FOUC #}

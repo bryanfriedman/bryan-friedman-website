@@ -23,7 +23,7 @@ export default function(eleventyConfig) {
 
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["webp", "jpeg"],
-    widths: [480, 720, 960, 1200, "auto"],
+    widths: [480, 820, "auto"],
     resolvePath: (filepath) => {
       if (filepath.startsWith("/")) {
         const withoutLeading = filepath.replace(/^\/+/, "");
