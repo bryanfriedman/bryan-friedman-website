@@ -96,3 +96,17 @@ pre code {
   white-space: pre-wrap;
   word-break: break-word;
 }
+
+/* Improve primary button contrast */
+.btn-primary {
+  background-color: #005f73;
+  border-color: #005f73;
+  color: #fff;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #004a5a;
+  border-color: #004a5a;
+  color: #fff;
+}

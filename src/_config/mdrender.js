@@ -11,47 +11,12 @@ export default function(eleventyConfig) {
             return self.renderToken(tokens, idx, options);
         }; 
 
-        // Allow for specifying attributes in markdown (i.e. {.alignright})
-        markdown.use(mdAttr);
-
-
-        // Add anchors to headers
-        markdown.use(mdAnchor);
-
-        // Open external links in new tab/window
-        markdown.renderer.rules.link_open = function (tokens, idx, options, env, self) {
-            if (/a/.test(tokens[idx].tag)) {
-                var href = tokens[idx].attrGet('href');
-                if (!href.includes('bryanfriedman.com') && !href.startsWith('/') && !href.startsWith('#')) {
-                    tokens[idx].attrPush([ 'target', '_blank' ]);
-                    tokens[idx].attrPush([ 'rel', 'noopener noreferrer' ]);
-                }
-            }
-            return self.renderToken(tokens, idx, options);
-        };
-
-        // Add anchors to headers
-        markdown.use(mdAnchor);
-
-        // Open external links in new tab/window
-        markdown.renderer.rules.link_open = function (tokens, idx, options, env, self) {
-            if (/a/.test(tokens[idx].tag)) {
-                var href = tokens[idx].attrGet('href');
-                if (!href.includes('bryanfriedman.com') && !href.startsWith('/') && !href.startsWith('#')) {
-                    tokens[idx].attrPush([ 'target', '_blank' ]);
-                    tokens[idx].attrPush([ 'rel', 'noopener noreferrer' ]);
-                }
-            }
-            return self.renderToken(tokens, idx, options);
-        };
-
         // Add anchors to headers
         markdown.use(mdAnchor, {
             permalink: mdAnchor.permalink.linkInsideHeader({
                 symbol: "#",
                 placement: "before",
-                class: "header-anchor",
-                ariaHidden: true
+                class: "header-anchor"
             })
         });
 
@@ -66,6 +31,9 @@ export default function(eleventyConfig) {
             }
             return self.renderToken(tokens, idx, options);
         };
+
+        // Allow for specifying attributes in markdown (i.e. {.alignright})
+        markdown.use(mdAttr);
 
         // Keep image src absolute to the page stem for consistent resolution
         markdown.renderer.rules.image = function (tokens, idx, options, env, self) {
