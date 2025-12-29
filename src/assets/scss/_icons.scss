@@ -72,6 +72,10 @@
   width: 22px;
   height: 22px;
 }
+#mainNav .nav-icon-link:hover,
+#mainNav .nav-icon-link:focus {
+  color: lighten($primary, 10%);
+}
 
 #mainNav .nav-icon svg {
   width: 100%;
@@ -91,4 +95,9 @@
 .footer-social .list-inline-item {
   margin-left: 0.65rem;
   margin-right: 0.65rem;
+}
+.footer-social a:hover .icon-circle,
+.footer-social a:focus .icon-circle {
+  background-color: lighten($primary, 5%);
+  color: #fff;
 }
