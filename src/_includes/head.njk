@@ -28,10 +28,17 @@
 <link rel="apple-touch-icon" sizes="180x180" href="{{ '/img/apple-touch-icon.png' | url }}">
 <link rel="manifest" href="{{ '/site.webmanifest' | url }}">
 
-<link rel="preload" fetchpriority="high" as="image" href="{{ '/img/header.webp' | url }}">
+{% if page.url == "/about/" %}
 <link rel="preload" fetchpriority="high" as="image" href="{{ '/img/about.webp' | url }}">
+{% else %}
+<link rel="preload" fetchpriority="high" as="image" href="{{ '/img/header.webp' | url }}">
+{% endif %}
 
-<title>{{ (title or metadata.title) | addDevPrefix }}</title>
+{% set pageTitle = title or metadata.title %}
+{% if layout == "post.njk" and title %}
+  {% set pageTitle = metadata.title ~ " - " ~ title %}
+{% endif %}
+<title>{{ pageTitle | addDevPrefix }}</title>
 
 <link href="{{ '/css/prism-base16-ateliersulphurpool.light.css' | minifyPath | url }}" rel="stylesheet" type="text/css" /> <!-- PrismJS stylesheet for syntax highlighting -->
 <script defer src="{{ '/js/fontawesome.js' | minifyPath | url }}" crossorigin="anonymous"></script>
