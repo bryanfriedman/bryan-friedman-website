@@ -55,7 +55,7 @@ h3 {
   left: -1em;
   opacity: 0;
   text-decoration: none;
-  color: var(--muted-text, #999);
+  color: var(--muted-text, #666);
   transition: opacity 0.15s ease, color 0.15s ease;
 }
 
@@ -74,4 +74,39 @@ h6:hover .header-anchor {
 
 .header-anchor:hover {
   color: var(--link-color, #007acc);
+}
+
+/* Blog content image sizing */
+.post-preview img,
+.post-preview figure img,
+article img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+}
+
+/* Prevent code blocks from causing horizontal scroll */
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+pre code {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Improve primary button contrast */
+.btn-primary {
+  background-color: #0a9396;
+  border-color: #0a9396;
+  color: #fff !important;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #07807f;
+  border-color: #07807f;
+  color: #fff;
 }

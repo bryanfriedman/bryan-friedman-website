@@ -1,13 +1,29 @@
 
-<!-- Google tag (gtag.js) -->
 {% if production %}
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZP3XBLDZL"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-8ZP3XBLDZL');
+  // Defer analytics to keep main thread clear
+  (function(w,d,id){
+    if (w.doNotTrack === "1") return;
+    var loaded = false;
+    var load = function() {
+      if (loaded) return;
+      loaded = true;
+      var s = d.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+      s.async = true;
+      d.head.appendChild(s);
+      w.dataLayer = w.dataLayer || [];
+      function gtag(){ w.dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', id, { anonymize_ip: true });
+    };
+    if ('requestIdleCallback' in w) {
+      requestIdleCallback(load, { timeout: 2000 });
+    } else {
+      w.addEventListener('load', load, { once: true });
+    }
+    ["keydown","pointerdown","scroll"].forEach(evt => w.addEventListener(evt, load, { once: true, passive: true }));
+  })(window, document, 'G-8ZP3XBLDZL');
 </script>
 {% endif %}
 
@@ -27,11 +43,12 @@
 <link rel="icon" type="image/png" sizes="16x16" href="{{ '/img/favicon-16x16.png' | url }}">
 <link rel="apple-touch-icon" sizes="180x180" href="{{ '/img/apple-touch-icon.png' | url }}">
 <link rel="manifest" href="{{ '/site.webmanifest' | url }}">
+<meta name="theme-color" content="#ffffff">
 
-{% if page.url == "/about/" %}
-<link rel="preload" fetchpriority="high" as="image" href="{{ '/img/about.webp' | url }}">
+{% if page.url and (page.url | lower | slice(0,6)) == "/about" %}
+  <link rel="preload" fetchpriority="high" as="image" href="{{ '/img/about.webp' | url }}">
 {% else %}
-<link rel="preload" fetchpriority="high" as="image" href="{{ '/img/header.webp' | url }}">
+  <link rel="preload" fetchpriority="high" as="image" href="{{ '/img/header.webp' | url }}">
 {% endif %}
 
 {% set pageTitle = title or metadata.title %}
@@ -40,13 +57,64 @@
 {% endif %}
 <title>{{ pageTitle | addDevPrefix }}</title>
 
-<link href="{{ '/css/prism-base16-ateliersulphurpool.light.css' | minifyPath | url }}" rel="stylesheet" type="text/css" /> <!-- PrismJS stylesheet for syntax highlighting -->
-<script defer src="{{ '/js/fontawesome.js' | minifyPath | url }}" crossorigin="anonymous"></script>
-<script defer src="{{ '/js/brands.js' | minifyPath | url }}" crossorigin="anonymous"></script>
-<script defer src="{{ '/js/solid.js' | minifyPath | url }}" crossorigin="anonymous"></script>
-<link href="{{ '/css/styles.css' | minifyPath | url }}" rel="stylesheet" type="text/css" />
-<link href="{{ '/css/lite-yt-embed.css' | minifyPath | url }}" rel="stylesheet" type="text/css" />
+{# Minimal critical styles to avoid flash of default blue/unstyled content before async CSS loads #}
+<style>
+  body {
+    margin: 0;
+    background: #fff;
+    color: #212529;
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  a, a:visited {
+    color: inherit;
+  }
+  /* Prevent icon flash before async CSS arrives */
+  .nav-icon {
+    display: inline-flex;
+    width: 22px;
+    height: 22px;
+  }
+  .nav-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+  .footer-social .icon-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #212529;
+    color: #fff;
+  }
+  .footer-social .icon-circle svg {
+    width: 52%;
+    height: 52%;
+    fill: currentColor;
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="preload" as="style" href="{{ '/css/styles.css' | minifyPath | url }}">
+
+{# Main stylesheet loads normally to avoid FOUC #}
+<link href="{{ '/css/styles.css' | minifyPath | url }}" rel="stylesheet" type="text/css">
+{# Noscript fallbacks for feature styles (code/video) #}
+<noscript>
+  <link href="{{ '/css/prism-base16-ateliersulphurpool.light.css' | minifyPath | url }}" rel="stylesheet" type="text/css">
+  <link href="{{ '/css/lite-yt-embed.css' | minifyPath | url }}" rel="stylesheet" type="text/css">
+</noscript>
 
 <!-- Google fonts-->
-<link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&display=swap" rel="stylesheet" type="text/css" />
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&display=swap" rel="stylesheet" type="text/css" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&display=swap">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&display=swap">
+<link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&display=swap" rel="stylesheet" type="text/css" media="print" onload="this.media='all'">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&display=swap" rel="stylesheet" type="text/css" media="print" onload="this.media='all'">
+<noscript>
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&display=swap" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&display=swap" rel="stylesheet" type="text/css">
+</noscript>

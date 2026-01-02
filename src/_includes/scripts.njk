@@ -1,10 +1,11 @@
-{% if production %}
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/js/scripts.min.js"></script>
-{% else %}
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.js"></script>
-<script src="/js/scripts.js"></script>
-{% endif %}
-<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<script src="{{ '/js/lite-yt-embed.js' | minifyPath | url }}"></script>
+<script>
+  window.assetPaths = {
+    prismCss: "{{ '/css/prism-base16-ateliersulphurpool.light.css' | minifyPath | url }}",
+    liteCss: "{{ '/css/lite-yt-embed.css' | minifyPath | url }}",
+    liteJs: "{{ '/js/lite-yt-embed.js' | minifyPath | url }}"
+  };
+</script>
+<script defer src="{{ '/js/scripts.js' | minifyPath | url }}"></script>
+<script defer src="/js/tweet-loader.js"></script>
 <script type="module" src="{{ '/js/pagefind-search.js' | minifyPath | url }}"></script>
+
