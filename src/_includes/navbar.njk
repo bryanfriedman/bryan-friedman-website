@@ -13,9 +13,13 @@
                     </ul>
             </div>
         </div>
+        
         <div class="row">
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav ms-auto py-4 py-lg-0 nav-social">
+            <div class="collapse navbar-collapse d-flex align-items-center justify-content-end gap-3">
+                <form role="search" class="nav-search mb-3 mb-lg-0 me-lg-3">
+                    <input id="nav-search" type="search" placeholder="Search…" autocomplete="off" />
+                </form>
+                <ul class="navbar-nav ms-auto py-4 py-lg-0 nav-social d-flex align-items-center gap-2 gap-lg-3 mb-0">
                     <li class="nav-item">
                         <a class="nav-link nav-icon-link py-3" href="{{ metadata.author.linkedin }}" target="_blank" aria-label="LinkedIn">
                             <span class="nav-icon" aria-hidden="true">

@@ -5,12 +5,14 @@
     {% include 'head.njk' %}
   </head>
 
-  <body>
+  <body{% if pagefind_ignore %} data-pagefind-ignore="true"{% endif %}>
 
     {% include 'navbar.njk' %}
     {% include 'pageheader.njk' %}
 
-    {{ content | safe }}
+    <main id="page-content">
+      {{ content | safe }}
+    </main>
 
     {% include 'footer.njk' %}
 

@@ -45,14 +45,17 @@
 <link rel="manifest" href="{{ '/site.webmanifest' | url }}">
 <meta name="theme-color" content="#ffffff">
 
-{# Preload only the hero image needed for this page to avoid wasted bandwidth #}
 {% if page.url and (page.url | lower | slice(0,6)) == "/about" %}
   <link rel="preload" fetchpriority="high" as="image" href="{{ '/img/about.webp' | url }}">
 {% else %}
   <link rel="preload" fetchpriority="high" as="image" href="{{ '/img/header.webp' | url }}">
 {% endif %}
 
-<title>{{ (title or metadata.title) | addDevPrefix }}</title>
+{% set pageTitle = title or metadata.title %}
+{% if layout == "post.njk" and title %}
+  {% set pageTitle = metadata.title ~ " - " ~ title %}
+{% endif %}
+<title>{{ pageTitle | addDevPrefix }}</title>
 
 {# Minimal critical styles to avoid flash of default blue/unstyled content before async CSS loads #}
 <style>
