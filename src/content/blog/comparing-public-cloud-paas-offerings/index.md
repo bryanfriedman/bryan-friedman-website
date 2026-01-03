@@ -1,7 +1,7 @@
 ---
 title: "Comparing Public Cloud PaaS Offerings"
 date: "2017-09-20"
-tags: 
+tags:
   - "Cloud"
 ---
 
@@ -34,21 +34,21 @@ For each PaaS, I'll use the UI as well as the CLI where possible. I'll configure
 
 ### AWS Elastic Beanstalk
 
-With Elastic Beanstalk, I used the _Build a web app_ wizard from the main AWS page to get started. This actually takes care of two steps at once. It creates both an _environment_ containing the necessary AWS resources to host our code, and an _application_ construct that may contain many environments. (If we were to create an app without the wizard, we'd create the application first, then the environment. We can choose to create either a web environment, or a worker node for running related processes.)
+With Elastic Beanstalk, I used the _Build a web app_ wizard from the main AWS page to get started. This actually takes care of two steps at once. It creates both an *environment* containing the necessary AWS resources to host our code, and an *application* construct that may contain many environments. (If we were to create an app without the wizard, we'd create the application first, then the environment. We can choose to create either a web environment, or a worker node for running related processes.)
 
-Back to the wizard. We enter the application name and set the platform to _Java_ (not _Tomcat_ which will expect a _war_ file, not a _jar_ file). We upload the _jar_ file right here as well (ignoring the fact that it asks for _war_ or _zip_ only). We could set up a few more things we need in the _Configure more options_ sections, but we'll wait and do it later. Click _Create application_ and it spins things up. Once deployed, the app will be available at http://<ENV_NAME>.<ID>.<LOCATION>.elasticbeanstalk.com.
+Back to the wizard. We enter the application name and set the platform to *Java* (not _Tomcat_ which will expect a _war_ file, not a _jar_ file). We upload the _jar_ file right here as well (ignoring the fact that it asks for _war_ or _zip_ only). We could set up a few more things we need in the _Configure more options_ sections, but we'll wait and do it later. Click _Create application_ and it spins things up. Once deployed, the app will be available at http://<ENV_NAME>.<ID>.<LOCATION>.elasticbeanstalk.com.
 
 ![](images/aws1-1024x663.png)
 
-Don't forget, we need our database too. Amazon's RDS offering makes this pretty easy. There's a handy link at the bottom of the _Configuration_ screen in the EB Management Console for our application. We can quickly spin up a MySQL instance with it.
+Don't forget, we need our database too. Amazon's RDS offering makes this pretty easy. There's a handy link at the bottom of the *Configuration* screen in the EB Management Console for our application. We can quickly spin up a MySQL instance with it.
 
 ![](images/aws2-1024x134.png) ![](images/aws3-1024x488.png)
 
-The nice thing when we do it this way is that it creates the necessary Security Group and firewall rule for us so that the app may reach the database. Unfortunately, we still have to log in using a MySQL client to actually create the database, as previously discussed. So we add one more rule to the Security Group to let us log in and create the database. (To log in, we can use any MySQL client we like. To connect, we just need to use the database hostname that's listed as the _Endpoint_ from the _Data Tier_ area in the app _Configuration_ screen.)
+The nice thing when we do it this way is that it creates the necessary Security Group and firewall rule for us so that the app may reach the database. Unfortunately, we still have to log in using a MySQL client to actually create the database, as previously discussed. So we add one more rule to the Security Group to let us log in and create the database. (To log in, we can use any MySQL client we like. To connect, we just need to use the database hostname that's listed as the *Endpoint* from the *Data Tier* area in the app *Configuration* screen.)
 
 ![](images/aws4-1024x311.png)
 
-The last thing we have to do is set our environment variables. With EB and RDS, there are environment variables built-in that we could have used (like _RDS_DB_NAME_, etc.). Instead, we need to set the Spring-specific ones. We do that by clicking the _Software Configuration_ gear and scrolling down to the _Environment Properties_ section. Set the database connection info and also the port, since Elastic Beanstalk will assume port _5000_ while Spring Boot defaults to _8080_.
+The last thing we have to do is set our environment variables. With EB and RDS, there are environment variables built-in that we could have used (like *RDS_DB_NAME*, etc.). Instead, we need to set the Spring-specific ones. We do that by clicking the _Software Configuration_ gear and scrolling down to the *Environment Properties* section. Set the database connection info and also the port, since Elastic Beanstalk will assume port _5000_ while Spring Boot defaults to _8080_.
 
 ![](images/aws5-1024x608.png)
 
@@ -72,29 +72,29 @@ First, we create the web app. No code needed at this point. Once up and running,
 
 ![](images/azure1.png)
 
-Once it's done creating, we click the newly-created web app in the _App Services_ area. We need to go change the _Application Settings_ to enable Java because it's off by default.
+Once it's done creating, we click the newly-created web app in the *App Services* area. We need to go change the _Application Settings_ to enable Java because it's off by default.
 
 ![](images/azure2.png)
 
 ![](images/azure3.png)
 
-Now we're ready to upload the code. There are a few different ways to do it using the _Deployment Options_ menu. Azure App Services offers integrations with developer IDEs and source code management tools. I just want to upload my _jar_ file<sup>[3](#footnotes)</sup>. The _web deploy_ option that [integrates with IDEs](https://docs.microsoft.com/en-us/java/azure/eclipse/azure-toolkit-for-eclipse-installation) does have a CLI (_msdeploy.exe_) but it's Windows only. No Mac support. So the best option for me in this case is to use FTP. It wouldn't generally be my first choice, but at least it's scriptable. (It also supports FTPS).
+Now we're ready to upload the code. There are a few different ways to do it using the *Deployment Options* menu. Azure App Services offers integrations with developer IDEs and source code management tools. I just want to upload my _jar_ file<sup>[3](#footnotes)</sup>. The *web deploy* option that [integrates with IDEs](https://docs.microsoft.com/en-us/java/azure/eclipse/azure-toolkit-for-eclipse-installation) does have a CLI (_msdeploy.exe_) but it's Windows only. No Mac support. So the best option for me in this case is to use FTP. It wouldn't generally be my first choice, but at least it's scriptable. (It also supports FTPS).
 
 To make this work, we have to set up FTP credentials in the _Deployment Credentials_ section.
 
 ![](images/azure4.png)
 
-Then we can get the connection info from the app _Overview_ area.
+Then we can get the connection info from the app *Overview* area.
 
 ![](images/azure5.png)
 
 We'll use the standard FTP _put_ command (or your favorite FTP client) to upload the _jar_ file to the _site/wwwroot_ directory, along with a [manifest file](https://github.com/bryanfriedman/friedflix-media-tracker/blob/master/deploy/manifests/azure/web.config) to specify how to run the app.
 
-Now we have to deal with the MySQL database instance. _MySQL In App_ is offered as part of the Azure App Service, but it's hosted on the same instance as the app and isn't intended for production use. There is an option from [ClearDB](http://w2.cleardb.net/azure/) we could use. As it turns out, though, Azure recently released a preview version of [Azure Database for MySQL](https://azure.microsoft.com/en-us/services/mysql/). We'll try it out.
+Now we have to deal with the MySQL database instance. *MySQL In App* is offered as part of the Azure App Service, but it's hosted on the same instance as the app and isn't intended for production use. There is an option from [ClearDB](http://w2.cleardb.net/azure/) we could use. As it turns out, though, Azure recently released a preview version of [Azure Database for MySQL](https://azure.microsoft.com/en-us/services/mysql/). We'll try it out.
 
 ![](images/azure6.png)
 
-After creating the instance, we have to take care of some things. First, we need to adjust the firewall rules to allow the app instances to reach the database. We do this in the _Connection Security_ settings, but we have to lookup all the outbound IP addresses for the app first. These are found under the _Properties_ section of the app service.
+After creating the instance, we have to take care of some things. First, we need to adjust the firewall rules to allow the app instances to reach the database. We do this in the *Connection Security* settings, but we have to lookup all the outbound IP addresses for the app first. These are found under the *Properties* section of the app service.
 
 ![](images/azure8.png)
 
@@ -102,7 +102,7 @@ After creating the instance, we have to take care of some things. First, we need
 
 Notice I also add my IP (with the _\+ Add My IP_ button). This is so I can connect to the instance from my machine and create the actual database, as previously mentioned.
 
-We grab the database server name and login details from the _Overview_ area of the database instance in the Azure portal. Finally, we set the environment variables for connecting to the database.
+We grab the database server name and login details from the *Overview* area of the database instance in the Azure portal. Finally, we set the environment variables for connecting to the database.
 
 ![](images/azure9.png)
 
@@ -143,11 +143,11 @@ The nice thing with Google's interface is that we can actually create the databa
 
 Once again, this can all be done with the CLI. `# If not already installed sudo gcloud components install beta  # Create database instance gcloud sql instances create friedflix-media-tracker --tier=db-n1-standard-1 --region=us-central1  # Create database gcloud beta sql databases create friedflix --instance=friedflix-media-tracker  # Get connection info gcloud beta sql instances describe friedflix-media-tracker | grep connectionName`
 
-We're almost ready to get our code out there. First, we specify our [_app.yaml_ manifest file](https://github.com/bryanfriedman/friedflix-media-tracker/blob/master/deploy/manifests/gcp/app.yaml) in the [_src/main/appengine_ directory](https://github.com/bryanfriedman/friedflix-media-tracker/tree/master/src/main/appengine). This is the only place where we can enter the environment variables to specify our database details. With GAE, we won't be just uploading the jar file like with all the other services. There doesn't seem to be a way to do this, so we'll take advantage of the [appengine plugin for Maven](https://cloud.google.com/appengine/docs/standard/java/tools/maven). To do that, we have to [add it to our _pom.xml_ file](https://github.com/bryanfriedman/friedflix-media-tracker/blob/master/pom.xml#L103-L107).
+We're almost ready to get our code out there. First, we specify our [*app.yaml* manifest file](https://github.com/bryanfriedman/friedflix-media-tracker/blob/master/deploy/manifests/gcp/app.yaml) in the [_src/main/appengine_ directory](https://github.com/bryanfriedman/friedflix-media-tracker/tree/master/src/main/appengine). This is the only place where we can enter the environment variables to specify our database details. With GAE, we won't be just uploading the jar file like with all the other services. There doesn't seem to be a way to do this, so we'll take advantage of the [appengine plugin for Maven](https://cloud.google.com/appengine/docs/standard/java/tools/maven). To do that, we have to [add it to our _pom.xml_ file](https://github.com/bryanfriedman/friedflix-media-tracker/blob/master/pom.xml#L103-L107).
 
 `<plugin>   <groupId>com.google.cloud.tools</groupId>   <artifactId>appengine-maven-plugin</artifactId>   <version>1.2.1</version> </plugin>`
 
-To connect to our Cloud SQL database instance, we specified a [special JDBC connection string](https://github.com/bryanfriedman/friedflix-media-tracker/blob/master/src/main/appengine/app.yaml#L11) in our manifest that makes use of the Google Cloud SDK. The benefit here is that we don't need to configure any firewall rules or special settings on the database. The downside is we have a [few additional dependencies we'll need to include in _pom.xml_](https://github.com/bryanfriedman/friedflix-media-tracker/blob/master/pom.xml#L60-L94).
+To connect to our Cloud SQL database instance, we specified a [special JDBC connection string](https://github.com/bryanfriedman/friedflix-media-tracker/blob/master/src/main/appengine/app.yaml#L11) in our manifest that makes use of the Google Cloud SDK. The benefit here is that we don't need to configure any firewall rules or special settings on the database. The downside is we have a [few additional dependencies we'll need to include in *pom.xml*](https://github.com/bryanfriedman/friedflix-media-tracker/blob/master/pom.xml#L60-L94).
 
 Now we can push our app. We'll use the Maven plugin we enabled.
 

@@ -24,6 +24,6 @@ export default {
     /^icon/,
     /^tweet/,
     /^react-tweet/,
-    /^lite/
+    /^lite/,
   ],
 };

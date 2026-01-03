@@ -11,14 +11,14 @@ import pluginPurgeCSS from "eleventy-plugin-purgecss";
 import production from "../_data/production.js";
 //import pageAssetsPlugin from 'eleventy-plugin-page-assets';
 
-export default function(eleventyConfig) {
+export default function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginBundle);
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPlugin(eleventyCopyDataCascade);
   eleventyConfig.addPlugin(pluginSyntaxHighlight, {
-    preAttributes: { tabindex: 0 }
+    preAttributes: { tabindex: 0 },
   });
 
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
@@ -40,7 +40,7 @@ export default function(eleventyConfig) {
       sizes: "(min-width: 900px) 820px, 100vw",
     },
   });
-  
+
   // Purge unused CSS in production builds (config in purgecss.config.js)
   if (production) {
     eleventyConfig.addPlugin(pluginPurgeCSS, {
@@ -48,7 +48,7 @@ export default function(eleventyConfig) {
       quiet: true,
     });
   }
-  
+
   // This is so image files along side md files inside of folders will be copied over correctly without the /content directory
   // See for more info (and why we are pointing to fork instead of outdated npm package):
   //    https://github.com/victornpb/eleventy-plugin-page-assets/issues/3
@@ -59,5 +59,4 @@ export default function(eleventyConfig) {
   //    recursive: true,
   //    silent: true
   //});
-
 }

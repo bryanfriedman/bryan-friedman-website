@@ -1,7 +1,7 @@
 ---
 title: "Comparing Public PaaS Offerings - Part 2"
 date: "2017-10-25"
-tags: 
+tags:
   - "Cloud"
 ---
 
@@ -87,7 +87,7 @@ By default, visualizations appear for key metrics like requests, response time, 
 
 ![](images/azure2-2.png)
 
-From here you can set alerts as well.<sup>[2](#footnotes)</sup> The "+ Add metric alert_"_ button will let you create an alert on various metrics like CPU time or response codes. It also supports alerts for events like successful stop or failed start. There doesn't seem to be a way to configure a health check endpoint though.
+From here you can set alerts as well.<sup>[2](#footnotes)</sup> The "+ Add metric alert*"* button will let you create an alert on various metrics like CPU time or response codes. It also supports alerts for events like successful stop or failed start. There doesn't seem to be a way to configure a health check endpoint though.
 
 ![](images/azure2-3-495x1024.png)
 

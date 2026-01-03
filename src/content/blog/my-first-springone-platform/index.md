@@ -1,7 +1,7 @@
 ---
 title: "My First SpringOne Platform"
 date: "2017-12-07"
-tags: 
+tags:
   - "Cloud"
   - "Pivotal"
 ---

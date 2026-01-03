@@ -43,14 +43,28 @@
 }
 
 /* Icon variants */
-.icon-square svg .bg { fill: #212529; }
-.icon-square svg .fg { fill: #fff; }
-.icon-circle.icon-square svg .bg { fill: #fff; }
-.icon-circle.icon-square svg .fg { fill: #212529; }
-.icon-github svg .bg { fill: #212529; }
-.icon-github svg .fg { fill: #fff; }
+.icon-square svg .bg {
+  fill: #212529;
+}
+.icon-square svg .fg {
+  fill: #fff;
+}
+.icon-circle.icon-square svg .bg {
+  fill: #fff;
+}
+.icon-circle.icon-square svg .fg {
+  fill: #212529;
+}
+.icon-github svg .bg {
+  fill: #212529;
+}
+.icon-github svg .fg {
+  fill: #fff;
+}
 
-#mainNav .icon-plain { color: inherit; }
+#mainNav .icon-plain {
+  color: inherit;
+}
 
 /* Navbar social icons inherit nav state */
 #mainNav .nav-icon-link {

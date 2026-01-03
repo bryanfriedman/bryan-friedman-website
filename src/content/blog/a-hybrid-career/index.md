@@ -1,7 +1,7 @@
 ---
 title: "A Hybrid Career"
 date: "2017-07-03"
-tags: 
+tags:
   - "Career"
 ---
 
@@ -15,11 +15,11 @@ When I [last changed jobs](/blog/11-years-later/) after spending so long working
 
 The growth and knowledge I gained during my tenure there has been invaluable, but the time has come to once again expand on the hybridization of my career. So today, I'm very happy to report that **I've joined [Pivotal](https://pivotal.io/) as a Product Marketing Director.**
 
-There's something about **Pivotal's mission -** [**transform how the world builds software**](https://blog.pivotal.io/pivotal/news/we-transform-how-the-world-builds-software) - that appeals to all parts of me. I've lived the problem from both sides. When I worked in enterprise IT, we were constantly challenged by everything related to the development and deployment of software. It just wasn't a core competency of the company, and things often took too long and required too many people with too many different skill sets. On the other hand, even in a product development organization where building and shipping software _is_ supposed to be the core competency, it was _still_ challenging dealing with the complexities of engineering and large teams of developers who have various areas of expertise and experience.
+There's something about **Pivotal's mission -** [**transform how the world builds software**](https://blog.pivotal.io/pivotal/news/we-transform-how-the-world-builds-software) - that appeals to all parts of me. I've lived the problem from both sides. When I worked in enterprise IT, we were constantly challenged by everything related to the development and deployment of software. It just wasn't a core competency of the company, and things often took too long and required too many people with too many different skill sets. On the other hand, even in a product development organization where building and shipping software _is_ supposed to be the core competency, it was *still* challenging dealing with the complexities of engineering and large teams of developers who have various areas of expertise and experience.
 
 [![](images/pivotal-logo.png)](http://www.pivotal.io)
 
-No matter what kind of organization you're in, building software is a difficult thing to do, especially as you constantly face the rapidly changing technology \[and business!\] landscape. Except nowadays, _every company is a software company._ It's not just the Silicon Valley startups who need it. Every company these days undoubtedly has a lot of software - whether internal or customer-facing (or both) - to build and manage.
+No matter what kind of organization you're in, building software is a difficult thing to do, especially as you constantly face the rapidly changing technology \[and business!\] landscape. Except nowadays, *every company is a software company.* It's not just the Silicon Valley startups who need it. Every company these days undoubtedly has a lot of software - whether internal or customer-facing (or both) - to build and manage.
 
 That's what makes Pivotal's mission so incredibly intriguing. Companies (perhaps the biggest ones especially) need to rethink and revisit how they design, develop, and deploy software. In today's arena, that often means they need to be more cloud-native. But it's bigger than one technology or a single tool - it's truly about transformation. That's why I really love how Pivotal tackles it not just with a strong portfolio of products (from the flagship [Pivotal Cloud Foundry](https://pivotal.io/platform), to the open source [Spring](https://spring.io/) framework, to the more widely known [Pivotal Tracker](https://www.pivotaltracker.com/), and even a [Big Data Suite](http://pivotal.io/big-data/pivotal-big-data-suite)), but also through [Pivotal Labs](https://pivotal.io/labs), where they partner directly with customers and guide them through the change.
 

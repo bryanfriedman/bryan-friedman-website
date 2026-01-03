@@ -6,7 +6,7 @@
 
 Having built and customized quite a few websites using [WordPress](https://wordpress.org) over the years, my self-hosted personal website/blog was naturally powered by WordPress for a long time as well. However, I became aware of [Jamstack](https://jamstack.org) in a previous job and was intrigued by it. Later in my career, I led a team where we built a [Hugo](https://gohugo.io) site and hosted it on [Netlify](https://www.netlify.com). I _really_ liked the whole experience and became curious about other [Static Site Generators](https://jamstack.org/generators/). After experimenting with a few [React](https://react.dev)-based ones, I stumbled on [Eleventy](https://www.11ty.dev) and I liked the balance it struck between the JavaScript ecosystem and the experience I had with Hugo. So I thought the best way to learn was to rebuild my site using Eleventy, so here we are.
 
- I owe a debt of gratitude to those code bases that I referenced as I learned to build this site. That includes the [Eleventy Base Blog](https://github.com/11ty/eleventy-base-blog) starter site, and the [Start Bootstrap Clean Blog](https://github.com/StartBootstrap/startbootstrap-clean-blog) theme, both of which I borrowed from heavily (and credited in the included license).
+I owe a debt of gratitude to those code bases that I referenced as I learned to build this site. That includes the [Eleventy Base Blog](https://github.com/11ty/eleventy-base-blog) starter site, and the [Start Bootstrap Clean Blog](https://github.com/StartBootstrap/startbootstrap-clean-blog) theme, both of which I borrowed from heavily (and credited in the included license).
 
 ## Building the Site
 
@@ -30,7 +30,7 @@ In deciding how to structure the project, I used some combination of the tips ou
 
 ```
 ├── dist            # Output folder (for development)
-├── public          # Deployment folder (for production)     
+├── public          # Deployment folder (for production)
 └── src             # Main input folder
     ├── _config     # Config scripts to be included in `eleventy.config.js` at the root
     ├── _data       # Global data files
@@ -52,7 +52,7 @@ This is the global data file directory as normal in Eleventy, which houses some 
 
 ### `assets`
 
-All the folders within here are copied to the root of the output folder, shedding the `assets` folder, which is only used to help separate from other content and files under the input directory. This includes the `img` folder, which gets copied via passthrough for images that aren't already stored in the same folder as the content (see below), the `js` folder which is copied via passthrough for local development but gets run through minification first for production, and finally, the `scss` folder containing the Sass style templates that get compiled into CSS and copied to the `css` folder. 
+All the folders within here are copied to the root of the output folder, shedding the `assets` folder, which is only used to help separate from other content and files under the input directory. This includes the `img` folder, which gets copied via passthrough for images that aren't already stored in the same folder as the content (see below), the `js` folder which is copied via passthrough for local development but gets run through minification first for production, and finally, the `scss` folder containing the Sass style templates that get compiled into CSS and copied to the `css` folder.
 
 ### `content`
 

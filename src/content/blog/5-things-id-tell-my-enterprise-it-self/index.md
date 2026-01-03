@@ -1,7 +1,7 @@
 ---
 title: "5 Things I'd Tell My Enterprise IT Self"
 date: "2015-05-19"
-tags: 
+tags:
   - "Agile"
   - "Career"
   - "Cloud"
@@ -12,7 +12,7 @@ It was exactly one year ago today that I became a [Product Owner](/blog/being-a
 
 #### You Don't Know The Cloud
 
-Everyone I worked with in IT used to talk about "the cloud" as if they knew what it was and had used it on various projects. Sure, there were plenty of times that a vendor would sell services _branded_ as "Cloud" to attach some buzz to what was really more analogous to a traditional application service provider or legacy hosting model. In reality, almost nobody in IT actually understood or took advantage of cloud for any practical purpose. 
+Everyone I worked with in IT used to talk about "the cloud" as if they knew what it was and had used it on various projects. Sure, there were plenty of times that a vendor would sell services *branded* as "Cloud" to attach some buzz to what was really more analogous to a traditional application service provider or legacy hosting model. In reality, almost nobody in IT actually understood or took advantage of cloud for any practical purpose.
 
 My![](images/ST-Cloud-LoL-573x1024.png){.alignright width="263"} favorite definition to use _now_ when describing the cloud is [Dave Nielsen's O.S.S.M. acronym](http://www.daveslist.com/): on-demand, self-service, scalable, measurable. Before, all the cloud really was to me was a series of "as-a-Services" — Infrastructure-as-a-Service (Iaas), Platform-as-a-Service (PaaS), Software-as-a-Service (SaaS) — and we seemed most comfortable with SaaS (a [familiar story](http://www.forbes.com/sites/louiscolumbus/2015/01/24/roundup-of-cloud-computing-forecasts-and-market-estimates-2015/) for many enterprises). I complained plenty about how long it took to get a server stood up and I thought the move the company was making to colocation might begin to solve things. I didn't recognize how much IaaS would have helped with that, or even more how the power of PaaS may have eliminated that need altogether.
 
@@ -36,7 +36,7 @@ I can already hear some former colleagues pooh-poohing these ideas with utteranc
 
 For a few months at my old company, I was on a small team tasked with delivering SharePoint. It started out experimentally and wasn't widely used so we were able to fly under the radar a bit and follow our own processes. We did pair programming, frequent releases, progressive refinement, and just the right amount of documentation. Looking back now, we were exhibiting certain Agile characteristics without even knowing it. On top of that, we were responsible for both building _and_ running the whole stack and we embraced automation wherever possible. (I have fond memories of "Redeployer" — our ASCII-art-infused command line tool.) At the time, I'd never heard of DevOps, but I now know that these are some of the key characteristics of DevOps organizations.
 
-One of my first assignments in my new job was to read _The Phoenix Project_ and it was a completely eye-opening experience. It's a great way to be introduced to DevOps if you're unfamiliar with it, as is Richard Seroter's Pluralsight course, [DevOps: The Big Picture](http://www.pluralsight.com/courses/devops-big-picture). Just like with Agile, the resources you can find online about DevOps are endless and will all do a better job defining it than I could. ![devops](images/devops.jpg){.alignright} Sticking with the theme of four letter acronym definitions, [John Willis coined C.A.M.S.](https://www.chef.io/blog/2010/07/16/what-devops-means-to-me/) to describe DevOps: culture, automation, measurement, sharing. In a way, it's kind of an [extension of Agile](http://theagileadmin.com/what-is-devops/) for the Operations world...but it's really more than that. To me, it's about the idea that everyone is on the same team, working together towards a common goal. No more "us vs. them" mentality.
+One of my first assignments in my new job was to read *The Phoenix Project* and it was a completely eye-opening experience. It's a great way to be introduced to DevOps if you're unfamiliar with it, as is Richard Seroter's Pluralsight course, [DevOps: The Big Picture](http://www.pluralsight.com/courses/devops-big-picture). Just like with Agile, the resources you can find online about DevOps are endless and will all do a better job defining it than I could. ![devops](images/devops.jpg){.alignright} Sticking with the theme of four letter acronym definitions, [John Willis coined C.A.M.S.](https://www.chef.io/blog/2010/07/16/what-devops-means-to-me/) to describe DevOps: culture, automation, measurement, sharing. In a way, it's kind of an [extension of Agile](http://theagileadmin.com/what-is-devops/) for the Operations world...but it's really more than that. To me, it's about the idea that everyone is on the same team, working together towards a common goal. No more "us vs. them" mentality.
 
 Unfortunately, our small, Agile-ish, DevOps-ish SharePoint team did not last long. It got sucked into the enterprise IT vortex never to be productive again. For an organization to truly adopt DevOps it must completely change the way it thinks, starting at the top with upper-level management and cascading all the way down to the boots on the ground. There's no tool for doing DevOps, but there are DevOps-y tools that have gained popularity like [Chef](https://www.chef.io/) (infrastructure as code), [Docker](https://www.docker.com/) (containers), and a [bevy of continuous integration (CI) tools](http://en.wikipedia.org/wiki/Comparison_of_continuous_integration_software).
 
@@ -58,6 +58,6 @@ Enterprise applications don't have to be on par with Facebook or Google, but la
 
 **Lesson:** Applications should be designed for scale from the start. Global accessibility and consistent performance across geographies should not be an afterthought. If the tool you select or build does not support your scalability requirements, it will be a failure regardless of how well it works. Consider a more modern architecture and leave the three-tier apps behind.
 
-* * *
+---
 
 As Bob Dylan wrote, "the times they are a-changin'" — and one thing I'm glad about is that in this past year I've finally begun catching up with the times. I know big companies usually have large enterprise IT organizations that always seem to have a stigma for being _behind_ the times. Well, here's another quote for them from German author Eckhart Tolle — "awareness is the greatest agent for change." If you're trapped in an organization like the one I was in, don't wait for your future self to travel back in time and educate you. Educate yourself now and start changing the way you do IT.

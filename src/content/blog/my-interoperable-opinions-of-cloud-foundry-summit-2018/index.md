@@ -1,7 +1,7 @@
 ---
 title: "My Interoperable Opinions of Cloud Foundry Summit 2018"
 date: "2018-04-24"
-tags: 
+tags:
   - "Cloud"
   - "Cloud Foundry"
   - "Pivotal"
@@ -36,7 +36,7 @@ I remember one of the last projects I worked on. We were selecting a software pr
 Unfortunately, I had not yet learned about the value that opinionated software can bring. It's about a simplified user experience and increased productivity. I like how [Duncan Winn](https://twitter.com/duncwinn) describes it in his book, _[Cloud Foundry: The Definitive Guide](http://shop.oreilly.com/product/0636920042501.do)_:"
 
 > When you look at successful software, the greatest and most widely adopted technologies are incredibly opinionated. What this means is that they are built on, and adhere to, a set of well-defined principles employing best practices. They are proven to work in a practical way and reflect how things can and should be done when not constrained by the baggage of technical debt. Opinions produce contracts to ensure applications are constrained to do the right thing.
-> 
+>
 > Platforms are opinionated because they make specific assumptions and optimizations to remove complexity and pain from the user. Opinionated platforms are designed to be consistent across environments, with every feature working as designed out of the box. For example, the Cloud Foundry platform provides the same user experience when deployed over different IaaS layers and the same developer experience regardless of the application language. Opinionated platforms such as Cloud Foundry can still be configurable and extended, but not to the extent that the nature of the platform changes...
 
 That last part is key: _"...can still be configurable and extended..."_ Remember, interoperability still matters. It just can't happen at the expense of complexity. That's why something like the Open Service Broker API is so elegant and powerful.

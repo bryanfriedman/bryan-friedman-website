@@ -15,10 +15,7 @@ export async function buildTweetAssets(outputDir) {
   const cssOut = path.join(ROOT, outputDir, "css");
 
   // Ensure dirs exist
-  await Promise.all([
-    fs.mkdir(jsOut, { recursive: true }),
-    fs.mkdir(cssOut, { recursive: true }),
-  ]);
+  await Promise.all([fs.mkdir(jsOut, { recursive: true }), fs.mkdir(cssOut, { recursive: true })]);
 
   // Bundle the heavy React + react-tweet embed (JS + CSS)
   await esbuild.build({

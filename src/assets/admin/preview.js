@@ -85,7 +85,8 @@ CMS.registerPreviewStyle(
 CMS.registerPreviewStyle("/css/styles.min.css");
 
 // Preview-only layout helpers
-CMS.registerPreviewStyle(`
+CMS.registerPreviewStyle(
+  `
   .decap-preview-wrap { padding: 2rem 1rem; }
   .decap-preview-inner { 
     max-width: 42rem; 
@@ -107,7 +108,9 @@ CMS.registerPreviewStyle(`
   .decap-preview-inner code {
     overflow-x: auto;
   }
-`, { raw: true });
+`,
+  { raw: true }
+);
 
 // ---------- Preview Template ----------
 const BlogPreview = ({ entry, widgetFor }) => {
@@ -117,8 +120,8 @@ const BlogPreview = ({ entry, widgetFor }) => {
   const tags = Array.isArray(tagsRaw)
     ? tagsRaw
     : tagsRaw && typeof tagsRaw.toJS === "function"
-    ? tagsRaw.toJS()
-    : [];
+      ? tagsRaw.toJS()
+      : [];
   const dateStr = dateRaw
     ? new Date(dateRaw).toLocaleDateString("en-US", {
         year: "numeric",
@@ -150,11 +153,7 @@ const BlogPreview = ({ entry, widgetFor }) => {
               { className: "post-meta" },
               " in ",
               ...tags.flatMap((t, i) => {
-                const link = h(
-                  "a",
-                  { href: `/topics/${slugify(t)}/` },
-                  t
-                );
+                const link = h("a", { href: `/topics/${slugify(t)}/` }, t);
                 return i === 0 ? [link] : [", ", link];
               })
             )

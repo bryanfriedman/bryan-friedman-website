@@ -1,7 +1,7 @@
 ---
 title: "Five Things that Blew My Mind at SpringOne Platform 2017"
 date: "2017-12-08"
-tags: 
+tags:
   - "Cloud"
   - "Pivotal"
 ---

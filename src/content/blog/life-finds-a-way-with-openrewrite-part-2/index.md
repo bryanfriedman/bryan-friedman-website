@@ -1,11 +1,10 @@
 ---
 title: "Life Finds a Way with OpenRewrite Part 2: Code Evolution"
 date: "2025-10-06"
-tags: 
-  "Career"
+tags: "Career"
 ---
 
-When I [last left off](/blog/life-finds-a-way-with-openrewrite), I’d done the unthinkable. I resurrected my college senior project from 2003—[the Help Desk Scheduler](https://github.com/bryanfriedman/help-desk-scheduler). It was running again as a Java 8 web app on Tomcat 4 with Struts 1.0 and MySQL. To continue my _Jurassic Park_ metaphor, it was the software equivalent of a creature that shouldn’t exist anymore, but somehow came back to life. 
+When I [last left off](/blog/life-finds-a-way-with-openrewrite), I’d done the unthinkable. I resurrected my college senior project from 2003—[the Help Desk Scheduler](https://github.com/bryanfriedman/help-desk-scheduler). It was running again as a Java 8 web app on Tomcat 4 with Struts 1.0 and MySQL. To continue my _Jurassic Park_ metaphor, it was the software equivalent of a creature that shouldn’t exist anymore, but somehow came back to life.
 
 And also because, [now that I’m at Moderne](/blog/career-refactoring/), I spend my days thinking about automated code transformation with OpenRewrite. (I'm super fun at parties.) So of course I wanted to see if this ancient app could evolve enough to survive in 2025. I don't need to go full _Jurassic World_ reboot yet, but what if we can tweak things just enough to get to _The Lost World_ at least?
 
@@ -28,7 +27,7 @@ For the first time in two decades, HDS had an actual build pipeline. Now OpenRew
 
 With Gradle in place, I was ready to run some recipes. I wanted to take this from barely runnable on Java 8 to something that could at least sort of live in the modern Java world. I started with [`UpgradeToJava21`](https://docs.openrewrite.org/recipes/java/migrate/upgradetojava21), which handled compiler targets and cleaned up a few deprecated APIs.
 
-Next came [`JakartaEE11`](https://docs.openrewrite.org/recipes/java/migrate/jakarta/jakartaee11), which migrated `javax.* `packages to `jakarta.*`. What could possibly go wrong at this point? 
+Next came [`JakartaEE11`](https://docs.openrewrite.org/recipes/java/migrate/jakarta/jakartaee11), which migrated `javax.* `packages to `jakarta.*`. What could possibly go wrong at this point?
 
 Everything. The changes were clean, but it turns out that Struts 1.0 simply wasn’t built for a Jakarta world, and the build logs made that abundantly clear. Huh. What to do?
 
@@ -38,15 +37,15 @@ First, I'd need a newer version of Tomcat. I got that up and running manually an
 
 Then, I considered trying an upgrade to Struts 2, but that honestly looked almost as hard as a full-scale rewrite. Same for moving off of Tomcat altogether to a Spring application. I hope to get there eventually, but this first step was just about some incremental change. I wanted to run Java 21 without too much manual effort, if possible. Could I automate everything with OpenRewrite and make it all work?
 
-Rather than give up, I went hunting for a compatible solution and I stumbled upon [Struts1 Reloaded](https://github.com/weblegacy/struts1), a modernized fork that aims "to bring Struts 1 to a current technology." This looked like the best route, at least for now. The latest version (1.5.0-RC2) supports more recent Jakarta namespaces. Sweet! 
+Rather than give up, I went hunting for a compatible solution and I stumbled upon [Struts1 Reloaded](https://github.com/weblegacy/struts1), a modernized fork that aims "to bring Struts 1 to a current technology." This looked like the best route, at least for now. The latest version (1.5.0-RC2) supports more recent Jakarta namespaces. Sweet!
 
 Using OpenRewrite [dependency recipes](https://docs.openrewrite.org/recipes/java/dependencies), I [swapped out the old framework for the new libraries](https://github.com/bryanfriedman/help-desk-scheduler/blob/main/recipes/src/main/resources/META-INF/rewrite/handle-dependencies.yml). That meant replacing the old Servlet API with the new ones, retiring the old `com.sun.mail` packages in favor of new ones from Eclipse, and replacing the local Struts JAR with all new references to the Struts1 Reloaded libraries.
 
-Still got a bunch of build errors, but far fewer. Getting closer. 
+Still got a bunch of build errors, but far fewer. Getting closer.
 
 ## A Little Genetic Engineering
 
-The errors were mostly type and method name changes from moving to Struts 1.5. Thankfully, those trusty old OpenRewrite standards  [`ChangeType`](https://docs.openrewrite.org/recipes/java/changetype) and [`ChangeMethodName`](https://docs.openrewrite.org/recipes/java/changemethodname) came to the rescue for that. `Action perform()` is now `Action execute()`? No problem. Oh, `ActionError` is gone in favor of `ActionMessage`? Easy. But `ActionMessages empty()` needs to be `ActionMessages isEmpty()`? Done. Thanks OpenRewrite!
+The errors were mostly type and method name changes from moving to Struts 1.5. Thankfully, those trusty old OpenRewrite standards [`ChangeType`](https://docs.openrewrite.org/recipes/java/changetype) and [`ChangeMethodName`](https://docs.openrewrite.org/recipes/java/changemethodname) came to the rescue for that. `Action perform()` is now `Action execute()`? No problem. Oh, `ActionError` is gone in favor of `ActionMessage`? Easy. But `ActionMessages empty()` needs to be `ActionMessages isEmpty()`? Done. Thanks OpenRewrite!
 
 ```
 type: specs.openrewrite.org/v1beta/recipe
@@ -69,7 +68,7 @@ recipeList:
 
 But now, things got a little more complicated. There were two changes that I needed to make and I couldn't find any existing recipes to do the trick. But hey, I said I wanted to learn how to write some custom recipes. This was my chance. So I wrote two imperative recipes to handle these cases:
 
-1.	**DataSource access.** The old Struts `ActionServlet findDataSource()` helper no longer worked. They needed to be converted to use standard JNDI lookups. 
+1. **DataSource access.** The old Struts `ActionServlet findDataSource()` helper no longer worked. They needed to be converted to use standard JNDI lookups.
 2. **Method signature.** The new `Action execute()` method in Struts 1.5 added a `throws Exception` declaration, meaning any overriding methods needed to also.
 
 I had a little bit of help from Claude Code to write these recipes. (I'd had [some experience doing that at work](https://www.moderne.ai/blog/writing-openrewrite-recipes-with-ai).) But still, writing these custom solutions gave me such an appreciation for how elegant and extendable OpenRewrite really is when you need that level of precision. And the test framework is so easy to use, you can [see exactly what needed changing](https://github.com/bryanfriedman/help-desk-scheduler/blob/main/recipes/src/test/java/com/bryanfriedman/rewrite/AddThrowsExceptionToActionTest.java#L44) in [both cases](https://github.com/bryanfriedman/help-desk-scheduler/blob/main/recipes/src/test/java/com/bryanfriedman/rewrite/struts/FindDataSourceToJndiTest.java#L55).
