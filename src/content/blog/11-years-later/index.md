@@ -1,7 +1,7 @@
 ---
 title: "11 Years Later"
 date: 2014-05-16
-tags: 
+tags:
   - "Career"
 ---
 

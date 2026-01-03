@@ -1,13 +1,13 @@
 ---
 title: "Automated Refactoring Meets Edge Deployment: An Exploration of OpenRewrite and EVE-OS"
 date: "2025-04-19"
-tags: 
+tags:
   - "Cloud"
   - "Open Source"
   - "Spring"
 ---
 
-I know from my experience working for and with enterprise companies that keeping dozens or hundreds (or thousands!) of apps up to date is complicated. Much of my career in tech has been spent in and around the cloud-based platform and modern application development spaces in an attempt to help solve this problem for customers. But I also spent time as a product manager working directly with developers, so I’ve seen how even with automated CI/CD pipelines, modern app architectures, and robust app platforms, it ultimately comes down to effectively managing a code base and often tackling mountains of tech debt along the way. I remember having to spend precious sprint cycles on cleaning up and refactoring whole swaths of code instead of focusing on delivering features for end users. 
+I know from my experience working for and with enterprise companies that keeping dozens or hundreds (or thousands!) of apps up to date is complicated. Much of my career in tech has been spent in and around the cloud-based platform and modern application development spaces in an attempt to help solve this problem for customers. But I also spent time as a product manager working directly with developers, so I’ve seen how even with automated CI/CD pipelines, modern app architectures, and robust app platforms, it ultimately comes down to effectively managing a code base and often tackling mountains of tech debt along the way. I remember having to spend precious sprint cycles on cleaning up and refactoring whole swaths of code instead of focusing on delivering features for end users.
 
 I’ve also seen over the past many years how even the most successful moves to cloud can still lead to a lot of challenges when it comes to data migration. Plus, with the explosion of Internet-of-Things (IoT) devices, it’s getting more and more difficult to ship data off to the cloud for processing. It’s been fun to watch the trend towards edge computing to combat these obstacles, but of course, that brings its own set of challenges from a scaled management perspective. I remember working on this almost ten years ago with automated bare metal hardware deployments, but now there is even more to consider!
 
@@ -15,9 +15,9 @@ These are hardly solved problems, but thankfully, a few of my former colleagues 
 
 ## OpenRewrite
 
-[OpenRewrite](https://github.com/openrewrite/) is an open-source tool and framework for automated code refactoring that’s designed to help developers modernize, standardize, and secure their codebases. With all the tech debt out there among enterprise teams managing large Java projects in particular, OpenRewrite was born to work with Java, with seamless integration into build tools like Gradle and Maven. But it’s now being expanded to support other languages as well. 
+[OpenRewrite](https://github.com/openrewrite/) is an open-source tool and framework for automated code refactoring that’s designed to help developers modernize, standardize, and secure their codebases. With all the tech debt out there among enterprise teams managing large Java projects in particular, OpenRewrite was born to work with Java, with seamless integration into build tools like Gradle and Maven. But it’s now being expanded to support other languages as well.
 
-Using built-in, community, or custom recipes, OpenRewrite makes it easy to apply any changes across an entire codebase. This includes migrating or upgrading frameworks, applying security fixes, and imposing standards of style and consistency. The OpenRewrite project is maintained by [Moderne](https://www.moderne.ai), who also offers a commercial platform version that enables automated refactoring more efficiently and at scale. 
+Using built-in, community, or custom recipes, OpenRewrite makes it easy to apply any changes across an entire codebase. This includes migrating or upgrading frameworks, applying security fixes, and imposing standards of style and consistency. The OpenRewrite project is maintained by [Moderne](https://www.moderne.ai), who also offers a commercial platform version that enables automated refactoring more efficiently and at scale.
 
 ## EVE (Edge Virtualization Engine)
 
@@ -27,7 +27,7 @@ With EVE-OS, devices can be pre-configured and shipped to remote locations to li
 
 ## Let’s Build Something!
 
-There isn’t *exactly* an obvious intersection of interest here, but bumping into these projects independently, right around the same time, got me thinking about how I *could* experiment with both of them and build something that balances practical OpenRewrite usage with something deployable via EVE-OS. This is what I came up with:
+There isn’t _exactly_ an obvious intersection of interest here, but bumping into these projects independently, right around the same time, got me thinking about how I _could_ experiment with both of them and build something that balances practical OpenRewrite usage with something deployable via EVE-OS. This is what I came up with:
 
 1. Write a very simple but somehow outdated Spring Boot REST app
 2. Use OpenRewrite to refactor and “modernize” it
@@ -65,11 +65,11 @@ My Spring skills are pretty outdated, so I would say a refactor is most certainl
 - Use the newer dedicated `@GetMapping` as an alternative for `@RequestMapping`
 - Use the SLF4J Logger instead of the elementary `System.out.println`
 - Upgrade from Spring Boot 2.x to 3.x
-    - I didn’t show my `pom.xml` file here, but I used version 2.3 and will upgrade to 3.2
+  - I didn’t show my `pom.xml` file here, but I used version 2.3 and will upgrade to 3.2
 
 There are definitely other things I could choose to update. For example, I didn’t opt to write test cases in a test class, but if I had I could also have migrated from JUnit 4 to 5. I also saw some articles that suggested updating `RestTemplate` to `RestClient` or even the asynchronous `WebClient`. I didn’t find any recipes for this, though I could maybe tackle [writing a custom one](https://docs.openrewrite.org/authoring-recipes), but I left that out of scope for now. I’m satisfied with this limited example.
 
-Since I first learned to build Spring apps with Maven, that’s what I opted to use here (but there is support for Gradle as well). The basic Maven plugin command to run for OpenRewrite is `mvn rewrite:run`, but that requires defining configuration and parameters in `pom.xml`. I wanted to keep everything dynamic and on the command line, so I passed everything in using the  `-D` flag to define the properties:
+Since I first learned to build Spring apps with Maven, that’s what I opted to use here (but there is support for Gradle as well). The basic Maven plugin command to run for OpenRewrite is `mvn rewrite:run`, but that requires defining configuration and parameters in `pom.xml`. I wanted to keep everything dynamic and on the command line, so I passed everything in using the `-D` flag to define the properties:
 
 ```sh
 $ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
@@ -129,7 +129,7 @@ Notice `@GetMapping` has replaced `@RequestMapping` and the `System.out.println`
 
 Now that we have a running, refactored app, let’s deploy it to “the edge.” But first, we need an EVE node. The easiest way to setup a virtual EVE node locally, it turns out, is to use a tool called [Eden](https://github.com/lf-edge/eden) (clever) as a management harness for setting up and testing EVE. Eden will also help us create an open-source reference implementation of an [LF-Edge API-compliant controller](https://github.com/lf-edge/eve-api/blob/main/README.md) called [Adam](https://github.com/lf-edge/adam) (also clever) which we will need to control the EVE node via its API. Eden is neat because it lets you deploy/delete/manage nodes running EVE, the Adam controller, and all the required virtual network orchestration between nodes. It also lets you execute tasks on the nodes via the controller.
 
-To accomplish this setup, I mostly followed an [EVE Tutorial that I found](https://github.com/shantanoo-desai/EVE-OS-tutorials/blob/master/00-Eve-Eden-Local-QEMU.md) which was extremely helpful. It outlines the process of building and running Eden and establishing the EVE node and Adam controller. However, this tutorial was written for Linux, so I ran into a few snags that didn't work in my MacOS environment. As such, I ended up forking `eden` and tweaking a few minor things just to get it to work on my machine. This mostly involved getting the right `qemu` commands to make the environment run. You can see the specifics here in the [forked repo](https://github.com/bryanfriedman/eden.git). And of course, while the tutorial describes how to run a default `nginx` deployment to test things out, I obviously deployed this Spring app instead. I also discovered that I needed to specifically configure the port forwarding for the deployed pod in question in order to reach the app for testing. 
+To accomplish this setup, I mostly followed an [EVE Tutorial that I found](https://github.com/shantanoo-desai/EVE-OS-tutorials/blob/master/00-Eve-Eden-Local-QEMU.md) which was extremely helpful. It outlines the process of building and running Eden and establishing the EVE node and Adam controller. However, this tutorial was written for Linux, so I ran into a few snags that didn't work in my MacOS environment. As such, I ended up forking `eden` and tweaking a few minor things just to get it to work on my machine. This mostly involved getting the right `qemu` commands to make the environment run. You can see the specifics here in the [forked repo](https://github.com/bryanfriedman/eden.git). And of course, while the tutorial describes how to run a default `nginx` deployment to test things out, I obviously deployed this Spring app instead. I also discovered that I needed to specifically configure the port forwarding for the deployed pod in question in order to reach the app for testing.
 
 Here are the slightly modified steps that I took:
 

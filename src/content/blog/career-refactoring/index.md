@@ -1,8 +1,7 @@
 ---
 title: "Career Refactoring"
 date: "2025-05-19"
-tags: 
-  "Career"
+tags: "Career"
 ---
 
 It was 11 years ago (to the day, if you can believe that) that I started a new job after leaving my first job out of college. (Fun fact: that was also an 11 year run.) Since then, I’ve been [charting my career journey](/blog/11-years-later/) in this space. It sure has been [quite a ride](/blog/a-hybrid-career/), filled with [diverse roles](/blog/being-a-product-manager/), inspiring leaders, and [wildly different company cultures](/blog/5-things-id-tell-my-enterprise-it-self/).

@@ -1,11 +1,11 @@
 {
-    "title": "Bryan Friedman",
-    "description": "The Evolving Technologist: Adventures of a Recovering Software Generalist",
-    "language": "en",
-    "author": {
-		  "name": "Bryan Friedman",
-		  "url": "http://www.bryanfriedman.com/about/",
-      "github": "https://github.com/bryanfriedman",
-      "linkedin": "https://www.linkedin.com/in/bryanmfriedman/"
-    }
+  "title": "Bryan Friedman",
+  "description": "The Evolving Technologist: Adventures of a Recovering Software Generalist",
+  "language": "en",
+  "author": {
+    "name": "Bryan Friedman",
+    "url": "http://www.bryanfriedman.com/about/",
+    "github": "https://github.com/bryanfriedman",
+    "linkedin": "https://www.linkedin.com/in/bryanmfriedman/"
+  }
 }

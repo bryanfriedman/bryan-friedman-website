@@ -1,5 +1,5 @@
 {
-	"layout": "post.njk",
-	"tags": ["posts"],
-	"eleventyCopy": ["images/**/*.{jpg,jpeg,png,gif,webp}"]
+  "layout": "post.njk",
+  "tags": ["posts"],
+  "eleventyCopy": ["images/**/*.{jpg,jpeg,png,gif,webp}"]
 }

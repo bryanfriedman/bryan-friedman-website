@@ -1,52 +1,51 @@
-// 
+//
 // Global theme styling
-// 
+//
 
 // Increase base font styling in the body only
 
 body {
-    font-size: $font-size-lg;
+  font-size: $font-size-lg;
 }
 
 // Set horizontal rule color to border color
 
 hr {
-    border-color: $border-color;
-    opacity: 1;
+  border-color: $border-color;
+  opacity: 1;
 }
 
 // Set defaults for the paragraph element
 
 p {
-    margin: 2rem 0;
+  margin: 2rem 0;
 
-    a {
-        text-decoration: underline;
-    }
+  a {
+    text-decoration: underline;
+  }
 }
 
 ul {
-
-    a {
-        text-decoration: underline;
-    }
+  a {
+    text-decoration: underline;
+  }
 }
 
 blockquote {
-    font-style: italic;
-    color: $gray-600;
+  font-style: italic;
+  color: $gray-600;
 }
 
 h1 {
-    font-size: 2.25rem;
+  font-size: 2.25rem;
 }
 
 h2 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 h3 {
-    font-size: 1.6rem;
+  font-size: 1.6rem;
 }
 
 /* Header anchor link styling */
@@ -56,10 +55,17 @@ h3 {
   opacity: 0;
   text-decoration: none;
   color: var(--muted-text, #666);
-  transition: opacity 0.15s ease, color 0.15s ease;
+  transition:
+    opacity 0.15s ease,
+    color 0.15s ease;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   position: relative;
 }
 

@@ -1,7 +1,7 @@
 ---
 title: "SpringOne Platform 2018 - Let’s Get Technical"
 date: "2018-10-03"
-tags: 
+tags:
   - "Cloud"
   - "Pivotal"
 ---

@@ -3,7 +3,7 @@
 //
 
 // Import variables
-@import './variables';
+@import "./variables";
 
 // Import only the Bootstrap parts we use
 @import "bootstrap/scss/functions";
@@ -24,18 +24,18 @@
 @import "bootstrap/scss/utilities/api";
 
 // Global CSS
-@import './global';
-@import './icons';
+@import "./global";
+@import "./icons";
 
 // Tweet embed styling
-@import './tweet';
+@import "./tweet";
 
 // Components
-@import './components/buttons';
-@import './components/navbar';
-@import './components/pagefind';
+@import "./components/buttons";
+@import "./components/navbar";
+@import "./components/pagefind";
 
 // Sections
-@import './sections/footer';
-@import './sections/masthead';
-@import './sections/post';
+@import "./sections/footer";
+@import "./sections/masthead";
+@import "./sections/post";

@@ -1,7 +1,7 @@
 ---
 title: "Learning the Importance of Learning"
 date: "2020-02-14"
-tags: 
+tags:
   - "Career"
   - "VMware"
 ---
@@ -18,7 +18,7 @@ Riveting fiction. But it actually helped. And in case it's not obvious, it's abo
 
 So that was that. Now my daughter was better able to manage her bouts of perfectionism by thinking about bubble gum and giraffes. Parenting achievement unlocked.
 
-Then it came up _again._ Except this time, it wasn't the eight year-old. It was Twitter. And it actually came up a lot. My Twitter feed is primarily filled with cloud computing and tech pundits and professionals (with a smattering of comedians and baseball reporters just to confuse and entertain). So I was surprised to see an elementary school education concept come up with some regularity from this crowd.
+Then it came up *again.* Except this time, it wasn't the eight year-old. It was Twitter. And it actually came up a lot. My Twitter feed is primarily filled with cloud computing and tech pundits and professionals (with a smattering of comedians and baseball reporters just to confuse and entertain). So I was surprised to see an elementary school education concept come up with some regularity from this crowd.
 
 {% tweet "https://twitter.com/caitie/status/1225815427797774337?s=20" %}
 
@@ -28,7 +28,7 @@ Yes, Growth Mindset is a thing. Once I began down the internet rabbit hole, I re
 
 Thankfully, I've been lucky enough for the past several years to work in organizations and for managers that heavily value learning and actually do embrace a Growth Mindset. I just never put a name to it. (I've been in the opposite situation too so it's nice to have some perspective on it.)
 
-So despite me burying my head in the sand about it for so long, I've been attempting to tap into my bubble gum brain as much as possible. I'm working on being less affected by a fear of failure and trying hard to celebrate my mistakes as part of the learning process. I guess what they say is true. You _can_ learn from your kids.
+So despite me burying my head in the sand about it for so long, I've been attempting to tap into my bubble gum brain as much as possible. I'm working on being less affected by a fear of failure and trying hard to celebrate my mistakes as part of the learning process. I guess what they say is true. You *can* learn from your kids.
 
 Why am I writing about this now? Because at the start of this new year I've taken on a new role at VMware, leading a small team and focusing on developer engagement to help enterprise developers learn about and get started using [VMware Tanzu](https://cloud.vmware.com/tanzu). I've been a developer before, but this particular experience is a new one for me. And some days I feel like I don't know how to do it...
 

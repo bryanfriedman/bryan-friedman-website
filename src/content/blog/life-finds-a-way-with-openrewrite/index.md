@@ -1,8 +1,7 @@
 ---
 title: "Life Finds a Way with OpenRewrite: Resurrecting a Long-Extinct Java App"
 date: "2025-06-26"
-tags: 
-  "Career"
+tags: "Career"
 ---
 
 I'm sure you know this classic line from _Jurassic Park_:
@@ -34,7 +33,7 @@ Somehow, I had kept a copy of the source code, preserved like a mosquito in ambe
 Getting it running again meant digging through ancient APIs, outdated assumptions, and a build process so flaky that I can hear Dennis Nedry now: “Uh uh uh, you didn’t say the magic word!”
 
 Here’s what it took to get it running in 2025:
-  
+
 - Sticking with Tomcat 4 (v4.1.24 downloaded from the [Apache archives](https://archive.apache.org))
 - Using the oldest "supported" version of MySQL: 8.0.13 (plus a newer JDBC connector)
 - Tweaking the database schema and JDBCRealm configuration to support MySQL 8
