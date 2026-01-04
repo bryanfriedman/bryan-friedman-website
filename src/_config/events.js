@@ -1,4 +1,4 @@
-import production from "../_data/production.js";
+import env from "../_data/env.js";
 import { rimraf } from "rimraf";
 import open from "open";
 
@@ -8,7 +8,7 @@ export default function (eleventyConfig) {
   // Clean output folders
   eleventyConfig.on("eleventy.before", async ({ dir }) => {
     rimraf.sync(dir.output + "/*");
-    if (production) rimraf.sync("public");
+    if (env.isProd || env.isPreview) rimraf.sync("public");
     await buildTweetAssets(dir.output);
   });
 

@@ -8,7 +8,7 @@ import eleventyCopyDataCascade from "@bryanfriedman/eleventy-plugin-html-relativ
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import path from "path";
 import pluginPurgeCSS from "eleventy-plugin-purgecss";
-import production from "../_data/production.js";
+import env from "../_data/env.js";
 //import pageAssetsPlugin from 'eleventy-plugin-page-assets';
 
 export default function (eleventyConfig) {
@@ -42,7 +42,7 @@ export default function (eleventyConfig) {
   });
 
   // Purge unused CSS in production builds (config in purgecss.config.js)
-  if (production) {
+  if (env.isProd || env.isPreview) {
     eleventyConfig.addPlugin(pluginPurgeCSS, {
       configFile: "purgecss.config.js",
       quiet: true,

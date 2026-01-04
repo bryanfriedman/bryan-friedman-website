@@ -1,4 +1,4 @@
-import production from "../_data/production.js";
+import env from "../_data/env.js";
 import path from "node:path";
 import sass from "sass";
 import postcss from "postcss";
@@ -16,7 +16,7 @@ export default function (eleventyConfig) {
         if (parsed.name.startsWith("_")) return;
         return (data) => {
           var min = ".";
-          if (production) min = ".min.";
+          if (env.isProd || env.isPreview) min = ".min.";
           return "/css/" + data.page.fileSlug + min + data.page.outputFileExtension;
         };
       },
@@ -36,7 +36,7 @@ export default function (eleventyConfig) {
       this.addDependencies(inputPath, result.loadedUrls);
 
       return async (data) => {
-        if (production) {
+        if (env.isProd || env.isPreview) {
           var { css } = await postcss([autoprefixer, cssnano]).process(result.css, {
             from: inputPath,
           });

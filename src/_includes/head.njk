@@ -1,5 +1,5 @@
 
-{% if production %}
+{% if env.isProd %}
 <script>
   // Defer analytics to keep main thread clear
   (function(w,d,id){
@@ -25,6 +25,10 @@
     ["keydown","pointerdown","scroll"].forEach(evt => w.addEventListener(evt, load, { once: true, passive: true }));
   })(window, document, 'G-8ZP3XBLDZL');
 </script>
+{% endif %}
+
+{% if env.isPreview %}
+<meta name="robots" content="noindex, nofollow">
 {% endif %}
 
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />

@@ -1,6 +1,6 @@
-export default function (eleventyConfig, { production } = {}) {
+export default function (eleventyConfig, { env } = {}) {
   // When in production, skip pages/posts marked draft: true
-  if (!production) return;
+  if (!(env?.isProd || env?.isPreview)) return;
 
   eleventyConfig.addGlobalData("eleventyComputed", {
     eleventyExcludeFromCollections: (data) => data?.draft === true,

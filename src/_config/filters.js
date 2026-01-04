@@ -1,4 +1,4 @@
-import production from "../_data/production.js";
+import env from "../_data/env.js";
 import { DateTime } from "luxon";
 
 export default function (eleventyConfig) {
@@ -48,13 +48,13 @@ export default function (eleventyConfig) {
 
   // These two functions help the head.njk template to handle some things differently depending on environment
   eleventyConfig.addFilter("minifyPath", function minifyPath(path) {
-    if (production)
+    if (env.isProd || env.isPreview)
       return path.slice(0, path.lastIndexOf(".")) + ".min" + path.slice(path.lastIndexOf("."));
     else return path;
   });
 
   eleventyConfig.addFilter("addDevPrefix", function addDevPrefix(str) {
-    if (production) return str;
+    if (env.isProd || env.isPreview) return str;
     else return "DEV - " + str;
   });
 }

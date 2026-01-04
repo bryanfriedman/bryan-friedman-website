@@ -1,6 +1,6 @@
 // External configuration files
 import settings from "./src/_config/settings.js";
-import production from "./src/_data/production.js";
+import env from "./src/_data/env.js";
 
 import minify from "./src/_config/minify.js";
 import sass from "./src/_config/sass.js";
@@ -29,8 +29,8 @@ export default function (eleventyConfig) {
 
   // Copy js assets
   eleventyConfig.addPassthroughCopy({ "src/assets/js": "/js" });
-  if (production) {
-    // If production, minify js and html
+  // Minify for prod and preview; keep dev builds readable
+  if (env.isProd || env.isPreview) {
     eleventyConfig.addPlugin(minify);
   }
 
@@ -53,7 +53,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(plugins);
 
   // Exclude drafts from output/collections when production is true
-  eleventyConfig.addPlugin(drafts, { production });
+  eleventyConfig.addPlugin(drafts, { env });
 
   // Add watch targets here
   //eleventyConfig.addWatchTarget("src/_config/purgecss.js");
