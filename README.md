@@ -48,7 +48,7 @@ I really liked the idea of a clean and more readable `eleventy.config.js` file a
 
 ### `_data`
 
-This is the global data file directory as normal in Eleventy, which houses some metadata and a helper function for outputing the current year in the footer. One additional note is that I followed the advice on [this post](https://www.roboleary.net/webdev/2024/01/24/eleventy-production-flag.html) to create a global data flag for when the build is for Production to determine when to minify code, among other things.
+This is the global data file directory as normal in Eleventy, which houses some metadata and a helper function for outputing the current year in the footer. One additional note is that I followed the advice on [this post](https://www.roboleary.net/webdev/2024/01/24/eleventy-production-flag.html) to create a global data flag for when the build is for Production (or Staging or Dev) to determine when to minify code, among other things.
 
 ### `assets`
 
@@ -56,4 +56,4 @@ All the folders within here are copied to the root of the output folder, sheddin
 
 ### `content`
 
-I really wanted to keep the content (page templates and markdown) inside of this separate directory as outlined in [this post](https://www.webstoemp.com/blog/eleventy-projects-structure/) referenced above. But then I didn't want an extra subdirectory in the output folder that would cause longer URLs unnecessarily. So I had to build some extra functionality that I discovered to allow this directory to be stripped in the output folder. In `/src/content/content.json`, a custom filter is used to rewrite the `permalink` value for each content file within to remove `content` from the path. There's also a modified version of the `eleventy-plugin-page-assets` plugin so that it copies images that are alongside the Markdown content within this folder, since a passthrough copy would have otherwise copied over the `content` folder as well.
+I really wanted to keep the content (page templates and markdown) inside of this separate directory as outlined in [this post](https://www.webstoemp.com/blog/eleventy-projects-structure/) referenced above. But then I didn't want an extra subdirectory in the output folder that would cause longer URLs unnecessarily. So I had to build some extra functionality that I discovered to allow this directory to be stripped in the output folder. In `/src/content/content.json`, a custom filter is used to rewrite the `permalink` value for each content file within to remove `content` from the path. Then, while I used a modified version of the `eleventy-plugin-page-assets` plugin to copy images that are alongside the Markdown content within this folder (since a passthrough copy would have otherwise copied over the `content` folder as well), this plugin broke with Eleventy v3, so I had to write [a new plugin](https://github.com/bryanfriedman/eleventy-plugin-html-relative-datacascade) myself to cover this case.
