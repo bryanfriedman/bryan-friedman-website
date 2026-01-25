@@ -14,6 +14,10 @@
   align-items: center;
 }
 
+#mainNav .nav-tools {
+  flex-wrap: nowrap;
+}
+
 #nav-search:focus {
   outline: none;
   border-color: #b3b3b3;
@@ -56,11 +60,29 @@
 // spacing for social icons in nav
 #mainNav .nav-social {
   gap: 0.75rem;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 #mainNav .nav-social .nav-link {
   padding-left: 0;
   padding-right: 0;
+}
+
+#mainNav .nav-social.navbar-nav {
+  flex-direction: row;
+}
+
+#mainNav .nav-social .nav-item {
+  flex: 0 0 auto;
+}
+
+@include media-breakpoint-down(lg) {
+  #mainNav .navbar-collapse .nav-social.navbar-nav {
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+  }
 }
 
 body.search-active #page-content {
