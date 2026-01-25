@@ -94,6 +94,12 @@
     }
   }
 
+  @include media-breakpoint-down(sm) {
+    .nav-tools .nav-search {
+      width: 110px;
+    }
+  }
+
   // Desktop only styling for the navbar
   // Set to large breakpoint and up (this should always match the .navbar-expand-* class
 
