@@ -10,7 +10,8 @@
   font-size: $font-size-sm;
   font-style: italic;
   display: block;
-  margin: 0;
+  margin: auto;
+  margin-top: 0.525rem;
   padding: 0.625rem;
   text-align: center;
 }
@@ -25,8 +26,8 @@
   margin: 1em 1em 1em 0 !important;
 }
 
-.alignriht-top {
-  float: left;
+.alignright-top {
+  float: right;
   margin: 0 0 1em 1em !important;
 }
 
@@ -43,7 +44,7 @@
       max-width: 100%;
       height: auto;
       display: block;
-      margin: 0 auto;
+      margin: auto;
     }
   }
 
