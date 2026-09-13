@@ -16,19 +16,19 @@ But then of course, Microsoft built Windows after Bill Gates visited Apple, and 
 
 ![](/blog/every-ai-app-is-becoming-every-other-ai-app/images/pirates.jpg)
 
-Feels like OpenAI and Anthropic are following a similar pattern, "stealing" from each other back and forth. Claude shipped [Artifacts](https://www.anthropic.com/news/claude-3-5-sonnet), so ChatGPT shipped [Canvas](https://openai.com/index/introducing-canvas/). ChatGPT shipped [Deep Research](https://openai.com/index/introducing-deep-research/), then Claude shipped [Research](https://www.anthropic.com/news/research). [Claude Code](https://www.anthropic.com/news/claude-3-7-sonnet) came out, and then [Codex](https://openai.com/index/introducing-codex/). Concepts within the apps like projects, memory, voice, connectors, computer control...take your pick of features, and you're bound to see the other one either has it or is about to. 
+Feels like OpenAI and Anthropic are following a similar pattern, "stealing" from each other back and forth. Claude shipped [Artifacts](https://www.anthropic.com/news/claude-3-5-sonnet), so ChatGPT shipped [Canvas](https://openai.com/index/introducing-canvas/). ChatGPT shipped [Deep Research](https://openai.com/index/introducing-deep-research/), then Claude shipped [Research](https://www.anthropic.com/news/research). [Claude Code](https://www.anthropic.com/news/claude-3-7-sonnet) came out, and then [Codex](https://openai.com/index/introducing-codex/). Concepts within the apps like projects, memory, voice, connectors, computer control...take your pick of features, and you're bound to see the other one either has it or is about to. When OpenAI rolled out its new desktop "superapp" this summer, [PCWorld's headline](https://www.pcworld.com/article/3188176/the-new-chatgpt-superapp-takes-aim-at-claude-desktop.html) put it bluntly: "The new ChatGPT superapp takes aim at Claude Desktop." 
 
-When OpenAI rolled out its new desktop "superapp" this summer, [PCWorld's headline](https://www.pcworld.com/article/3188176/the-new-chatgpt-superapp-takes-aim-at-claude-desktop.html) put it bluntly: "The new ChatGPT superapp takes aim at Claude Desktop." And of course there's more than just two players in the market. Microsoft has Copilot, Google has Gemini, and in the software coding space it gets even more crowded with the coding version of each of those plus Cursor, Windsurf, Amp, the list goes on. 
+And of course there's more than just two players in the market. Microsoft has Copilot, Google has Gemini, and in the software coding space it gets even more crowded with the coding version of each of those plus Cursor, Windsurf, Amp, the list goes on. 
 
-None of this is a knock. Copying is how software gets better. It happened with cloud providers, and ...it's been happening for decades, before Microsoft vs. Apple, and many times since... And for all the sameness on the surface, underneath they still can't agree on much. Take the instruction files you write to tell an agent how to behave in your project. Claude reads `CLAUDE.md`. Copilot reads `.github/copilot-instructions.md`. Gemini wants `GEMINI.md`. Cursor has its own rules folder. Then `AGENTS.md` showed up to be the one file everyone could share, which went about how [xkcd said it would](https://xkcd.com/927/). Now we have skill files, too.
+Of course I understand this is how business works. Apple's rivalry didn't stop with Microsoft, with Samsung in its sights and iPhone vs Android. The cloud providers each have equivalent versions of products they've copied over the years. It's not even limited to software or technology. Long before any of this, there was Nike vs. Adidas, Ford and Ferrari, and the ever present question: Coke or Pepsi? So it's nothing new, but it's noteworthy because of the moment we're in. (More on that later.)\
+\
+But for all the sameness on the surface, like any tech, underneath the hood, no one can agree on much. For instance, there are so many places to put instruction files to tell an agent how to behave in your project: Claude Code reads `CLAUDE.md`, but GitHub Copilot reads `.github/copilot-instructions.md`,  and Google even has `GEMINI.md`. Cursor has its own rules folder too. So of course the problem got solved in the [most xkcd way](https://xkcd.com/927/) possible: the `AGENTS.md` standard.
 
-## So Which One Do I Use? Yes.
+## So Which One Should You Use? (Yes.)
 
-Here's my actual usage, as best I can reconstruct it:
+This is not a comparison piece, so I'm not going to get into details, but the answer to a question like that is usually: "it depends." For me, the landscape looks something like this:
 
-* **Claude**
-
-   for most things at work, and most things at home.
+* **Claude.** At this point it's my default. I use it almost exclusively at work for writing, coding, and answering dumb questions. At home, it's helped me build complex spreadsheets, plan house projects, design web sites, and...answer dumb questions.
 * **GitHub Copilot**
 
    at work. A lot.
