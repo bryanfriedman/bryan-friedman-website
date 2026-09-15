@@ -36,6 +36,70 @@ function rewritePreviewImgSrc(src, blogFolder) {
   return `/blog/${blogFolder}/${cleaned}`;
 }
 
+// Resolve a raw src to a displayable URL, preferring Decap's getAsset so that
+// pending uploads (held in memory as blob URLs) and committed-but-unpublished
+// media (fetched through the authenticated backend) both render. Falls back to
+// the public-path rewrite when getAsset can't resolve the path.
+function applyImgSrc(img, url) {
+  if (url == null) return;
+  const str = String(url);
+  if (!str || str === "undefined" || str === "null") return;
+  if (img.getAttribute("src") !== str) img.setAttribute("src", str);
+}
+
+function resolveImgWithAsset(img, src, blogFolder, getAsset) {
+  const fallback = rewritePreviewImgSrc(src, blogFolder);
+
+  // Already a fully resolved/inline source — nothing for getAsset to do.
+  if (
+    !src ||
+    src.startsWith("blob:") ||
+    src.startsWith("data:") ||
+    src.startsWith("http://") ||
+    src.startsWith("https://")
+  ) {
+    applyImgSrc(img, src);
+    return;
+  }
+
+  if (typeof getAsset !== "function") {
+    applyImgSrc(img, fallback);
+    return;
+  }
+
+  let asset;
+  try {
+    asset = getAsset(src);
+  } catch (e) {
+    applyImgSrc(img, fallback);
+    return;
+  }
+
+  if (!asset) {
+    applyImgSrc(img, fallback);
+    return;
+  }
+
+  // getAsset may hand back a Promise, an AssetProxy (has .toString()/.url),
+  // or a plain string depending on Decap version and asset state.
+  if (typeof asset.then === "function") {
+    asset
+      .then((resolved) => {
+        const url =
+          resolved && typeof resolved.toString === "function"
+            ? resolved.toString()
+            : resolved;
+        applyImgSrc(img, url || fallback);
+      })
+      .catch(() => applyImgSrc(img, fallback));
+    return;
+  }
+
+  const url =
+    typeof asset.toString === "function" ? asset.toString() : asset.url || asset;
+  applyImgSrc(img, url || fallback);
+}
+
 function stripMarkdownItAttributes(rootEl) {
   if (!rootEl) return;
   const walker = document.createTreeWalker(rootEl, NodeFilter.SHOW_TEXT);
@@ -49,10 +113,10 @@ function stripMarkdownItAttributes(rootEl) {
   }
 }
 
-function fixPreviewImages(rootEl, blogFolder) {
+function fixPreviewImages(rootEl, blogFolder, getAsset) {
   rootEl.querySelectorAll("img").forEach((img) => {
     const src = img.getAttribute("src");
-    img.setAttribute("src", rewritePreviewImgSrc(src, blogFolder));
+    resolveImgWithAsset(img, src, blogFolder, getAsset);
   });
 }
 
@@ -67,10 +131,10 @@ function normalizeImageWrappers(rootEl) {
   });
 }
 
-function fixPreviewBody(rootEl, entry) {
+function fixPreviewBody(rootEl, entry, getAsset) {
   if (!rootEl) return;
   const blogFolder = getBlogFolder(entry);
-  fixPreviewImages(rootEl, blogFolder);
+  fixPreviewImages(rootEl, blogFolder, getAsset);
   normalizeImageWrappers(rootEl);
   stripMarkdownItAttributes(rootEl);
 }
@@ -113,7 +177,7 @@ CMS.registerPreviewStyle(
 );
 
 // ---------- Preview Template ----------
-const BlogPreview = ({ entry, widgetFor }) => {
+const BlogPreview = ({ entry, widgetFor, getAsset }) => {
   const title = entry.getIn(["data", "title"]) || "";
   const dateRaw = entry.getIn(["data", "date"]) || "";
   const tagsRaw = entry.getIn(["data", "tags"]);
@@ -162,7 +226,7 @@ const BlogPreview = ({ entry, widgetFor }) => {
           "div",
           {
             className: "post-body",
-            ref: (rootEl) => fixPreviewBody(rootEl, entry),
+            ref: (rootEl) => fixPreviewBody(rootEl, entry, getAsset),
           },
           widgetFor("body")
         )
