@@ -47,6 +47,22 @@ function applyImgSrc(img, url) {
   if (img.getAttribute("src") !== str) img.setAttribute("src", str);
 }
 
+// Map a stored image path to the entry-relative media path that getAsset can
+// resolve against this collection's media_folder ("./images"). Collection media
+// is published under /blog/<slug>/images, but the <slug> baked into the stored
+// path can differ from the entry folder (e.g. a post authored under a working
+// folder name, or renamed after the image was inserted). Reducing any
+// ".../images/<file>" path to "images/<file>" lets getAsset resolve it against
+// the current entry regardless of the slug in the path.
+function toEntryMediaPath(src) {
+  if (src.startsWith("/")) {
+    const m = src.match(/\/images\/(.+)$/);
+    if (m) return "images/" + m[1];
+    return src;
+  }
+  return src.replace(/^\.\//, "");
+}
+
 function resolveImgWithAsset(img, src, blogFolder, getAsset) {
   const fallback = rewritePreviewImgSrc(src, blogFolder);
 
@@ -67,9 +83,11 @@ function resolveImgWithAsset(img, src, blogFolder, getAsset) {
     return;
   }
 
+  const assetPath = toEntryMediaPath(src);
+
   let asset;
   try {
-    asset = getAsset(src);
+    asset = getAsset(assetPath);
   } catch (e) {
     applyImgSrc(img, fallback);
     return;
