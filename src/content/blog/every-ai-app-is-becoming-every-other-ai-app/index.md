@@ -37,15 +37,13 @@ What are people using? Most everyone I know, at least in the consumer space, are
 
 I know some folks swear by one choice for writing (ChatGPT) and another for images (Gemini). Lots of people are probably just using whatever their company pays for, or (like I sometimes do) whatever shows up at the top of Google. Some folks, use one at work and a different one at home. I kind of do that too, except with two Claudes.
 
-\[SCREENSHOT: LinkedIn Severance post]
+![](images/screenshot-2026-09-18-at-3.21.10 pm.png)
 
 So how does anyone decide? Remember what Bill Gates said (in the movie): it doesn't really matter.
 
-## The Model Is Only Half of It
+## The Model Is Only Part of the Story
 
-At work, I've gone well past chatting into agents that call tools, read files, and make decisions along the way. That's where the differences stop being cosmetic.
-
-Most AI conversations focus on the model, but the model is only one layer. The other is the **harness**: the agent wrapped around the model that decides what context it sees, which tools it has, how it plans, and when it's done. Put the same model in two different harnesses and you get two different coworkers. Update either one and you might get a third.
+Most AI conversations focus on the model, but the model is only one layer. The other is the **harness**: the agent wrapped around the model that decides what context it sees, which tools it has, how it plans, and when it's done. Use the same model with different harnesses, and you get different coworkers with different results.
 
 That's where a lot of the variability lives. Remember all those instruction files? We write them carefully, spelling out which tool to use for which job. Sometimes the agent follows them perfectly. Sometimes it reads them, nods, and does something else. (I have a teenager. I know this feeling.) Then a new version drops, and a workflow that was reliable last month starts taking scenic detours.
 
