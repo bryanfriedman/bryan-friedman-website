@@ -6,23 +6,23 @@ I hadn't used it in a bit, but I randomly opened ChatGPT on my Mac the other day
 
 The whole UI was different from how I remembered it, and it was styled much more like Claude's interface. They both always had the sidebar and the chat window, but now it seemed like ChatGPT even switched to using a similar font and color palette. I did a double take and realized that it was indeed ChatGPT. 
 
-When I started at Moderne, I was copy-pasting things in and out of ChatGPT all day. Then as I used Claude more and more at work, I switched to using it at home too. So I only open ChatGPT once in a while, but while I was gone it apparently redecorated to look like the place I moved to.
+When I started at Moderne, I was [copy-pasting things in and out of ChatGPT](https://www.bryanfriedman.com/blog/between-two-summits-one-year-in/#the-ai-of-it-all) all day. Then as I used Claude more and more at work, I switched to using it at home too. So I only open ChatGPT once in a while, but while I was gone it apparently redecorated to look like the place I moved to.
 
 ## Good Artists Copy
 
 If you're of a certain age, this feels familiar. Remember Mac vs. Windows? I was a little bit too young to follow it while it was going on, but that's okay because it was made into one of my favorite TV movies of all time: *Pirates of Silicon Valley.* The movie dramatizes how Apple built its graphical interface after a famous visit to Xerox PARC. As Noah Wyle's Steve Jobs puts it in the film, "Good artists copy, great artists steal."
 
-But then of course, Microsoft built Windows after Bill Gates visited Apple, and that quote about artists came back to bite Steve Jobs. This leads to probably my favorite scene in the film: when Steve accuses Bill Gates of ripping off the Mac, and Bill Gates said it was more like they both had a rich neighbor named Xerox, and Steve says that Apple has better stuff, and Bill Gates says "You don't get it Steve. That doesn't *matter!*" (I don't know if it quite went down exactly like this in real life, but the Anthony Michael Hall and Noah Wyle version is *my* reality anyway.)
+But then of course, Microsoft built Windows after Bill Gates visited Apple, and that quote about artists came back to bite Steve Jobs. This leads to probably my favorite scene in the film: when Steve accuses Bill Gates of ripping off the Mac, and Bill Gates said it was more like they both had a rich neighbor named Xerox, and Steve says that Apple has better stuff, and Bill Gates says "You don't get it Steve. That doesn't *matter!*" (I don't know if it quite went down [exactly like this in real life](https://www.folklore.org/A_Rich_Neighbor_Named_Xerox.html), but the Anthony Michael Hall and Noah Wyle version is *my* reality anyway.)
 
 ![](images/pirates.jpg)
 
-Feels like OpenAI and Anthropic are following a similar pattern, "stealing" from each other back and forth. Claude shipped Artifacts, so ChatGPT shipped Canvas. ChatGPT shipped Deep Research, then Claude shipped Research. Claude Code came out, and then Codex. Concepts within the apps like projects, memory, voice, connectors, computer control...take your pick of features, and you're bound to see the other one either has it or is about to. When OpenAI rolled out its new desktop "superapp" this summer, PCWorld's headline put it bluntly: "The new ChatGPT superapp takes aim at Claude Desktop." (ChatGPT even started naming their models using a theme, like Anthropic does, instead of the confusing names they had before.)
+Feels like OpenAI and Anthropic are following a similar pattern, "stealing" from each other back and forth. Claude shipped [Artifacts](https://www.anthropic.com/news/claude-3-5-sonnet), so ChatGPT shipped [Canvas](https://openai.com/index/introducing-canvas/). ChatGPT shipped [Deep Research](https://openai.com/index/introducing-deep-research/), then Claude shipped [Research](https://www.anthropic.com/news/research). [Claude Code](https://www.anthropic.com/news/claude-3-7-sonnet) came out, and then [Codex](https://openai.com/index/introducing-codex/). Concepts within the apps like projects, memory, voice, connectors, computer control...take your pick of features, and you're bound to see the other one either has it or is about to. When OpenAI rolled out its new desktop "superapp" this summer, [PCWorld's headline](https://www.pcworld.com/article/3188176/the-new-chatgpt-superapp-takes-aim-at-claude-desktop.html) put it bluntly: "The new ChatGPT superapp takes aim at Claude Desktop." (ChatGPT even started naming their models using a theme, like Anthropic does, instead of the confusing names they had before.)
 
 And of course there's more than just two players in the market. Microsoft has Copilot, Google has Gemini, and in the software coding space it gets even more crowded with the coding version of each of those plus Cursor, Windsurf, Amp, the list goes on. 
 
 Of course I understand this is how business works. Apple's rivalry didn't stop with Microsoft, as years later it had Samsung in its sights from the iPhone vs Android fight. The cloud providers all do it too, with each of them having equivalent versions of products they've copied over the years. It's not even limited to software or technology, either. Long before any of this, there was Nike vs. Adidas, Ford and Ferrari, and the ever present question: Coke or Pepsi? So it's nothing new, but it's noteworthy because of the moment we're in. (More on that later.)
 
-But for all the sameness on the surface, like any tech, underneath the hood, no one can agree on much. For instance, there are so many places to put instruction files to tell an agent how to behave in your project: Claude Code reads `CLAUDE.md`, but GitHub Copilot reads `.github/copilot-instructions.md`,  and Google even has `GEMINI.md`. Cursor has its own rules folder too. So of course the problem got solved in the most xkcd way possible: the `AGENTS.md` standard.
+But for all the sameness on the surface, like any tech, underneath the hood, no one can agree on much. For instance, there are so many places to put instruction files to tell an agent how to behave in your project: Claude Code reads `CLAUDE.md`, but GitHub Copilot reads `.github/copilot-instructions.md`,  and Google even has `GEMINI.md`. Cursor has its own rules folder too. So of course the problem got solved in the [most xkcd way](https://xkcd.com/927/) possible: the `AGENTS.md` standard.
 
 ## So Which One Should You Use? (Yes.)
 
@@ -57,7 +57,7 @@ None of that makes agents less useful. It just means "we use AI" is closer to "w
 
 The economics are upside down right now, too.
 
-Most of us pay for AI like a gym membership: flat monthly fee, all you can eat, within limits. That means the heaviest users get the best deal, which is not usually how this works. So "within limits" keeps getting redefined. Five-hour windows, weekly caps, pricier plans with more headroom. Underneath it all is a slow slide toward paying per token. GitHub moved Copilot to usage-based billing in June with a refreshingly blunt explanation: a quick chat question and a multi-hour autonomous coding session could cost the same amount.
+Most of us pay for AI like a gym membership: flat monthly fee, all you can eat, within limits. That means the heaviest users get the best deal, which is not usually how this works. So "within limits" keeps getting redefined. Five-hour windows, weekly caps, pricier plans with more headroom. Underneath it all is a slow slide toward paying per token. GitHub moved Copilot to [usage-based billing](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing) in June with a refreshingly blunt explanation: a quick chat question and a multi-hour autonomous coding session could cost the same amount.
 
 Meanwhile, the price of a token keeps falling. But agents chew through tokens in a way a chat window never did, so the bill doesn't necessarily shrink. Cheaper gas, bigger truck.
 
@@ -75,7 +75,7 @@ It's the same conversation engineering teams are having about junior and senior 
 
 ## Haven't We Been Here Before?
 
-I get why this feels existential for a lot of people. Bill Gates (the real one, not Anthony Michael Hall) just published a long essay saying he's "very concerned": about entry-level jobs disappearing, software engineering included, about what AI does to kids' development, and about how few people outside the industry are paying attention. The guy who told Steve it didn't matter thinks *this* matters a lot.
+I get why this feels existential for a lot of people. Bill Gates (the real one, not Anthony Michael Hall) just published [a long essay](https://www.gatesnotes.com/work/make-ai-work-for-everyone/reader/a-turbulent-ai-era-and-critical-choices-to-make) saying he's "very concerned": about entry-level jobs disappearing, software engineering included, about what AI does to kids' development, and about how few people outside the industry are paying attention. The guy who told Steve it didn't matter thinks *this* matters a lot.
 
 He also argues it's different from past technology shifts, because it substitutes for human thinking itself and it's happening over a decade instead of generations. So he'd probably say my go-to comparison undersells it. Maybe. But he also says being pessimistic isn't helpful, and either way it's not optional.
 
@@ -88,5 +88,3 @@ I suspect the AI version goes the same way. The apps will keep looking more alik
 So which one should you use? Probably all of them, for a while.
 
 Just learn to write on paper first.
-
-ImageImageImageChoose different imageReplace with URLRemove imageAlt TextTitle
