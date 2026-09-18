@@ -28,12 +28,10 @@ But for all the sameness on the surface, like any tech, underneath the hood, no 
 
 This is not a comparison piece, so I'm not going to get into details, but the answer to a question like that is usually: "it depends." For me, the landscape looks something like this:
 
-* **Claude.** At this point it's my default. I use it almost exclusively at work for writing, coding, and answering dumb questions. At home, it's helped me build complex spreadsheets, plan house projects, design web sites, and...answer dumb questions.
-* **ChatGPT.** Because I first used 
-* **GitHub Copilot**
-* **Gemini**
-
-   whenever I Google something and the AI Overview answers before I can click a link. I didn't pick Gemini. Gemini picked me.
+* **Claude.** At this point it's my default. I use it almost exclusively at work to write, code, and answer dumb questions. At home, it's helped me build complex spreadsheets, plan house projects, design web sites, and...answer dumb questions.
+* **ChatGPT/Codex.** The original. It got me started both at home and at work. Even when I started using Claude at work, I stuck with ChatGPT at home, thinking it would be a good split. I even used Codex for coding projects at home. Now I've migrated to using Claude most of the time, even at home. I've kept ChatGPT around mostly for historical purposes. It was sort my pseudo-doctor/therapist well before Claude came around, so I still use it for that sometimes, since it "knows me."
+* **GitHub Copilot.** This is the other go-to option at work for me, and I like using it for coding work sometimes, if I've maxed out my Claude usage, or if it's annoying me. It can use both OpenAI and Anthropic models, or switch between them, and it will sometimes even decide for you, depending on the task. It's also got great integration with tools I already use. 
+* **Gemini.** I experimented with [Antigravity](https://antigravity.google) for a bit, and occasionally reach for Gemini within Google Docs or something. But I really haven't used Gemini much at work. I try to "search" (or ask those dumb questions) with AI, but I still end up Googling some things (old habits die hard), so I'll often end up using the AI Overview feature of Google and finding myself almost unwittingly inside of Gemini.
 
 So how does anyone decide? There are benchmarks and leaderboards, but mostly people try things. Some swear by one model for writing and another for images. Plenty just use whatever their company pays for, or whatever shows up at the top of Google. Whether it's the *best* one barely comes into it. In *Pirates*, Jobs yells at Gates that Apple has better stuff, and Gates doesn't even argue: "You don't get it, Steve. That doesn't matter."
 
