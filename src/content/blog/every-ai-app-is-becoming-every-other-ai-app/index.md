@@ -33,13 +33,13 @@ This is not a comparison piece, so I'm not going to get into details, but the an
 * **GitHub Copilot.** This is the other go-to option at work for me, and I like using it for coding work sometimes, if I've maxed out my Claude usage, or if it's annoying me. It can use both OpenAI and Anthropic models, or switch between them, and it will sometimes even decide for you, depending on the task. It's also got great integration with tools I already use. 
 * **Gemini.** I experimented with [Antigravity](https://antigravity.google) for a bit, and occasionally reach for Gemini within Google Docs or something. But I really haven't used Gemini much at work. I try to "search" (or ask those dumb questions) with AI, but I still end up Googling some things (old habits die hard), so I'll often end up using the AI Overview feature of Google and finding myself almost unwittingly inside of Gemini.
 
-So how does anyone decide? There are benchmarks and leaderboards, but mostly people try things. Some swear by one model for writing and another for images. Plenty just use whatever their company pays for, or whatever shows up at the top of Google. Whether it's the *best* one barely comes into it. In *Pirates*, Jobs yells at Gates that Apple has better stuff, and Gates doesn't even argue: "You don't get it, Steve. That doesn't matter."
+What are people using? Most everyone I know, at least in the consumer space, are pretty much sticking with the horse they rode in on and using ChatGPT for everything. My family mostly does that, but I've also converted a few friends and family over to the Claude side. (The [government contract stuff](https://medium.com/utopian/deletechatgpt-ab17bd8550da) helped.)
 
-So really there are two markets: consumer AI that you choose, and business AI that gets chosen for you by an admin, a procurement process, and a policy doc. I'm learning both at once, and I've ended up building a wall between them.
+I know some folks swear by one choice for writing (ChatGPT) and another for images (Gemini). Lots of people are probably just using whatever their company pays for, or (like I sometimes do) whatever shows up at the top of Google. Some folks, use one at work and a different one at home. I kind of do that too, except with two Claudes.
 
 \[SCREENSHOT: LinkedIn Severance post]
 
-Looking at that list above, though, it's less *Severance* and more an entire office floor of departments that don't talk to each other.
+So how does anyone decide? Remember what Bill Gates said (in the movie): it doesn't really matter.
 
 ## The Model Is Only Half of It
 
