@@ -61,26 +61,18 @@ It reminds me of the cloud provider race-to-zero pricing from the early 2010s. I
 
 ## Paper First
 
-At back-to-school night this year, one of my daughter's high school teachers told us that in-class writing in his room happens on paper. No laptops.
+I recently had back-to-school night for my daughter's high school this year, and one of the teachers told us that all writing for his class happens in the room and on paper. No homework, no laptops.
 
-In 2026, that sounds almost radical. But he isn't anti-AI. He thinks there's a place for these tools and that his students will use them. He just doesn't think kids at this age are ready to use them responsibly yet, and more importantly, they need to build the underlying skill first. You can't tell whether AI wrote something good if you've never learned what good looks like.
+At first that sounded insane to me. No laptops? It's 2026! And we can't ignore AI. It's here!\
+\
+But his explanation made sense to me. He's not anti-AI. In fact he thinks there's a place for these tools and that his students will use them. He just doesn't think kids at this age are ready to use them responsibly yet, and more importantly, they need to build the underlying skill first. You can't tell whether AI wrote something good if you've never learned what good looks like. And that applies to the rest of us too.
 
-That applies to the rest of us too.
-
-It's the same conversation engineering teams are having about junior and senior developers. A senior engineer can look at what an agent produced and spot the problem fast, because they've made that mistake before. A junior engineer might not see it at all. I notice this in my own work. When an agent's draft of a doc is off, I can tell right away. When it writes Java, I'm a lot less sure. (My hands-on coding is what I'd generously call surface level.)
+It's the same conversation engineering teams are having about junior and senior developers. A senior engineer can look at what an agent produced and spot the problem fast, because they've made that mistake before. A junior engineer might not see it at all. I notice this in my own work. When an agent's draft of a doc is off, I can usually tell how and guide it a different way or change it myself. When it writes Java, though, I'm a lot less sure, because it's been a long time since I was a real software engineer. (My skill level for coding is good for prototypes, but not so much production-ready code.)
 
 ## Haven't We Been Here Before?
 
-I get why this feels existential for a lot of people. Bill Gates (the real one, not Anthony Michael Hall) just published [a long essay](https://www.gatesnotes.com/work/make-ai-work-for-everyone/reader/a-turbulent-ai-era-and-critical-choices-to-make) saying he's "very concerned": about entry-level jobs disappearing, software engineering included, about what AI does to kids' development, and about how few people outside the industry are paying attention. The guy who told Steve it didn't matter thinks *this* matters a lot.
+I get why this feels existential for a lot of people. Bill Gates (the real one, not Anthony Michael Hall) just published [a long essay](https://www.gatesnotes.com/work/make-ai-work-for-everyone/reader/a-turbulent-ai-era-and-critical-choices-to-make) saying he's "very concerned": about entry-level jobs disappearing (software engineering included), about what AI does to kids' development, and about how few people outside the industry are paying attention. (Turns out, maybe it *does* matter?)
 
-He also argues it's different from past technology shifts, because it substitutes for human thinking itself and it's happening over a decade instead of generations. So he'd probably say my go-to comparison undersells it. Maybe. But he also says being pessimistic isn't helpful, and either way it's not optional.
+It's not a perfect analogy, but the current moment reminds me a bit of the rise of the internet. Email changed how we worked, and the web changed the concept of what a business even was. But Gates argues that this is different from past technology shifts, because it substitutes for human thinking itself and it's happening over a decade instead of generations. So he'd probably say my go-to comparison undersells it. 
 
-It's not a perfect analogy, but it reminds me of the internet showing up. Email changed how we worked, the web changed what a business was, then mobile changed it all again. We even fumbled the pricing the same way: dial-up billed by the hour until AOL went unlimited, and unlimited data plans that carriers took away and then brought back. Nobody got to opt out. Everyone had to figure it out and catch up, and the people who did best learned the new thing without forgetting the old one.
-
-And remember Mac vs. Windows? That fight didn't really end with a winner. It mostly ended because the browser became the thing that mattered. Now people use a Mac at home, Windows at work, and a phone from whoever, and nobody asks whether you're a Mac person or a PC person anymore. (Except Mac people. We still bring it up.)
-
-I suspect the AI version goes the same way. The apps will keep looking more alike, the features will keep leapfrogging, and which logo you click will matter less than whether you recognize good output when you see it.
-
-So which one should you use? Probably all of them, for a while.
-
-Just learn to write on paper first.
+So, is it more Mac vs. Windows? Or is it the next version of the social reckoning? (Can't wait for [that movie](https://www.imdb.com/title/tt37510326/), by the way. Big Sorkin fan here.) It's probably too soon to say, but either way, it's here. There's no ignoring it. AI apps will continue looking more and more like each other, the features will keep leapfrogging, and which logo you align with will matter less than whether you recognize good output when you see it. Because regardless of which one we use, we have to learn to write on paper first.
