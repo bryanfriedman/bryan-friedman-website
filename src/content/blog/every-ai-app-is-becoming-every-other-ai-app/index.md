@@ -57,7 +57,7 @@ Most of us pay for AI like a gym membership: flat monthly fee, all you can eat, 
 
 And while it's true that the price of a token will continue to fall, agents are chewing through tokens at a faster and faster clip, so even if the gas is getting cheaper, it's like we're driving a bigger truck.
 
-I don't know how this ends and if we'll settle into something more sane, or if it  just keeps getting cheaper and cheaper while we keep using more and more?
+It reminds me of the cloud provider race-to-zero pricing from the early 2010s. I don't know how this ends and if we'll settle into something more sane, or if it  just keeps getting cheaper and cheaper while we keep using more and more? 
 
 ## Paper First
 
