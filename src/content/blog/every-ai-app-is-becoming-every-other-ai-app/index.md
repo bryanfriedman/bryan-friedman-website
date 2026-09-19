@@ -1,6 +1,6 @@
 ---
 title: Haven't We Seen This Movie Before?
-date: 2026-09-13T07:30:00.000-07:00
+date: 2026-09-19T13:40:00.000-07:00
 ---
 I hadn't used it in a bit, but I randomly opened ChatGPT on my Mac the other day, and for a second, I thought I was in Claude.
 
