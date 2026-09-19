@@ -1,5 +1,5 @@
 ---
-title: Every AI App Is Becoming Every Other AI App
+title: Haven't We Seen This Movie Before?
 date: 2026-09-13T07:30:00.000-07:00
 ---
 I hadn't used it in a bit, but I randomly opened ChatGPT on my Mac the other day, and for a second, I thought I was in Claude.
@@ -12,7 +12,7 @@ When I started at Moderne, I was [copy-pasting things in and out of ChatGPT](ht
 
 If you're of a certain age, this feels familiar. Remember Mac vs. Windows? I was a little bit too young to follow it while it was going on, but that's okay because it was made into one of my favorite TV movies of all time: *Pirates of Silicon Valley.* The movie dramatizes how Apple built its graphical interface after a famous visit to Xerox PARC. As Noah Wyle's Steve Jobs puts it in the film, "Good artists copy, great artists steal."
 
-But then of course, Microsoft built Windows after Bill Gates visited Apple, and that quote about artists came back to bite Steve Jobs. This leads to probably my favorite scene in the film: when Steve accuses Bill Gates of ripping off the Mac, and Bill Gates says it was more like they both had a rich neighbor named Xerox, and Steve says that Apple has better stuff, and Bill Gates says "You don't get it Steve. That doesn't *matter!*" (I don't know if it quite went down [exactly like this in real life](https://www.folklore.org/A_Rich_Neighbor_Named_Xerox.html), but the Anthony Michael Hall and Noah Wyle version is *my* reality anyway.)
+But then of course, Microsoft built Windows after Bill Gates visited Apple, and that quote about artists came back to bite Steve Jobs. This leads to probably my favorite scene in the film: when Steve accuses Bill Gates of ripping off the Mac, and Bill Gates says it was more like they both had a rich neighbor named Xerox, and Steve says that Apple has better stuff, and Bill Gates says "You don't get it, Steve. That doesn't *matter!*" (I don't know if it quite went down [exactly like this in real life](https://www.folklore.org/A_Rich_Neighbor_Named_Xerox.html), but the Anthony Michael Hall and Noah Wyle version is *my* reality anyway.)
 
 ![](images/pirates.jpg)
 
@@ -69,7 +69,7 @@ But his explanation made sense to me. He's not anti-AI. In fact he thinks there'
 
 It's the same conversation engineering teams are having about [junior and senior developers in the age of AI](https://www.weforum.org/stories/artificial-intelligence/as-ai-reshapes-entry-level-software-jobs-where-will-senior-developers-come-from/). A senior engineer can look at what an agent produced and spot the problem fast, because they've made that mistake before. A junior engineer might not see it at all. I notice this in my own work. When an agent's draft of a doc is off, I can usually tell how and guide it a different way or change it myself. When it writes Java, though, I'm a lot less sure, because it's been a long time since I was a real software engineer. (My skill level for coding is good for prototypes, but not so much production-ready code.)
 
-## Haven't We Been Here Before?
+## Which Movie Are We In?
 
 I get why this feels existential for a lot of people. Bill Gates (the real one, not Anthony Michael Hall) just published [a long essay](https://www.gatesnotes.com/work/make-ai-work-for-everyone/reader/a-turbulent-ai-era-and-critical-choices-to-make) about it, and it isn't exactly reassuring. He writes that AI "could stunt our kids' development and replace human relationships," that the jobs most at risk are entry- and mid-level, and that even under the best circumstances, this will be "one of the most turbulent times in human history." (Turns out, maybe it *does* matter?)
 
