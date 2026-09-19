@@ -43,21 +43,21 @@ So how does anyone decide? Remember what Bill Gates said (in the movie): it does
 
 ## The Model Is Only Part of the Story
 
-Most AI conversations focus on the model, but the model is only one layer. The other is the **harness**: the agent wrapped around the model that decides what context it sees, which tools it has, how it plans, and when it's done. Use the same model with different harnesses, and you get different coworkers with different results.
+Most AI conversations focus on the model, but the model is only one layer. The other is the **harness**: the software wrapped around the model that decides what context it sees, which tools it can use, how its work is structured, and when it stops.
 
-That's where a lot of the variability lives. Remember all those instruction files? We write them carefully, spelling out which tool to use for which job. Sometimes the agent follows them perfectly. Sometimes it reads them, nods, and does something else. (I have a teenager. I know this feeling.) Then a new version drops, and a workflow that was reliable last month starts taking scenic detours.
+That's where a lot of the variability lives. Remember all those instruction files? We write them carefully, spelling out which tool to use for which job. Sometimes the agent follows them perfectly, and sometimes it reads them, nods, and does something else. (Kind of like my kids.) It's tempting to blame the model, but often the harness is the one deciding how much weight those instructions get, or whether they're still in context at all. And when a new version drops (of the model *or* the harness), a workflow that was reliable at one point may all the sudden behave totally differently.
 
-None of that makes agents less useful. It just means "we use AI" is closer to "we hired a bunch of contractors who each interpret instructions a little differently." It's also given me a new appreciation for tools that do exactly the same thing every time you run them. (I work at a company that builds those, so grain of salt.)
+This is something I'm seeing a lot of at work, as we try to steer agents to use the right tools for the the job, and often find them colliding with other tools, or the instincts of the agent in general. But if anything, that's given me even more appreciation for deterministic tools that do exactly the same thing every time you run them. (Like the ones we build at Moderne, of course!)
 
 ## Who's Paying for All These Tokens?
 
-The economics are upside down right now, too.
+The other thing that's happening right now is that the economics are completely upside down.
 
-Most of us pay for AI like a gym membership: flat monthly fee, all you can eat, within limits. That means the heaviest users get the best deal, which is not usually how this works. So "within limits" keeps getting redefined. Five-hour windows, weekly caps, pricier plans with more headroom. Underneath it all is a slow slide toward paying per token. GitHub moved Copilot to [usage-based billing](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing) in June with a refreshingly blunt explanation: a quick chat question and a multi-hour autonomous coding session could cost the same amount.
+Most of us pay for AI like a gym membership: flat monthly fee, all you can eat, within limits. That means the heaviest users get the best deal, but "within limits" also keeps getting redefined. Five-hour windows, weekly caps, pricier plans...it all seems to be a slow slide toward paying per token. GitHub Copilot  already moved to [usage-based billing](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing) back in June because a quick chat question and a multi-hour autonomous coding session was potentially costing the same amount for the user.
 
-Meanwhile, the price of a token keeps falling. But agents chew through tokens in a way a chat window never did, so the bill doesn't necessarily shrink. Cheaper gas, bigger truck.
+And while it's true that the price of a token will continue to fall, agents are chewing through tokens at a faster and faster clip, so even if the gas is getting cheaper, it's like we're driving a bigger truck.
 
-Does it settle into something sane, or does it just keep getting cheaper while we keep using more? (Probably both?)
+I don't know how this ends and if we'll settle into something more sane, or if it  just keeps getting cheaper and cheaper while we keep using more and more?
 
 ## Paper First
 
